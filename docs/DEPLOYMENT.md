@@ -6,7 +6,7 @@
 
 先安装 **Python 3.12+** 和 **Node.js 22.12+ 或 24 LTS**（包含 npm）。Windows 安装 Python 时勾选加入 PATH，安装完成后重新打开终端。Linux 若提示缺少 `venv`，请通过所用发行版的包管理器安装对应的 Python venv 组件。
 
-优先从 [Releases](https://github.com/w7lau/abyss-tavern/releases) 下载 `abyss-tavern-v版本号.zip` 并完整解压，这是带升级校验清单的正式安装包。尚无正式包时可用 **Code → Download ZIP** 或 Git 克隆。不要在 ZIP 内直接运行脚本。
+从 [最新正式版](https://github.com/w7lau/abyss-tavern/releases/latest) 的 **Assets** 下载 `abyss-tavern-v版本号.zip` 并完整解压。这是带升级校验清单的正式安装包；页面自动生成的 `Source code` 附件是源码归档。普通游玩无需 GitHub 账号，也不用先 Fork。不要在 ZIP 内直接运行脚本。
 
 **Windows：双击项目里的 `tools/setup.cmd`。** 也可以在项目目录打开终端：
 
@@ -21,6 +21,21 @@ python3 tools/setup.py
 ```
 
 向导会依次安装依赖、构建网页、生成本地配置、询问模型信息、创建首个管理员并启动游戏。首次下载可能需要几分钟；安装失败会停止，按提示处理后可以重新运行。脚本会检查环境，不会替你安装系统级 Python、Node.js 或修改防火墙。
+
+### Fork 后启动（可选）
+
+想在自己账号下保留一份仓库，或以后修改代码，可以这样操作：
+
+1. 打开 [Fork 页面](https://github.com/w7lau/abyss-tavern/fork)，选择自己的账号，点击 **Create fork**。
+2. 在自己的仓库点击 **Code → Download ZIP**，完整解压到本机。
+3. 安装上面列出的 Python 和 Node.js，Windows 双击 `tools/setup.cmd`，按向导填写模型信息并创建管理员。Linux 使用 `python3 tools/setup.py`。
+4. 浏览器打开 `http://127.0.0.1:5500`。以后双击 `tools/start.cmd` 启动；更新前正常停服，再双击 `tools/update.cmd`。
+
+Fork 只复制代码，不会替你启动服务器或提供模型额度。API Key 在本机向导或酒馆网页管理页填写，不要写进 GitHub 文件、Issues 或 Actions 配置。
+
+更新工具仍跟随 `w7lau/abyss-tavern` 的正式 Release。与已发布版本一致、没有源码改动的副本可使用它；开发中的源码或有定制修改的 Fork 会在版本核对或文件冲突检查时停止。保留定制代码时请自行维护更新流程，不要强行覆盖。GitHub 的 **Sync fork** 只同步仓库代码，不会更新已经运行的酒馆，也不要在同一安装目录交替使用源码同步和更新工具。只想游玩并方便更新时，直接下载正式包更省步骤。
+
+GitHub 操作说明：[创建 Fork](https://docs.github.com/zh/pull-requests/how-tos/work-with-forks/fork-a-repo)、[同步 Fork](https://docs.github.com/zh/pull-requests/how-tos/work-with-forks/syncing-a-fork)。
 
 ### 接口地址、Key 和模型分别填什么？
 

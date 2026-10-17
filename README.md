@@ -36,13 +36,17 @@
 
 ## 开始游玩
 
-安装 Python 3.12+ 和 Node.js 22.12+ 或 24 LTS，下载并解压源码后：
+**[下载最新正式版](https://github.com/w7lau/abyss-tavern/releases/latest)** · [先 Fork 到自己的账号](https://github.com/w7lau/abyss-tavern/fork)
+
+普通游玩直接下载正式版即可，无需 GitHub 账号或 Fork。选择附件中的 `abyss-tavern-v版本号.zip`，完整解压；先安装 Python 3.12+ 和 Node.js 22.12+ 或 24 LTS，然后：
 
 - **Windows**：双击 `tools/setup.cmd`，按提示填写模型接口地址、API Key 和模型名，再创建管理员。
 - **Linux / 终端**：在项目目录运行 `python3 tools/setup.py`。
 - 安装完成会启动游戏，浏览器打开 `http://127.0.0.1:5500`。以后 Windows 双击 `tools/start.cmd`，Linux 运行 `python3 tools/start.py`。
 
 完整的 [安装与模型配置教程](docs/DEPLOYMENT.md) 包含 Key 怎么填、模型怎么换、如何邀请朋友，以及服务器部署说明。玩法与默认设置见 [游玩指南](game-packs/s1-fantasy/SELF_HOSTED_RULES.md)。
+
+想保留自己的仓库副本或修改代码，也可以先 **Fork → Code → Download ZIP → 解压 → 双击 `tools/setup.cmd`**。Fork 不会自动运行服务器，游戏仍运行在自己的电脑或服务器上；详见教程中的 [Fork 后启动](docs/DEPLOYMENT.md#fork-后启动可选)。
 
 第一次开服请看 [管理员入门](docs/ADMIN.md)：开放酒馆、让玩家入驻、调整 AI 与运行节奏，以及常用管理入口。
 

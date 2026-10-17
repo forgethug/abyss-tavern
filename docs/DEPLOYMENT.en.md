@@ -6,7 +6,7 @@
 
 Install **Python 3.12+** and **Node.js 22.12+ or 24 LTS** (including npm). On Windows, add Python to PATH during installation and open a new terminal afterward. On Linux, install your distribution's matching Python venv package if required.
 
-Download the source using **Code → Download ZIP** on GitHub and extract it completely, or clone the repository with Git. Run scripts from the extracted project, not from inside the ZIP.
+Open the [latest release](https://github.com/w7lau/abyss-tavern/releases/latest), download the `abyss-tavern-vVERSION.zip` file under **Assets**, and extract it completely. This package includes the upgrade verification manifest; GitHub's automatically generated `Source code` attachments are source archives. No GitHub account or fork is needed for ordinary play. Run scripts from the extracted project, not from inside the ZIP.
 
 **Windows:** double-click `tools/setup.cmd`, or run this from the project directory:
 
@@ -21,6 +21,21 @@ python3 tools/setup.py
 ```
 
 The wizard installs dependencies, builds the website, generates local configuration, asks for model settings, creates the first administrator and starts the game. The first run needs internet access to download dependencies. Python and Node.js must already be installed.
+
+## Start from a fork (optional)
+
+To keep a repository copy under your account or modify the code:
+
+1. Open the [Fork page](https://github.com/w7lau/abyss-tavern/fork), select your account and click **Create fork**.
+2. In your fork, choose **Code → Download ZIP** and extract the archive locally.
+3. Install the Python and Node.js versions listed above. On Windows, double-click `tools/setup.cmd` and follow the wizard to enter model settings and create an administrator. On Linux, run `python3 tools/setup.py`.
+4. Open `http://127.0.0.1:5500`. Use `tools/start.cmd` for later Windows starts. To update, stop the service normally and double-click `tools/update.cmd`.
+
+A fork copies the code; it does not start a server or provide model credits. Enter API keys in the local wizard or tavern administration page, never in GitHub files, Issues or Actions configuration.
+
+The updater follows official Releases from `w7lau/abyss-tavern`. An unchanged copy matching a published version can use it; unpublished development code or customized forks stop at version or file conflict checks. Maintain your own update process for custom code. **Sync fork** updates repository code only, not a running installation. Do not alternate source synchronization and the updater in the same installation. For straightforward play and updates, downloading the official package takes fewer steps.
+
+GitHub instructions: [create a fork](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo) and [sync a fork](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/syncing-a-fork).
 
 ## Enter your model settings
 

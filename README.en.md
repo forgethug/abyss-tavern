@@ -36,7 +36,9 @@ Play alone or invite friends. You can create multiple independent taverns, each 
 
 ## Get started
 
-Install **Python 3.12+** and **Node.js 22.12+ or 24 LTS**, then download and extract the source:
+**[Download the latest release](https://github.com/w7lau/abyss-tavern/releases/latest)** · [Fork to your account](https://github.com/w7lau/abyss-tavern/fork)
+
+For ordinary play, download the release directly; no GitHub account or fork is required. Choose the `abyss-tavern-vVERSION.zip` asset and extract it completely. Install **Python 3.12+** and **Node.js 22.12+ or 24 LTS**, then:
 
 - **Windows:** double-click `tools/setup.cmd`.
 - **Linux:** run `python3 tools/setup.py` from the project directory.
@@ -44,6 +46,8 @@ Install **Python 3.12+** and **Node.js 22.12+ or 24 LTS**, then download and ext
 - For later starts, use `tools/start.cmd` on Windows or `python3 tools/start.py` on Linux.
 
 See the [deployment and model setup guide](docs/DEPLOYMENT.en.md) and the [playing guide](game-packs/s1-fantasy/PLAYING.en.md).
+
+To keep your own repository copy or modify the code, use **Fork → Code → Download ZIP → extract → double-click `tools/setup.cmd`**. A fork does not start a server; the game runs on your computer or server. See [starting from a fork](docs/DEPLOYMENT.en.md#start-from-a-fork-optional).
 
 The [administrator guide](docs/ADMIN.en.md) covers opening a tavern, admitting players, configuring AI and game pace, and finding management tools.
 
