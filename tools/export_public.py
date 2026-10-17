@@ -9,7 +9,7 @@ import subprocess
 import tarfile
 
 ROOT = Path(__file__).resolve().parents[1]
-ROOT_FILES = {'.env.example', '.gitattributes', '.gitignore', 'README.md', 'README.en.md', 'LICENSE', 'THIRD_PARTY_NOTICES.md'}
+ROOT_FILES = {'.env.example', '.gitattributes', '.gitignore', 'README.md', 'README.en.md', 'LICENSE', 'THIRD_PARTY_NOTICES.md', 'VERSION'}
 TREES = {'backend', 'runtime_core', 'runtime_host', 'game-packs', 'frontend-v2', 'tools', 'deploy', '.github'}
 PUBLIC_DOCS = {'DEPLOYMENT.md', 'DEPLOYMENT.en.md', 'ADMIN.md', 'ADMIN.en.md'}
 PUBLIC_MARKDOWN = {
@@ -20,7 +20,7 @@ PUBLIC_MARKDOWN = {
     'game-packs/s1-fantasy/PLAYING.en.md',
 }
 FORBIDDEN_PARTS = {'.git', '.codex', '.agents', '.venv', 'node_modules', '__pycache__', '.pytest_cache',
-                   'data', 'dist', 'logs', '.tmp', 'backups'}
+                   'data', 'dist', 'logs', '.tmp', 'backups', '.updates'}
 SECRET_PATTERNS = [re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
                    re.compile(rb'\bsk-[A-Za-z0-9_-]{24,}\b'),
                    re.compile(rb'\bgh[pousr]_[A-Za-z0-9]{30,}\b')]
@@ -37,13 +37,13 @@ def allowed(name):
     if name in {'tools/sync-s0-source-snapshot.ps1', 'runtime_host/tests/test_original_anomaly_runtime.py',
                 'backend/tests/test_original_pack_boundaries.py'}:
         return False
-    if set(path.parts) & FORBIDDEN_PARTS or path.name == 'AGENTS.md':
+    if {part.casefold() for part in path.parts} & FORBIDDEN_PARTS or path.name.casefold() == 'agents.md':
         return False
-    if path.name.startswith('.env') and name != '.env.example':
+    if path.name.casefold().startswith('.env') and name != '.env.example':
         return False
     if path.suffix.lower() == '.md' and name not in PUBLIC_MARKDOWN:
         return False
-    if path.suffix.lower() in {'.db', '.sqlite', '.sqlite3', '.log', '.pyc', '.pem', '.key', '.dump', '.zip'}:
+    if path.suffix.lower() in {'.db', '.sqlite', '.sqlite3', '.log', '.pyc', '.pem', '.key', '.dump', '.zip', '.upgrade-tmp'}:
         return False
     return name in ROOT_FILES or path.parts[0] in TREES or (path.parts[0] == 'docs' and path.name in PUBLIC_DOCS)
 
@@ -64,7 +64,7 @@ def export(destination, ref=None, working_tree=False):
         revision = 'uncommitted-local-validation'
     else:
         revision = subprocess.check_output(['git', 'rev-parse', '--verify', ref + '^{commit}'], cwd=ROOT).decode().strip()
-        archive = subprocess.check_output(['git', 'archive', '--format=tar', revision], cwd=ROOT)
+        archive = subprocess.check_output(['git', '-c', 'core.autocrlf=false', 'archive', '--format=tar', revision], cwd=ROOT)
         with tarfile.open(fileobj=io.BytesIO(archive)) as tar:
             for member in tar:
                 if allowed(member.name) and not member.isdir():

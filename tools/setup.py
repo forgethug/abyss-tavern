@@ -8,6 +8,8 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from runtime_core.installation import installed_python, require_completed_update
 
 
 class SetupError(RuntimeError):
@@ -60,11 +62,17 @@ def ensure_admin():
 
 
 def main(argv=None):
+    require_completed_update(ROOT)
     parser = argparse.ArgumentParser(description='深渊酒馆安装与启动向导')
     parser.add_argument('--configure-only', action='store_true', help='已安装依赖时，只配置模型和管理员')
     parser.add_argument('--no-start', action='store_true', help='完成配置后不启动服务')
     parser.add_argument('--env-file', type=Path, default=Path(os.getenv('PLATFORM_ENV_FILE', str(ROOT / '.env'))))
     args = parser.parse_args(argv)
+    if args.configure_only:
+        python = installed_python(ROOT)
+        if python.is_file() and os.path.abspath(sys.executable) != os.path.abspath(python):
+            return subprocess.call([str(python), '-X', 'utf8', str(Path(__file__).resolve()),
+                                    *(argv if argv is not None else sys.argv[1:])], cwd=ROOT)
     env_path = args.env_file.resolve()
     os.environ['PLATFORM_ENV_FILE'] = str(env_path)
     os.environ['PYTHONUTF8'] = '1'
@@ -72,7 +80,7 @@ def main(argv=None):
         check_environment()
         print('正在安装依赖并构建网页，首次运行需要联网下载，请耐心等待。', flush=True)
         subprocess.run([sys.executable, str(ROOT / 'tools/install.py')], cwd=ROOT, check=True)
-        python = ROOT / '.venv' / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
+        python = installed_python(ROOT)
         command = [str(python), '-X', 'utf8', str(Path(__file__).resolve()), '--configure-only', '--env-file', str(env_path)]
         if args.no_start:
             command.append('--no-start')

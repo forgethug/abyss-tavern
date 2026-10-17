@@ -47,6 +47,8 @@ See the [deployment and model setup guide](docs/DEPLOYMENT.en.md) and the [playi
 
 The [administrator guide](docs/ADMIN.en.md) covers opening a tavern, admitting players, configuring AI and game pace, and finding management tools.
 
+To update, stop the server and use `tools/update.cmd` on Windows or `python3 tools/update.py` on Linux. The updater backs up your installation and preserves configuration and player data. See [updating](docs/DEPLOYMENT.en.md#update-the-game).
+
 ## License
 
 The code is available under the [MIT License](LICENSE). See [third-party notices](THIRD_PARTY_NOTICES.md) for source and dependency information.

@@ -12,6 +12,12 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / 'backend'), str(ROOT)]
+if __name__ == '__main__':
+    from runtime_core.installation import installed_python, require_completed_update
+    require_completed_update(ROOT)
+    active = installed_python(ROOT)
+    if active.is_file() and os.path.abspath(sys.executable) != os.path.abspath(active):
+        os.execv(str(active), [str(active), *sys.argv])
 from config import Config
 from runtime_core.process_lock import instance_lock
 from sqlalchemy import create_engine, inspect, text
@@ -74,34 +80,39 @@ def read_taverns(url):
 
 
 def backup(destination, config=Config):
-    destination = Path(destination).resolve()
     with instance_lock(config.RUNTIME_DATA_DIR):
-        taverns = read_taverns(config.SQLALCHEMY_DATABASE_URI)
-        urls = database_urls(config, taverns)
-        destination.mkdir(parents=True, exist_ok=False)
-        entries = []
-        for name, url in urls:
-            parsed = make_url(url)
-            backend = parsed.get_backend_name()
-            if backend == 'sqlite':
-                source = Path(parsed.database).resolve()
-                if not source.is_file():
-                    if name == 'platform':
-                        raise ValueError('Control database missing')
-                    continue  # Tavern has never started: no database to back up.
-                filename = name + '.sqlite'
-                with sqlite3.connect(source.as_uri() + '?mode=ro', uri=True) as src, sqlite3.connect(destination / filename) as dst:
-                    src.backup(dst)
-            elif backend == 'postgresql':
-                filename = name + '.dump'
-                pg_command('pg_dump', url, '--format=custom', '--no-owner', '--no-acl', '--file', str(destination / filename))
-            else:
-                raise ValueError('Only SQLite and PostgreSQL backup are supported')
-            entries.append({'name': name, 'backend': backend, 'file': filename, 'sha256': digest(destination / filename)})
-        sources = {str(path.relative_to(ROOT)): path.read_text(encoding='utf-8')
-                   for path in (ROOT / 'game-packs').glob('*/source-snapshot/SOURCE')}
-        manifest = {'format': 1, 'taverns': taverns, 'databases': entries, 'sources': sources}
-        (destination / 'manifest.json').write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding='utf-8')
+        return backup_locked(destination, config)
+
+
+def backup_locked(destination, config=Config):
+    """Caller must hold instance_lock for the entire maintenance operation."""
+    destination = Path(destination).resolve()
+    taverns = read_taverns(config.SQLALCHEMY_DATABASE_URI)
+    urls = database_urls(config, taverns)
+    destination.mkdir(parents=True, exist_ok=False)
+    entries = []
+    for name, url in urls:
+        parsed = make_url(url)
+        backend = parsed.get_backend_name()
+        if backend == 'sqlite':
+            source = Path(parsed.database).resolve()
+            if not source.is_file():
+                if name == 'platform':
+                    raise ValueError('Control database missing')
+                continue  # Tavern has never started: no database to back up.
+            filename = name + '.sqlite'
+            with sqlite3.connect(source.as_uri() + '?mode=ro', uri=True) as src, sqlite3.connect(destination / filename) as dst:
+                src.backup(dst)
+        elif backend == 'postgresql':
+            filename = name + '.dump'
+            pg_command('pg_dump', url, '--format=custom', '--no-owner', '--no-acl', '--file', str(destination / filename))
+        else:
+            raise ValueError('Only SQLite and PostgreSQL backup are supported')
+        entries.append({'name': name, 'backend': backend, 'file': filename, 'sha256': digest(destination / filename)})
+    sources = {str(path.relative_to(ROOT)): path.read_text(encoding='utf-8')
+               for path in (ROOT / 'game-packs').glob('*/source-snapshot/SOURCE')}
+    manifest = {'format': 1, 'taverns': taverns, 'databases': entries, 'sources': sources}
+    (destination / 'manifest.json').write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding='utf-8')
     return destination
 
 

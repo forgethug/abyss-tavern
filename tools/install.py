@@ -7,18 +7,21 @@ import sys
 import venv
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from runtime_core.installation import installed_python, require_completed_update
 
 
 def main():
+    require_completed_update(ROOT)
     if sys.version_info < (3, 12):
         raise SystemExit('Python 3.12 or newer is required')
     npm = shutil.which('npm')
     if not npm:
         raise SystemExit('Install Node.js 22.12+ or 24 LTS (including npm) first')
-    directory = ROOT / '.venv'
+    python = installed_python(ROOT)
+    directory = python.parent.parent
     if not directory.exists():
         venv.EnvBuilder(with_pip=True).create(directory)
-    python = directory / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
     subprocess.run([str(python), '-m', 'pip', 'install', '--upgrade', 'pip==26.2.1'], check=True)
     subprocess.run([str(python), '-m', 'pip', 'install', '-r', str(ROOT / 'backend/requirements.txt')], check=True)
     subprocess.run([str(python), str(ROOT / 'tools/configure.py'), '--env-file',

@@ -145,6 +145,7 @@ class S1FantasyRuntimeAdapter:
         )
         app.config.update(rules_config())
         app.config.update(self._environment_config())
+        load_runtime_extension_factory(__file__, "ai_input_mode.py", "install")(app)
         s1_ai_runtime_config_service.requests = RequestsTransportFacade(
             app.extensions["model_gateway"]
         )
@@ -154,6 +155,7 @@ class S1FantasyRuntimeAdapter:
         app.register_blueprint(adventurer_s1_bp)
         from routes.model_config import create_model_config_blueprint
         app.register_blueprint(create_model_config_blueprint(self.route_prefix))
+        load_runtime_extension_factory(__file__, "ai_input_mode.py", "install_routes")(app)
         imported_table_names = tuple(
             sorted(set(db.metadata.tables) - tables_before_pack_import)
         )
@@ -207,6 +209,8 @@ class S1FantasyRuntimeAdapter:
         load_runtime_extension_factory(
             __file__, "public_content_migration.py", "migrate"
         )()
+        from services.tavern_ai_input_settings import initialize
+        initialize()
 
     def _handler(self, task_type):
         return lambda payload: self._dispatch(task_type, payload)

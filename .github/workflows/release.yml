@@ -1,0 +1,29 @@
+name: Publish upgrade package
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  verify:
+    uses: ./.github/workflows/verify.yml
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build checksummed source package
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: python tools/build_release.py --ref HEAD --version "${RELEASE_TAG#v}" --output release-packages
+      - name: Publish verified release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$RELEASE_TAG" release-packages/* --verify-tag --title "Abyss Tavern $RELEASE_TAG" --notes "Download the abyss-tavern ZIP asset for installation or upgrade. See docs/DEPLOYMENT.md (中文) or docs/DEPLOYMENT.en.md (English). Existing configuration and player databases are preserved by tools/update.py."

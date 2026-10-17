@@ -99,4 +99,37 @@ Save `.env` and the corresponding source version separately. Backups contain pla
 
 To restore, configure a new destination with the same database type, then run `tools/backup.py restore <backup-directory>` using the virtual environment's Python. SQLite destination files must not exist; PostgreSQL destination databases must exist and be empty. The tool validates file checksums before restoration and refuses to overwrite existing data. PostgreSQL backup and restore require compatible `pg_dump` and `pg_restore` tools in PATH, or a `PG_BIN` directory setting.
 
-Before upgrading, back up configuration and databases and test the new version on a restored copy. To roll back, stop the new version and restore both the matching old source and database backup. There is no general automatic database downgrade.
+## Update the game
+
+Prefer the `abyss-tavern-vVERSION.zip` asset from [Releases](https://github.com/w7lau/abyss-tavern/releases) for new installations. It includes the upgrade manifest. If no release exists yet, use the source download or Git clone.
+
+Wait for adventures and settlements to finish, stop the taverns in administration, then stop the platform normally. **Windows: double-click `tools/update.cmd`.** Linux: run `python3 tools/update.py`. Confirm the update; the tool backs up data, installs dependencies, builds the frontend and updates the program. Interactive runs offer to start the game afterward.
+
+If your installation has no updater, extract a formal release into a **separate folder**, run its updater and enter the original installation directory when prompted. Do not manually overwrite a running installation.
+
+Use `--check` for a read-only version check. Use the same `--env-file <path>` or `PLATFORM_ENV_FILE` as startup. `--yes --no-start` supports unattended maintenance after the service has been stopped. No published package is a normal “no update” result.
+
+The updater preserves `.env`, accounts, player data and each tavern's independent model profiles, keys and feature assignments. It downloads the complete ZIP, verifies SHA-256, then replaces only changed program files and removes obsolete managed files. Local source edits or conflicting custom files stop the update. Development branches are not followed automatically.
+
+Private backups, recovery records and the active Python environment live under `.updates/transactions/`. **Do not publish or delete the entire `.updates` directory.** Allow disk space for backups, dependencies and builds; dependency installation requires network access.
+
+Candidate startup checks use disposable copies and make no model calls. SQLite checks use platform and tavern backups. PostgreSQL uses `pg_dump` backups and a fresh SQLite startup probe; this does not validate PostgreSQL data migrations. Automatic upgrades currently accept compatible releases with the same data format only.
+
+Dependency, build or startup-check failures leave the original program intact. File replacement failures restore the previous program automatically. After a power loss or forced interruption, rerun the updater to recover before starting. If the installed tool cannot run, use a freshly extracted release's updater with the original installation directory. Never remove a pending marker to bypass recovery.
+
+Existing startup scripts and service entrypoints select the updated dependency environment. Do not mix the updater and `git pull` in one installation. Maintain a separate deployment process for customized source.
+
+To downgrade after successful updates and further gameplay, stop the service and restore the matching old source, configuration and database backup into empty destinations. This loses progress made after that backup; the updater does not perform automatic data downgrades.
+
+### Publish an update
+
+Maintainers synchronize tested public source, update `VERSION`, then push its matching `vMAJOR.MINOR.PATCH` tag. GitHub Actions runs Windows/Linux verification before publishing the source ZIP, file manifest and SHA-256. Packages exclude private configuration, databases and Git history. Upstream changes must be adapted and tested before publication.
+
+## AI input compression
+
+In the target tavern, open **管理 → 探险 → 运行与 AI → S1 AI 模型配置** and use **资产描述压缩与特质分类筛选** (asset description compression and trait context filtering). This switch is **off by default**, applies only to the current tavern, and survives restarts.
+
+- **Off:** applicable trait, skill, and equipment descriptions are sent in full, avoiding omissions caused by summarization or context filtering. Longer contexts can make the model overlook or forget details, dilute its attention, and consume more tokens at a higher cost.
+- **On:** reviewed summaries and trait context filtering reduce input length and token costs, with a risk of omitted information. Generating summaries and classifications also requires AI calls.
+
+Equipment, archived assets, and asset dependency rules still apply. Changes affect newly prepared inputs. Frozen expedition inputs and their reviews remain consistent; requests already sent are not canceled. Turning compression off stops new background asset compression tasks and prevents old summaries from being used in new inputs.

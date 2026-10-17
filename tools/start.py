@@ -3,15 +3,19 @@ import argparse
 import os
 from pathlib import Path
 import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from runtime_core.installation import installed_python, require_completed_update
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description='启动深渊酒馆')
     parser.add_argument('--env-file', type=Path, default=Path(os.getenv('PLATFORM_ENV_FILE', str(ROOT / '.env'))))
     args = parser.parse_args(argv)
-    python = ROOT / '.venv' / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
+    require_completed_update(ROOT)
+    python = installed_python(ROOT)
     if not python.is_file() or not args.env_file.is_file() or not (ROOT / 'frontend-v2/dist/index.html').is_file():
         raise SystemExit('尚未完成安装，请先运行 python tools/setup.py。')
     env = dict(os.environ, PLATFORM_ENV_FILE=str(args.env_file.resolve()), PYTHONUTF8='1')

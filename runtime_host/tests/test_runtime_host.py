@@ -316,7 +316,7 @@ class TestRuntimeHost:
         assert response.status_code == 200
         assert response.json["data"]["status"] == "runtime_host_ready"
         assert response.json["data"]["model_table_count"] >= 90
-        assert response.json["data"]["s1_route_count"] == 590
+        assert response.json["data"]["s1_route_count"] == 591
         assert response.json["data"]["s1_ruleset"] == "self_hosted"
 
     def test_exposes_source_snapshot_info_route(self, runtime_client):

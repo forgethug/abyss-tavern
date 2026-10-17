@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import TavernModelConfigEditor from './TavernModelConfigEditor.vue'
+import TavernAiInputSettings from './TavernAiInputSettings.vue'
 import { defineAsyncComponent, ref } from 'vue'
 const TavernTokenUsagePanel = defineAsyncComponent(() => import('./TavernTokenUsagePanel.vue'))
 const showUsage = ref(false)
@@ -10,6 +11,7 @@ defineProps<{
 </script>
 
 <template>
+  <TavernAiInputSettings v-if="scope === 's1'" />
   <TavernModelConfigEditor v-if="scope === 's1'" />
   <section v-if="scope === 's1'" class="usage-section">
     <button type="button" @click="showUsage = !showUsage">{{ showUsage ? '收起 AI 用量统计' : '查看 AI 用量统计与失败详情' }}</button>

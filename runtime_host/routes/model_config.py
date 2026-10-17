@@ -36,4 +36,18 @@ def create_model_config_blueprint(prefix):
         from services.ai_runtime_config_service import resume_ai_credential_after_topup
         return reply(resume_ai_credential_after_topup(request.get_json(silent=True)))
 
+    @blueprint.route('/admin/ai/input-settings', methods=['GET', 'PUT'])
+    @login_required
+    @admin_required
+    def input_settings():
+        from services.tavern_ai_input_settings import read_settings, save_settings
+        try:
+            if request.method == 'GET':
+                return reply((read_settings(), None))
+            data, error, status = save_settings(request.get_json(silent=True))
+            return reply((data, error), status)
+        except SQLAlchemyError as exc:
+            current_app.logger.error('AI input settings storage failed: %s', type(exc).__name__)
+            return reply((None, '设置保存失败，请稍后重试'), 503)
+
     return blueprint

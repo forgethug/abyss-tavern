@@ -56,3 +56,12 @@ Only administrators see these tools. Check the tavern name before changing setti
 - Verify joining, character reservation and admission with a player account.
 - Confirm your model configuration, AI switch and dispatch settings. Actual story generation consumes provider credits.
 - Share a reachable server address. `127.0.0.1` only reaches the visitor's own computer. Follow the [deployment guide](DEPLOYMENT.en.md) for HTTPS hosting, offline backups and restoration.
+
+## AI input compression
+
+In the target tavern, open **管理 → 探险 → 运行与 AI → S1 AI 模型配置** and use **资产描述压缩与特质分类筛选** (asset description compression and trait context filtering). This switch is **off by default**, applies only to the current tavern, and survives restarts.
+
+- **Off:** applicable trait, skill, and equipment descriptions are sent in full, avoiding omissions caused by summarization or context filtering. Longer contexts can make the model overlook or forget details, dilute its attention, and consume more tokens at a higher cost.
+- **On:** reviewed summaries and trait context filtering reduce input length and token costs, with a risk of omitted information. Generating summaries and classifications also requires AI calls.
+
+Equipment, archived assets, and asset dependency rules still apply. Changes affect newly prepared inputs. Frozen expedition inputs and their reviews remain consistent; requests already sent are not canceled. Turning compression off stops new background asset compression tasks and prevents old summaries from being used in new inputs.

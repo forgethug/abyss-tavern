@@ -2,6 +2,18 @@
 import os
 from pathlib import Path
 import signal
+import sys
+
+# Existing service definitions can keep their original Python entrypoint.
+# Switch before importing dependencies from the newly installed source.
+if __name__ == '__main__':
+    root = Path(__file__).resolve().parents[1]
+    sys.path.insert(0, str(root))
+    from runtime_core.installation import installed_python, require_completed_update
+    require_completed_update(root)
+    active = installed_python(root)
+    if active.is_file() and os.path.abspath(sys.executable) != os.path.abspath(active):
+        os.execv(str(active), [str(active), *sys.argv])
 
 from app import create_app
 from config import Config
@@ -9,6 +21,7 @@ from extensions import db
 from flask import abort, send_from_directory
 from models import Tavern
 from runtime_core.process_lock import instance_lock
+from runtime_core.installation import require_completed_update
 from services.runtime_supervisor_service import RuntimeSupervisorService
 from waitress import create_server
 
@@ -52,6 +65,7 @@ def stop_owned_runtimes(app):
 
 def main():
     with instance_lock(Config.RUNTIME_DATA_DIR):
+        require_completed_update(Path(__file__).resolve().parents[1])
         app = create_app()
         register_frontend(app)
         server = create_server(app, host=os.getenv('PLATFORM_HOST', '127.0.0.1'),

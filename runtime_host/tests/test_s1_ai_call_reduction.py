@@ -255,6 +255,7 @@ def test_description_finalize_uses_two_calls_and_replays_old_receipt(runtime_app
 
 
 def test_legacy_short_policy_backlog_is_retired_locally(runtime_app, monkeypatch):
+    runtime_app.config['ADVENTURER_S1_DESCRIPTION_AI_SUMMARY_ENABLED'] = True
     from extensions import db
     from db_repository.s1_description_backlog_repository import remember_description_sources
     from plugins.adventurer_s1.models import AdventurerS1DescriptionAiBacklog, AdventurerS1DescriptionAiCache
@@ -275,6 +276,7 @@ def test_legacy_short_policy_backlog_is_retired_locally(runtime_app, monkeypatch
 
 
 def test_already_queued_policy_task_reuses_verified_summary_without_ai(runtime_app, monkeypatch):
+    runtime_app.config['ADVENTURER_S1_DESCRIPTION_AI_SUMMARY_ENABLED'] = True
     from extensions import db
     from plugins.adventurer_s1.models import AdventurerS1DescriptionAiCache
     from plugins.adventurer_s1.services import s1_description_ai_service as descriptions

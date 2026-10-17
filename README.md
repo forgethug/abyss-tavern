@@ -46,6 +46,8 @@
 
 第一次开服请看 [管理员入门](docs/ADMIN.md)：开放酒馆、让玩家入驻、调整 AI 与运行节奏，以及常用管理入口。
 
+以后更新游戏：停止服务后，Windows 双击 `tools/update.cmd`，Linux 运行 `python3 tools/update.py`。工具先备份，再更新程序，保留配置与玩家数据。详见 [更新游戏](docs/DEPLOYMENT.md#更新游戏)。
+
 ## 开源许可
 
 代码采用 [MIT 许可证](LICENSE)。第三方组件及来源说明见 [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md)。
