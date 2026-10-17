@@ -352,6 +352,7 @@ type StatusFlags = {
 }
 
 type CompareRow = {
+  compression_enabled?: boolean
   record_key: string
   asset_kind: AssetKind
   asset_id: number
@@ -515,6 +516,7 @@ function auditStatusLabel(status: string) {
 }
 
 function summaryStatus(row: CompareRow): StatusView {
+  if (row.compression_enabled === false) return { label: '压缩已关闭，使用全文', tone: 'info' }
   if (!row.requires_summary) return { label: '原文较短，无需压缩', tone: 'success' }
   if (row.compressed) {
     return row.effective_summary_source === 'cache'
@@ -536,6 +538,7 @@ function summaryStatus(row: CompareRow): StatusView {
 }
 
 function contextStatus(row: CompareRow): StatusView {
+  if (row.compression_enabled === false) return { label: '分类筛选已关闭', tone: 'info' }
   if (row.cache.context_effective) return { label: '路由已生效', tone: 'success' }
   if (row.cache.context_audit_status === 'passed') return { label: '路由格式不可用', tone: 'danger' }
   if (row.cache.context_audit_status === 'rejected') return { label: '路由未通过', tone: 'danger' }

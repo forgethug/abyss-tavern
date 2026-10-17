@@ -151,3 +151,32 @@ def test_disabled_feedback_task_releases_its_receipt(runtime_app, monkeypatch):
     with runtime_app.app_context():
         assert d.process_description_compression_task(payload) == (0, 0)
     assert calls == [(payload, 'retryable')]
+
+
+def test_admin_preview_does_not_present_cached_summaries_as_active(runtime_app, runtime_client):
+    from extensions import db
+    from plugins.adventurer_s1.models import AdventurerS1, AdventurerS1Trait
+    from plugins.adventurer_s1.services.s1_description_ai_service import description_source_hash
+    headers = _admin_headers(runtime_app, runtime_client)
+    with runtime_app.app_context():
+        adventurer = AdventurerS1(name='测试角色', status='resting')
+        db.session.add(adventurer)
+        db.session.flush()
+        full = '完整特质说明' * 80
+        trait = AdventurerS1Trait(adventurer_id=adventurer.id, name='测试特质', description=full,
+            description_ai='旧缓存摘要', description_ai_source_hash=description_source_hash(full, kind='trait'))
+        db.session.add(trait)
+        db.session.commit()
+        trait_id = trait.id
+    response = runtime_client.get(f'/api/adventurer-s1/admin/traits/compress/compare/{trait_id}', headers=headers)
+    assert response.status_code == 200, response.json
+    row = response.json['data']
+    assert row['compression_enabled'] is False
+    assert row['main_ai_uses_full_description'] and not row['compressed']
+    assert row['description_ai'] is None and row['candidate_description_ai'] == '旧缓存摘要'
+    assert not row['cache']['context_effective'] and not row['cache']['summary_effective']
+    response = runtime_client.get('/api/adventurer-s1/admin/descriptions/compress/preview?kind=trait', headers=headers)
+    assert response.status_code == 200, response.json
+    rows = response.json['data']['items']
+    assert len(rows) == 1
+    assert rows[0]['compression_enabled'] is False and not rows[0]['compressed']

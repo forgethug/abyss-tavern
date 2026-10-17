@@ -170,4 +170,20 @@ def install(app):
     _replace(descriptions, 'process_description_compression_task', process)
     _replace(traits, 'compress_traits', lambda original: lambda *args, **kwargs:
         original(*args, **kwargs) if enabled() else (0, 0))
+    def preview_row(original):
+        @wraps(original)
+        def call(*args, **kwargs):
+            row = original(*args, **kwargs)
+            row['compression_enabled'] = enabled()
+            if not row['compression_enabled']:
+                row.update(description_ai=None, description_ai_len=0, compressed=False,
+                    needs_compression=False, effective_summary_source='full',
+                    main_ai_uses_full_description=True, saved_chars=0, saved_percent=0.0)
+                row['cache'].update(summary_effective=False, context_effective=False,
+                    effective_context_rule=None)
+            return row
+        return staticmethod(call)
+    for owner, name in ((traits.S1TraitDescriptionAiService, '_trait_compare_row'),
+                        (traits.S1DescriptionAiAdminPreviewService, '_compare_row')):
+        setattr(owner, name, preview_row(getattr(owner, name)))
     descriptions._portable_input_mode_installed = True
