@@ -1,0 +1,343 @@
+:root {
+  color: #ece9df;
+  background: #090a0f;
+  font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 78% 8%, rgba(105, 70, 142, 0.22), transparent 32rem),
+    radial-gradient(circle at 10% 70%, rgba(150, 73, 41, 0.14), transparent 30rem),
+    #090a0f;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  padding: 0 5vw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(9, 10, 15, 0.82);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  color: #f2d9a7;
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: 1.12rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name {
+  color: #aaa5b5;
+}
+
+.text-link {
+  color: #d5c7ea;
+  text-decoration: none;
+}
+
+.page-shell {
+  width: min(1120px, 90vw);
+  margin: 0 auto;
+  padding: 4rem 0 6rem;
+}
+
+.hero {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+.hero.compact {
+  margin-bottom: 2rem;
+}
+
+.hero h1,
+.auth-copy h1,
+.runtime-header h1 {
+  margin: 0.25rem 0 1rem;
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: clamp(2.2rem, 6vw, 4.8rem);
+  font-weight: 500;
+  line-height: 1.04;
+}
+
+.hero.compact h1,
+.runtime-header h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.hero p,
+.auth-copy p,
+.migration-panel p {
+  color: #aaa5b5;
+  line-height: 1.8;
+}
+
+.eyebrow,
+.card-kicker {
+  color: #c8935c;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.panel,
+.tavern-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(28, 27, 36, 0.94), rgba(15, 16, 23, 0.9));
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+}
+
+.auth-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  align-items: center;
+  gap: 7vw;
+  min-height: calc(100vh - 180px);
+}
+
+.auth-panel,
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.auth-panel label,
+.form-stack label {
+  display: grid;
+  gap: 0.5rem;
+  color: #c8c3cf;
+  font-size: 0.88rem;
+}
+
+.page-shell:not(.page-shell--game) input,
+.page-shell:not(.page-shell--game) select {
+  width: 100%;
+  padding: 0.78rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9px;
+  color: #f4f0e8;
+  background: #0d0e14;
+  outline: none;
+}
+
+.page-shell:not(.page-shell--game) input:focus,
+.page-shell:not(.page-shell--game) select:focus {
+  border-color: #a477c6;
+  box-shadow: 0 0 0 3px rgba(164, 119, 198, 0.13);
+}
+
+.tab-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.tab-row button {
+  padding: 0.4rem 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: #817d88;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tab-row button.active {
+  border-color: #c8935c;
+  color: #f1e9dc;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.66rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-primary {
+  color: #160f0b;
+  background: linear-gradient(135deg, #d6a86d, #b987d2);
+}
+
+.button-ghost {
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #c7c2cc;
+  background: transparent;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.card-grid,
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.tavern-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  padding: 1.7rem;
+}
+
+.tavern-card h2 {
+  margin: 0.4rem 0;
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-size: 1.7rem;
+}
+
+.tavern-card > * {
+  position: relative;
+}
+
+.card-glow {
+  position: absolute;
+  top: -50px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(155, 99, 190, 0.16);
+  filter: blur(12px);
+}
+
+.tavern-card .button {
+  margin-top: 2rem;
+}
+
+.empty-state {
+  padding: 3rem;
+  color: #aaa5b5;
+  text-align: center;
+}
+
+.error-message,
+.success-message {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.error-message {
+  color: #ffb4aa;
+  background: rgba(162, 45, 42, 0.2);
+}
+
+.success-message {
+  color: #bfe4c4;
+  background: rgba(42, 122, 69, 0.2);
+}
+
+.runtime-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.status-pill {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(118, 193, 139, 0.35);
+  border-radius: 999px;
+  color: #a9ddb7;
+  background: rgba(55, 112, 70, 0.18);
+}
+
+.migration-panel {
+  padding: 2rem;
+}
+
+.migration-panel dl {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.migration-panel dl div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.migration-panel dt {
+  color: #817d88;
+}
+
+.migration-panel dd {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .topbar {
+    padding: 0 1rem;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .page-shell {
+    width: min(92vw, 1120px);
+    padding-top: 2.5rem;
+  }
+
+  .runtime-header {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+

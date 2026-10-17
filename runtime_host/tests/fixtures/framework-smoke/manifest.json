@@ -1,0 +1,23 @@
+{
+  "pack_id": "framework_smoke",
+  "display_name": "Framework Smoke Pack",
+  "platform_api_version": "0.1",
+  "runtime_api_version": "0.1",
+  "pack_version": "0.1.0",
+  "source_mode": "native",
+  "runtime_status": "contract_test",
+  "runtime_environment_keys": [],
+  "runtime_import_paths": [],
+  "model_capabilities": [],
+  "capabilities": [
+    "runtime_contract_test"
+  ],
+  "entrypoints": {
+    "runtime_host": "../../..",
+    "runtime_entrypoint": "run.py",
+    "runtime_adapter": "runtime_adapter/smoke_adapter.py",
+    "runtime_api_prefix": "/api/framework-smoke",
+    "frontend_plugin": "framework_smoke",
+    "control_plane_proxy": "/api/taverns/{slug}/runtime"
+  }
+}

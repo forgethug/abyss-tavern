@@ -1,0 +1,2595 @@
+{
+  "backend/db_repository/postgresql_advisory_lock.py": {
+    "upstream_sha256": "6a0a128342fe9f04443dbe4fbf2d1315ebb89e7bf4fb7f102afe7d000bd63c93",
+    "portable_sha256": "6a0a128342fe9f04443dbe4fbf2d1315ebb89e7bf4fb7f102afe7d000bd63c93",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_activity_repository.py": {
+    "upstream_sha256": "c382d782cd40a0324706f39fe68f960369b69eae18a7dfb4c5b566acceb466a3",
+    "portable_sha256": "c382d782cd40a0324706f39fe68f960369b69eae18a7dfb4c5b566acceb466a3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_ai_feedback_repository.py": {
+    "upstream_sha256": "5972723c83387a13d2d65f10dab5ff19e28240945f9a309e8cb0001f9c76cbe7",
+    "portable_sha256": "d17b5494a20c483fb816086d0c1f9bd97db4126802e65a051ba2851a43ea674a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_ai_input_policy_repository.py": {
+    "upstream_sha256": "446980713f0cb7286ed470aebb4a5850566c9688eba756a529e0ec505d69e3fa",
+    "portable_sha256": "446980713f0cb7286ed470aebb4a5850566c9688eba756a529e0ec505d69e3fa",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_asset_transfer_repository.py": {
+    "upstream_sha256": "be914e3198489a0a18a2f0c97540ea257e0f2fe4a799cdf63c28dfb3200fc707",
+    "portable_sha256": "be914e3198489a0a18a2f0c97540ea257e0f2fe4a799cdf63c28dfb3200fc707",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_balance_policy_repository.py": {
+    "upstream_sha256": "c17b81cb69a4d9faa02365a1596b920e3aebe249e41bbfb3993d04f9ccbe3a3b",
+    "portable_sha256": null
+  },
+  "backend/db_repository/s1_campaign_continuation_repository.py": {
+    "upstream_sha256": "b8053106d3b8585dcb9ac3e0b14ce400fbe622fafe19a6ca5830f11fd33d14f0",
+    "portable_sha256": "36e41f53e6dfafd404e7d7e2e27ae85d1b483731a8e9f0aec4765aca0a16580a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_campaign_dispatch_repository.py": {
+    "upstream_sha256": "dffaf22dd5aa8d38cb4960037af4074aaf0d36bcf99d851833e5d352fdb957d0",
+    "portable_sha256": "fe02896e66541d81f5e3d684b2892446fe86ed56354113aacfbbf68c9d481d34",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_campaign_evolution_repository.py": {
+    "upstream_sha256": "7e24de23a20c6aca4da34936756104a1d4fe9b63ba2484f57c2fa195f4236135",
+    "portable_sha256": "0209e4e3822e09349aabff078dffcaf14b8594b86a9c99c125feaf1911a705ae",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_campaign_local_world_repository.py": {
+    "upstream_sha256": "d89f658201b9a4985755e5655232a3bc7a829245b8cc6b6d2c33c52a71f694ac",
+    "portable_sha256": "d89f658201b9a4985755e5655232a3bc7a829245b8cc6b6d2c33c52a71f694ac",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_campaign_stage_repository.py": {
+    "upstream_sha256": "ad29cc58adc6f2a5c7590b386461bb85b328fefa4705ff77613e7a24505017ae",
+    "portable_sha256": "ed975f8e49aadeca321848febcf06807f78986ae87aba4d92c135e1dfc378cd9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_campaign_task_admission_repository.py": {
+    "upstream_sha256": "bab0f8d3ae08cd02602c60c133de2fcd068165664fe21ed0f0c79df271530ad9",
+    "portable_sha256": "bab0f8d3ae08cd02602c60c133de2fcd068165664fe21ed0f0c79df271530ad9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_campaign_world_repository.py": {
+    "upstream_sha256": "5b04b03c14610ec5a5c8fef81722390b44aad5d3bedf6051385e5efa5278b490",
+    "portable_sha256": "5b04b03c14610ec5a5c8fef81722390b44aad5d3bedf6051385e5efa5278b490",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_ceremony_hall_repository.py": {
+    "upstream_sha256": "3eccf22e88acbcfb90fb4913560f05011a665d56a623bce191c1295e5f292425",
+    "portable_sha256": "3eccf22e88acbcfb90fb4913560f05011a665d56a623bce191c1295e5f292425",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_cross_realm_mirror_repository.py": {
+    "upstream_sha256": "8f181de4c3d20a794b9ca84ae7c680d3dffbf67c0ba64ec6c352ace6c85e7d42",
+    "portable_sha256": "8f181de4c3d20a794b9ca84ae7c680d3dffbf67c0ba64ec6c352ace6c85e7d42",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_deployment_identity_repository.py": {
+    "upstream_sha256": "81aa68842a51f508a48324a6f0b0469d456036f10c2181c87287d4a2217000d3",
+    "portable_sha256": "81aa68842a51f508a48324a6f0b0469d456036f10c2181c87287d4a2217000d3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_description_backlog_repository.py": {
+    "upstream_sha256": "4668b82980364f593f96e6b10825bfc91992da2fd687444bdbf4e1f144321435",
+    "portable_sha256": "f903911f064e8a3f351152a80dec0b33f70aecd5b396df58aa9acc284d40df49",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_encounter_preparation_repository.py": {
+    "upstream_sha256": "1e9219a8ff8ed84f3c3c4784ce8b050ac0adbb5d406f097f54344630aa5cb9c6",
+    "portable_sha256": "1e9219a8ff8ed84f3c3c4784ce8b050ac0adbb5d406f097f54344630aa5cb9c6",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_expedition_comment_repository.py": {
+    "upstream_sha256": "3abcbcab341135a73a07fab7566e16fc013aed0b9e4a593edce362bddcf65ba0",
+    "portable_sha256": "3abcbcab341135a73a07fab7566e16fc013aed0b9e4a593edce362bddcf65ba0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_expedition_generation_repository.py": {
+    "upstream_sha256": "b618e712c638f8b25efe3ae0bbf8b01a502bc86a37c98bbce5092ddf73d7f9a4",
+    "portable_sha256": "362c14c9ac39540c9ae8967a0b6a2a1d6db6da941932fb5aab5429b28cb65e13",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_expedition_log_dedup_repository.py": {
+    "upstream_sha256": "6883a425b5e25144ac52814984742a43588a0611ac7063d7e6d96c20d9c07179",
+    "portable_sha256": "6883a425b5e25144ac52814984742a43588a0611ac7063d7e6d96c20d9c07179",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_item_catalog_repository.py": {
+    "upstream_sha256": "306d57d4852da606f937dcd7db84ccff08f786e7c494862d1fcd7c1d308a9080",
+    "portable_sha256": "306d57d4852da606f937dcd7db84ccff08f786e7c494862d1fcd7c1d308a9080",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_limited_shop_repository.py": {
+    "upstream_sha256": "0a3b735910efe88dd288f3731a88a374a7d63678d28ee403afc0e269a58626f4",
+    "portable_sha256": "0a3b735910efe88dd288f3731a88a374a7d63678d28ee403afc0e269a58626f4",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_party_preference_repository.py": {
+    "upstream_sha256": "bac9999331b11d70d350c119706124daa4cabeb8f685c59a91bda1b3d1d8ef42",
+    "portable_sha256": "bac9999331b11d70d350c119706124daa4cabeb8f685c59a91bda1b3d1d8ef42",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_player_name_history_repository.py": {
+    "upstream_sha256": "25f487340e145af8f7cac0350afec4f7ed3afca097941c822c63b00a41a9c1ea",
+    "portable_sha256": "25f487340e145af8f7cac0350afec4f7ed3afca097941c822c63b00a41a9c1ea",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_realm_repository.py": {
+    "upstream_sha256": "33595b75e375655d021bfdb7ad4332ec18fc2dfa8190f8686c69c6816b3a3269",
+    "portable_sha256": "33595b75e375655d021bfdb7ad4332ec18fc2dfa8190f8686c69c6816b3a3269",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_reservation_history_repository.py": {
+    "upstream_sha256": "56304765c31580de127177831f521ef1b3ff84034e41010c4d31438ee08393eb",
+    "portable_sha256": "56304765c31580de127177831f521ef1b3ff84034e41010c4d31438ee08393eb",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_reservation_repository.py": {
+    "upstream_sha256": "687d84c55391d013d62d7c9610631d93f18fea5080ecb2a6e02400cc3a03487c",
+    "portable_sha256": "687d84c55391d013d62d7c9610631d93f18fea5080ecb2a6e02400cc3a03487c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_role_admission_lock.py": {
+    "upstream_sha256": "cc6cbeb14bc0f6df8a868c163ea8699bb54220b92b3aaa5e8e8580232acd86d7",
+    "portable_sha256": "cc6cbeb14bc0f6df8a868c163ea8699bb54220b92b3aaa5e8e8580232acd86d7",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_runtime_identity_repository.py": {
+    "upstream_sha256": "fbea390524597859f647c83359bcd505b5d485202f03e517511cb12868d23c57",
+    "portable_sha256": "fbea390524597859f647c83359bcd505b5d485202f03e517511cb12868d23c57",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_runtime_relay_nonce_repository.py": {
+    "upstream_sha256": "de7e4ac672a34632d01d2f9209803ae1b0af57aeac21d83232ddb1388e842813",
+    "portable_sha256": "de7e4ac672a34632d01d2f9209803ae1b0af57aeac21d83232ddb1388e842813",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_tavern_read_repository.py": {
+    "upstream_sha256": "c16a2020bb9538097b0d531424df69e0089a9bc1fd3b3374c7752a32e0cbbcaf",
+    "portable_sha256": "c16a2020bb9538097b0d531424df69e0089a9bc1fd3b3374c7752a32e0cbbcaf",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_team_loot_repository.py": {
+    "upstream_sha256": "9e462f836df0efcb1793d11202c944d6d66d6f6636587235c96f1768a617b718",
+    "portable_sha256": "9e462f836df0efcb1793d11202c944d6d66d6f6636587235c96f1768a617b718",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_temporary_location_repository.py": {
+    "upstream_sha256": "8faf4016674f6a5359957025428df08f92991f3d0a5fa52a6b5f55d6782d9d6e",
+    "portable_sha256": "7e7410f17a2f6258d3e3f7717bf240f597c02a0a3442a223aacd385ceefc66b3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_trait_context_backfill_repository.py": {
+    "upstream_sha256": "34a09c693ad614d3a6f418df23f6a5c057fed73acb28fadefcde583d00c1dc72",
+    "portable_sha256": "34a09c693ad614d3a6f418df23f6a5c057fed73acb28fadefcde583d00c1dc72",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_world_actor_identity_repository.py": {
+    "upstream_sha256": "e672c7483c3423383c457e2f5a2a63f5f0517084eec42f8844c4ea01f0cc8058",
+    "portable_sha256": "e672c7483c3423383c457e2f5a2a63f5f0517084eec42f8844c4ea01f0cc8058",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_world_campaign_repository.py": {
+    "upstream_sha256": "a21279df5a4d381e850157539240fc4f8b4dcd4b01ac12ca6a03e9fa3d0c2a89",
+    "portable_sha256": "a21279df5a4d381e850157539240fc4f8b4dcd4b01ac12ca6a03e9fa3d0c2a89",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_world_identity_repository.py": {
+    "upstream_sha256": "0aa3ee26808aa40ea2e2433a41ec4dbd64d8a645d3c94e709b7510bd1b04d349",
+    "portable_sha256": "0aa3ee26808aa40ea2e2433a41ec4dbd64d8a645d3c94e709b7510bd1b04d349",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_world_location_state_repository.py": {
+    "upstream_sha256": "93f5310dcfae3e62a4efb19ee7090c1a099e4ae6ca020558e7ef32cabc50725a",
+    "portable_sha256": "93f5310dcfae3e62a4efb19ee7090c1a099e4ae6ca020558e7ef32cabc50725a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/db_repository/s1_world_outline_lease_repository.py": {
+    "upstream_sha256": "e758d46b30879c007d69aa98614f65d4ca32f2fe5ac5dd713522d05821c3dd88",
+    "portable_sha256": "0a52ad7bf3a36451251ffce8237cbbacb0d2092b3b3f1bccefc3ffe8bdb7d30b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_active_narrative_lease_uniqueness.py": {
+    "upstream_sha256": "a100dd4b3d5536a5a521fa7ba57dd1402e45a76f8151d2dad8edcd224effda01",
+    "portable_sha256": "a100dd4b3d5536a5a521fa7ba57dd1402e45a76f8151d2dad8edcd224effda01",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_activity_recent_indexes.py": {
+    "upstream_sha256": "aa3171c598a2cf09670875551f1dde02a874758679fdbe373789cc07683a86b5",
+    "portable_sha256": "aa3171c598a2cf09670875551f1dde02a874758679fdbe373789cc07683a86b5",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_ai_feedback.py": {
+    "upstream_sha256": "de9722cfc9b9c33bb5041593ef4d3015d5ba5d6f73fd2b2ae05b6b59fae885f3",
+    "portable_sha256": "de9722cfc9b9c33bb5041593ef4d3015d5ba5d6f73fd2b2ae05b6b59fae885f3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_ai_input_policy.py": {
+    "upstream_sha256": "3bf744135477a3195acc78f1ddc838d0c17e63b2c9e5fc39f4bcc04ab2c0578d",
+    "portable_sha256": "3bf744135477a3195acc78f1ddc838d0c17e63b2c9e5fc39f4bcc04ab2c0578d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_ambient_npcs.py": {
+    "upstream_sha256": "99f7ecb08648562e951143e999857b8e47b4bd1f3cc9583f3aead6b8cf112c5c",
+    "portable_sha256": "99f7ecb08648562e951143e999857b8e47b4bd1f3cc9583f3aead6b8cf112c5c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_archive_original_bed.py": {
+    "upstream_sha256": "17b702d1977fd8fdbc1e837db6f32a7cbc72e948432153e635964acd102d72d5",
+    "portable_sha256": "17b702d1977fd8fdbc1e837db6f32a7cbc72e948432153e635964acd102d72d5",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_assembly_source_index.py": {
+    "upstream_sha256": "4c4353eae691515880a5098a7300f8d9539b932c5301c96a59eaad432b87801a",
+    "portable_sha256": "4c4353eae691515880a5098a7300f8d9539b932c5301c96a59eaad432b87801a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_asset_recovery_fields.py": {
+    "upstream_sha256": "c7b5524b9a385964a1331dc6302c9e76d5156b00597afe88ac82c6a7030656f5",
+    "portable_sha256": "c7b5524b9a385964a1331dc6302c9e76d5156b00597afe88ac82c6a7030656f5",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_bug_reclaim_chunked_scan.py": {
+    "upstream_sha256": "78f258a841af346f07e825eaa5fccf082125c38d02eca16f85378d331e2b44c7",
+    "portable_sha256": "78f258a841af346f07e825eaa5fccf082125c38d02eca16f85378d331e2b44c7",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_building_donation_purpose.py": {
+    "upstream_sha256": "cee0b837e2131ac5ec9239ff667cce67d6a5b69766d6e550563ac82712fbda33",
+    "portable_sha256": "cee0b837e2131ac5ec9239ff667cce67d6a5b69766d6e550563ac82712fbda33",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_building_usage_queue.py": {
+    "upstream_sha256": "8e5cf541cda65d323f780650821eea80b0f767371e9a341c62974ed19dab1583",
+    "portable_sha256": "8e5cf541cda65d323f780650821eea80b0f767371e9a341c62974ed19dab1583",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_campaign_continuations.py": {
+    "upstream_sha256": "f59ca750628eb2a7db924c4511357a642bd0f6963be6a16d6861d6afec3ef703",
+    "portable_sha256": "f59ca750628eb2a7db924c4511357a642bd0f6963be6a16d6861d6afec3ef703",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_campaign_dispatch.py": {
+    "upstream_sha256": "5d8ee491aecd658dc30eb5f65d32429d96349bcd35c0a63a5d1e81bf339aee96",
+    "portable_sha256": "5d8ee491aecd658dc30eb5f65d32429d96349bcd35c0a63a5d1e81bf339aee96",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_campaign_evolutions.py": {
+    "upstream_sha256": "f6dd26884c9c915f263ce9befd9b1caf63802d980738dc2b0e1d80608d7a5bc5",
+    "portable_sha256": "f6dd26884c9c915f263ce9befd9b1caf63802d980738dc2b0e1d80608d7a5bc5",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_campaign_stages.py": {
+    "upstream_sha256": "99a7a2c9c0f7894730a3a00b6750a79b41ac54872e5d9cd67d139a9c79b32803",
+    "portable_sha256": "99a7a2c9c0f7894730a3a00b6750a79b41ac54872e5d9cd67d139a9c79b32803",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_ceremony_hall.py": {
+    "upstream_sha256": "f071caa14b3a0b7e552a8e1583a586e479e2784086ce7d6d229597d3aaeb74be",
+    "portable_sha256": "f071caa14b3a0b7e552a8e1583a586e479e2784086ce7d6d229597d3aaeb74be",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_companion_evolution_incremental_scan.py": {
+    "upstream_sha256": "3413cb2d4f929734e8eda7608700b28e01ebf77a715a9e2b2746e3b07f520dc0",
+    "portable_sha256": "3413cb2d4f929734e8eda7608700b28e01ebf77a715a9e2b2746e3b07f520dc0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_data_appeal_ai_reliability.py": {
+    "upstream_sha256": "1ef05c4927c550322e966bbafe3cf2ebf40318f2e747a3ed7c7ba52024c9ea93",
+    "portable_sha256": "1ef05c4927c550322e966bbafe3cf2ebf40318f2e747a3ed7c7ba52024c9ea93",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_data_appeal_quota_bucket.py": {
+    "upstream_sha256": "7e1ded98201f1bbfa039ac578db5a372a310c190284af97632f834f8c1b4bd96",
+    "portable_sha256": "20c3321364c23db5e6e5321311b01845046de6b5153ab296df1b67bf74322a34",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_description_ai_backlog.py": {
+    "upstream_sha256": "e15b74003a43d2203c265095682c224ee3e1d142f4caa010f996a003571dae3a",
+    "portable_sha256": "e15b74003a43d2203c265095682c224ee3e1d142f4caa010f996a003571dae3a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_description_ai_cache.py": {
+    "upstream_sha256": "30e26eee473f2cd103348d8a26c41a0b04ca100a0b21dd6dd2a68fdb0622591c",
+    "portable_sha256": "30e26eee473f2cd103348d8a26c41a0b04ca100a0b21dd6dd2a68fdb0622591c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_description_feedback_receipt.py": {
+    "upstream_sha256": "9666da4f9f0a671fd7d310ca949697d7a226fe8e3a77a529e2f8a059950d04f6",
+    "portable_sha256": "9666da4f9f0a671fd7d310ca949697d7a226fe8e3a77a529e2f8a059950d04f6",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_description_terminal_retry.py": {
+    "upstream_sha256": "59882d2db4c3a36634f3be24ba5d144137e89c845e22915932a13fd7b9bfaa67",
+    "portable_sha256": "59882d2db4c3a36634f3be24ba5d144137e89c845e22915932a13fd7b9bfaa67",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_expedition_comments.py": {
+    "upstream_sha256": "bc778f0462b136392a8d8cd6f34dc0c54cd3be010c33fd0873d754c9f4619310",
+    "portable_sha256": "bc778f0462b136392a8d8cd6f34dc0c54cd3be010c33fd0873d754c9f4619310",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_expedition_consumption_repairs.py": {
+    "upstream_sha256": "703275bd3506c335436a6b1d4eb8e4e76a2f19f66aa0bb3993eaa3ee1f29e0dc",
+    "portable_sha256": "703275bd3506c335436a6b1d4eb8e4e76a2f19f66aa0bb3993eaa3ee1f29e0dc",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_expedition_generation_phase.py": {
+    "upstream_sha256": "eb46bf59f0327529a22f4b34ff9753747681faaf245a3c88f25f991f25879de4",
+    "portable_sha256": "eb46bf59f0327529a22f4b34ff9753747681faaf245a3c88f25f991f25879de4",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_expedition_log_categories_and_favorites.py": {
+    "upstream_sha256": "4d3c8770f412b7fbb03e875b6cf9b037bb409e0cb0ef7bd274e04960244cfd54",
+    "portable_sha256": "4d3c8770f412b7fbb03e875b6cf9b037bb409e0cb0ef7bd274e04960244cfd54",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_expedition_observer_reviews.py": {
+    "upstream_sha256": "490f42013f0ddc06210b1185c88bbf0dc94b25a1508b506dbff838e4930822d9",
+    "portable_sha256": "490f42013f0ddc06210b1185c88bbf0dc94b25a1508b506dbff838e4930822d9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_faction_presence_continuity.py": {
+    "upstream_sha256": "a4036521191a58b12741a5c753d837b3e3cecd8cc2598959001d30bc7247dcc6",
+    "portable_sha256": "a4036521191a58b12741a5c753d837b3e3cecd8cc2598959001d30bc7247dcc6",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_faction_profiles.py": {
+    "upstream_sha256": "62b0f3899d892148ce7dfcd2932051b0d71677474489862d6977c713cb4304a2",
+    "portable_sha256": "62b0f3899d892148ce7dfcd2932051b0d71677474489862d6977c713cb4304a2",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_fate_reset_requests.py": {
+    "upstream_sha256": "837c50bb924bc650d1cd126e8932219f139a5a04e303c45aed00567db3b59498",
+    "portable_sha256": "837c50bb924bc650d1cd126e8932219f139a5a04e303c45aed00567db3b59498",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_hidden_dungeon.py": {
+    "upstream_sha256": "b3168b39a31d88424e21b510ef9720a1b52a095188d1b1454798ebb38e101b67",
+    "portable_sha256": "b3168b39a31d88424e21b510ef9720a1b52a095188d1b1454798ebb38e101b67",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_lucky_wheel_spins.py": {
+    "upstream_sha256": "3931c2f7bc452e6fef6a3688b3516dbbb0316c29e4518b4e179c52198ab3237d",
+    "portable_sha256": "3931c2f7bc452e6fef6a3688b3516dbbb0316c29e4518b4e179c52198ab3237d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_match_ticket_allow_solo_fill.py": {
+    "upstream_sha256": "142bb8cc37c9d80313bd9931c9afcd1b58fdc5d8d0274bee671d3969ce7cf816",
+    "portable_sha256": "142bb8cc37c9d80313bd9931c9afcd1b58fdc5d8d0274bee671d3969ce7cf816",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_match_ticket_fate_risk_acknowledgements.py": {
+    "upstream_sha256": "f9a8ce3145f4828953aec0dc9c41cc2e080bc0f6b85d1fc9d68acd77227e53c0",
+    "portable_sha256": "f9a8ce3145f4828953aec0dc9c41cc2e080bc0f6b85d1fc9d68acd77227e53c0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_match_ticket_preferred_dungeons.py": {
+    "upstream_sha256": "96637186b2d00824f04e0e6ee74f5cc9d8ebf5cc99c64d62d63ef9404a4ed849",
+    "portable_sha256": "96637186b2d00824f04e0e6ee74f5cc9d8ebf5cc99c64d62d63ef9404a4ed849",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_match_ticket_rejoin_and_error.py": {
+    "upstream_sha256": "c86d046beb5b12309276484c4838b7a25b8e73a01057d2600855485d714c1ed6",
+    "portable_sha256": "c86d046beb5b12309276484c4838b7a25b8e73a01057d2600855485d714c1ed6",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_name_history_projection.py": {
+    "upstream_sha256": "49f5d4c1fa5cdcae2ce0699b58cc706ac1c4666c94b0693429e0e192c33c44f7",
+    "portable_sha256": "49f5d4c1fa5cdcae2ce0699b58cc706ac1c4666c94b0693429e0e192c33c44f7",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_narrative_leases.py": {
+    "upstream_sha256": "a44630eb8549d11936c6f0cbebb7d851251f85412245318afec0f17fff1cf98c",
+    "portable_sha256": "a44630eb8549d11936c6f0cbebb7d851251f85412245318afec0f17fff1cf98c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_observer_review_consumption_status.py": {
+    "upstream_sha256": "870202e4234bda417086aad3fe79057914196a8f013ebad244734fc2299af3ae",
+    "portable_sha256": "870202e4234bda417086aad3fe79057914196a8f013ebad244734fc2299af3ae",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_observer_review_observability.py": {
+    "upstream_sha256": "a19d6e17d18f56f6f42bac6131e3670a70b2c417ba21b0b77afd4c3b2623ca32",
+    "portable_sha256": "a19d6e17d18f56f6f42bac6131e3670a70b2c417ba21b0b77afd4c3b2623ca32",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_player_item_protection.py": {
+    "upstream_sha256": "fe18d35a531741761a2b58dd30079ec46dd55ebe468b348b07bb63e17995f457",
+    "portable_sha256": "fe18d35a531741761a2b58dd30079ec46dd55ebe468b348b07bb63e17995f457",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_player_review_status.py": {
+    "upstream_sha256": "59379140b6a551ce8b34d1552419cbf69b5db60c833edccf3ca96d722b296227",
+    "portable_sha256": "59379140b6a551ce8b34d1552419cbf69b5db60c833edccf3ca96d722b296227",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_reservation_owner_activity.py": {
+    "upstream_sha256": "090f859e1998cb17b78e4685ee87ab8367e5b8d5b93fb65d97bed5da964f5dc3",
+    "portable_sha256": "090f859e1998cb17b78e4685ee87ab8367e5b8d5b93fb65d97bed5da964f5dc3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_task_instances.py": {
+    "upstream_sha256": "639c729b9e521971288aecf50c63a93a2aa7503485ee9bccbb46d2ee96dd3e1c",
+    "portable_sha256": "639c729b9e521971288aecf50c63a93a2aa7503485ee9bccbb46d2ee96dd3e1c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_task_override_source.py": {
+    "upstream_sha256": "d1882489c4145f4b677f892c844a9214044bc0fb7ffed31cf23a0ccc78bd364f",
+    "portable_sha256": "d1882489c4145f4b677f892c844a9214044bc0fb7ffed31cf23a0ccc78bd364f",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_task_overrides.py": {
+    "upstream_sha256": "de66fda47ca319ce5723a0ec513ff5ecd371da24167a46d278ea28c4aa2c5d76",
+    "portable_sha256": "de66fda47ca319ce5723a0ec513ff5ecd371da24167a46d278ea28c4aa2c5d76",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_tavern_food_fields.py": {
+    "upstream_sha256": "ccb615054f14a94f4245f8ea983fbde726d849bd12d3c60aa2437943862237e7",
+    "portable_sha256": "ccb615054f14a94f4245f8ea983fbde726d849bd12d3c60aa2437943862237e7",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_tavern_owner_room_key.py": {
+    "upstream_sha256": "e93189fa9d98c7692a8f71ec70408530dae1d4d75b5df63f552213722c94f568",
+    "portable_sha256": "e93189fa9d98c7692a8f71ec70408530dae1d4d75b5df63f552213722c94f568",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_tavern_treat_requests.py": {
+    "upstream_sha256": "9feec65f66b6367c01b5159425d50539389df47f7b2a0aa969f802ad2e2f59aa",
+    "portable_sha256": "9feec65f66b6367c01b5159425d50539389df47f7b2a0aa969f802ad2e2f59aa",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_tea_house_order_fields.py": {
+    "upstream_sha256": "1cee3d48d758a0402dfcb316f05140ffefc29caef8c45250bcc8f9831ebcc8b3",
+    "portable_sha256": "1cee3d48d758a0402dfcb316f05140ffefc29caef8c45250bcc8f9831ebcc8b3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_tea_house_stamina_settled_at.py": {
+    "upstream_sha256": "abc51b2bd93e08d015d74363439fdc25c336282b84075e38014e51eda6dab5c9",
+    "portable_sha256": "abc51b2bd93e08d015d74363439fdc25c336282b84075e38014e51eda6dab5c9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_team_loot_pool.py": {
+    "upstream_sha256": "e3cd268c29dc13e4a8eafd46caf1bb231c819f31652af7942bf744b4a89478c3",
+    "portable_sha256": "e3cd268c29dc13e4a8eafd46caf1bb231c819f31652af7942bf744b4a89478c3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_temporary_location_name.py": {
+    "upstream_sha256": "ac731945b060bc230fd2b8549a879458cfd57ff37b69e9fbf9b808d2fe7aa29a",
+    "portable_sha256": "ac731945b060bc230fd2b8549a879458cfd57ff37b69e9fbf9b808d2fe7aa29a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_token_usage_failure_detail.py": {
+    "upstream_sha256": "879f8ffc5fc8acb16dbab7dd6b225029b5e9c1936ff0d787471bab855e329f12",
+    "portable_sha256": "879f8ffc5fc8acb16dbab7dd6b225029b5e9c1936ff0d787471bab855e329f12",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_token_usage_failure_diagnostics.py": {
+    "upstream_sha256": "ce4c0152ec3c76938c4df09108b0bc944ac21fd2f775d8f03dafe7bf18b1ae48",
+    "portable_sha256": "ce4c0152ec3c76938c4df09108b0bc944ac21fd2f775d8f03dafe7bf18b1ae48",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_token_usage_reasoning_first_sentence.py": {
+    "upstream_sha256": "e706ed8121dae81692fe85813452703261dd5ac2d2296a5c65bbf33fccc2d24a",
+    "portable_sha256": "e706ed8121dae81692fe85813452703261dd5ac2d2296a5c65bbf33fccc2d24a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_token_usage_reasoning_tokens.py": {
+    "upstream_sha256": "82f46b0557fad7477d8893a9a731830206cd8a7810d34a1cab201e084cb99a7a",
+    "portable_sha256": "82f46b0557fad7477d8893a9a731830206cd8a7810d34a1cab201e084cb99a7a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_token_usage_route_metadata.py": {
+    "upstream_sha256": "ee19c7fc718b461dc13aecbada8279815c7d88a4a79ccff5b5c0e64fa2cd4c66",
+    "portable_sha256": "ee19c7fc718b461dc13aecbada8279815c7d88a4a79ccff5b5c0e64fa2cd4c66",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_token_usage_visible_reasoning_chars.py": {
+    "upstream_sha256": "6941419026aeb6d6cf52c036f392a9c009b88edfc431d2e0e937efa2fb9f6bec",
+    "portable_sha256": "6941419026aeb6d6cf52c036f392a9c009b88edfc431d2e0e937efa2fb9f6bec",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_trait_asset_dependencies.py": {
+    "upstream_sha256": "07d4c8a3c7700697732c218f7b2d7b4546d4976a013ea0e131b6254ab39eaa6c",
+    "portable_sha256": "07d4c8a3c7700697732c218f7b2d7b4546d4976a013ea0e131b6254ab39eaa6c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_trait_context_audit_receipt.py": {
+    "upstream_sha256": "a2302176b930957ddbd715a380b0f60c946e965542c55bf2ca43ddcb0e0d3fe3",
+    "portable_sha256": "a2302176b930957ddbd715a380b0f60c946e965542c55bf2ca43ddcb0e0d3fe3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_trait_context_rule_cache.py": {
+    "upstream_sha256": "f1eb46df1637c2c99f429692a83813124fe9da9427d67cf8743d4dfcef8fb38d",
+    "portable_sha256": "f1eb46df1637c2c99f429692a83813124fe9da9427d67cf8743d4dfcef8fb38d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_trait_description_ai_source_hash.py": {
+    "upstream_sha256": "4e96855c3c08391f686f803fcd0f437e233b3fc80b8e26ca9858c0eae65c445b",
+    "portable_sha256": "4e96855c3c08391f686f803fcd0f437e233b3fc80b8e26ca9858c0eae65c445b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_trait_loadout.py": {
+    "upstream_sha256": "442d368d1fb5ed1245d8937df76b6a4d915b3525b1376e5c4170922d24ce4413",
+    "portable_sha256": "442d368d1fb5ed1245d8937df76b6a4d915b3525b1376e5c4170922d24ce4413",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_trait_recovery_fields.py": {
+    "upstream_sha256": "52824e190eac16a6216218530164603cb191a9d93956d778363f3806d183c220",
+    "portable_sha256": "52824e190eac16a6216218530164603cb191a9d93956d778363f3806d183c220",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_trait_recovery_rest_baseline.py": {
+    "upstream_sha256": "bfa8ae767642ab2484a99357826078a07989d282d0dd75dd086c0f330fad276b",
+    "portable_sha256": "bfa8ae767642ab2484a99357826078a07989d282d0dd75dd086c0f330fad276b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_trait_recovery_rest_seconds.py": {
+    "upstream_sha256": "e1dad325a0d349b78bbf33dbc9f05b1394e71e2b62123fc8f4be11953e4ad66f",
+    "portable_sha256": "e1dad325a0d349b78bbf33dbc9f05b1394e71e2b62123fc8f4be11953e4ad66f",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_trait_transfer_rest.py": {
+    "upstream_sha256": "36cd765de7f8586783032ce93946092cefc485c0219c1457f0ee347ae4475e0f",
+    "portable_sha256": "36cd765de7f8586783032ce93946092cefc485c0219c1457f0ee347ae4475e0f",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_world_actor_capability_profiles.py": {
+    "upstream_sha256": "35b00a3bba0f1ba0009b832776fdeecd04bedf2fbc905a7f4605ade48cbbceb9",
+    "portable_sha256": "35b00a3bba0f1ba0009b832776fdeecd04bedf2fbc905a7f4605ade48cbbceb9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_world_actors.py": {
+    "upstream_sha256": "83abc5d960f102768c1dc439991647209b7083c4f4929ed895f2ea70e0ac6073",
+    "portable_sha256": "83abc5d960f102768c1dc439991647209b7083c4f4929ed895f2ea70e0ac6073",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_world_countermeasure_knowledge.py": {
+    "upstream_sha256": "70175cf979200dedc4dc0c0bce164e0863f2a6f61e4a1d4b9712a5e497236046",
+    "portable_sha256": "70175cf979200dedc4dc0c0bce164e0863f2a6f61e4a1d4b9712a5e497236046",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_world_fact_candidate_maintenance.py": {
+    "upstream_sha256": "8633be799ef805bf988427670745798c8ad7a961be7e65ff80ef6bf2bfca0b0e",
+    "portable_sha256": "8633be799ef805bf988427670745798c8ad7a961be7e65ff80ef6bf2bfca0b0e",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_world_location_risk_notices.py": {
+    "upstream_sha256": "1e60a5dadcb0b5210d505c7bee578a79da08f085d53db96eff6d6ed87758520b",
+    "portable_sha256": "1e60a5dadcb0b5210d505c7bee578a79da08f085d53db96eff6d6ed87758520b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/add_s1_world_story_lifecycle.py": {
+    "upstream_sha256": "48a2c145a2cda042ae32457ad7ab31560bfc68cb1c9d1cfeeed36282caec795a",
+    "portable_sha256": "48a2c145a2cda042ae32457ad7ab31560bfc68cb1c9d1cfeeed36282caec795a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/backfill_s1_buyback_repurchase_deadlines.py": {
+    "upstream_sha256": "2fedadd1e40b8db7e813dc23252344003946b9329f095024de1c5d16743f540f",
+    "portable_sha256": "a6959a7abf8fa4ef413a6e09541ec5f50feb162a3b73f1503ff3bfed34a8de0c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/backfill_s1_realm_memberships.py": {
+    "upstream_sha256": "09021bc674bfcdadf5212ba8cab89767e7e240fcd0a0b3748373012618fc1969",
+    "portable_sha256": "f541932b5a17c8a642f3b830f10bba496488566117f8c4f4fb3a9dd1288a1efc",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/drop_s1_item_locked_columns.py": {
+    "upstream_sha256": "dc4230d5f31e684973a68c9ac91e23e3efdf920b41e3d468cf7426aa705ad8ec",
+    "portable_sha256": "dc4230d5f31e684973a68c9ac91e23e3efdf920b41e3d468cf7426aa705ad8ec",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/extend_s1_ambient_npc_ai_gifts.py": {
+    "upstream_sha256": "95e8835f8e4f9d457dfa7beb853edb6b4fdea271cc82456823466803a22e11ed",
+    "portable_sha256": "95e8835f8e4f9d457dfa7beb853edb6b4fdea271cc82456823466803a22e11ed",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/extend_s1_description_ai_cache_lifecycle.py": {
+    "upstream_sha256": "9828a12e518988bfaeee1decdaf70f094805087e727de89a73ffe8295c58608b",
+    "portable_sha256": "9828a12e518988bfaeee1decdaf70f094805087e727de89a73ffe8295c58608b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/extend_s1_world_story_campaign_spine.py": {
+    "upstream_sha256": "88f74646c818057d0910ff73ee08be6201988bbed1de9c5f3bea7544a634fde1",
+    "portable_sha256": "88f74646c818057d0910ff73ee08be6201988bbed1de9c5f3bea7544a634fde1",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/repair_s1_narrative_lease_integrity.py": {
+    "upstream_sha256": "35d950a05b2a5f01fde0ee156a2e1a057da58414eeddb1f785ea4672b63640fd",
+    "portable_sha256": "35d950a05b2a5f01fde0ee156a2e1a057da58414eeddb1f785ea4672b63640fd",
+    "unchanged_except_python_compat": true
+  },
+  "backend/migrations/repair_s1_squad_integrity.py": {
+    "upstream_sha256": "e106052830a49260ac88b8c2bf6a210ac92c43b9f71419ca96ab953412d34ff1",
+    "portable_sha256": "e106052830a49260ac88b8c2bf6a210ac92c43b9f71419ca96ab953412d34ff1",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/__init__.py": {
+    "upstream_sha256": "9a9ecb81d9f8b5700e4f9c4db2ce62efdfc6196c1174ae492395248f1ac8d1bc",
+    "portable_sha256": "9a9ecb81d9f8b5700e4f9c4db2ce62efdfc6196c1174ae492395248f1ac8d1bc",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/models.py": {
+    "upstream_sha256": "1fad99eb1b48094044e52b8714b3cc48e0aab1f89e4421d93e8a470be0868337",
+    "portable_sha256": "1d21f63b28857eabfb9edcb5a22ee6684c020c7067343961f63385debe9f893c",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer/plugin.py": {
+    "upstream_sha256": "bf87a72e244dddf7ad974e763a32abd29dc87feb72c56565c6e1033e653478d2",
+    "portable_sha256": "bf87a72e244dddf7ad974e763a32abd29dc87feb72c56565c6e1033e653478d2",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/routes.py": {
+    "upstream_sha256": "7f03c911806502ad13f4a5a5af98b3fd09ddb670c15c2b31900a1ff1b591bc10",
+    "portable_sha256": "e44aceb8598dce7366e9c0aa4e3ad0f0a021800f68a49188e57c7a330a88faa0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/services/__init__.py": {
+    "upstream_sha256": "9fbd274247579194df6e90d8c9fbcda210e0a0d90214167ac6e79cf68115d53a",
+    "portable_sha256": "9fbd274247579194df6e90d8c9fbcda210e0a0d90214167ac6e79cf68115d53a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/services/adventurer_config_service.py": {
+    "upstream_sha256": "fca9ec2006e04b4f6d7c7339d364f0f4c70eaf1d0e8c9f3443cf98ef6ce04bea",
+    "portable_sha256": "08befb0256653fef1d99828de2af75c5e24174f908ff85d03b330127e927c090",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/services/adventurer_expedition_runner.py": {
+    "upstream_sha256": "0fe5db0ba90a1ec3a43cebf4275a51de926f848ff760306bc064b4f69419bc30",
+    "portable_sha256": "fa8592dc6363186d0e2610f64031ec46f78e478edeb2605ba0e053977bf59dc3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/services/adventurer_log_service.py": {
+    "upstream_sha256": "8d27a7f4d62bba3a97e46a69eb40a53d4404445cb7a226991449687af00a2a6d",
+    "portable_sha256": "8d27a7f4d62bba3a97e46a69eb40a53d4404445cb7a226991449687af00a2a6d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/services/adventurer_parser_service.py": {
+    "upstream_sha256": "6554d08e36c3f37e0bca7fa516ef7b927d139a771baa024c5eda7d35292f2568",
+    "portable_sha256": "b79acb8b7eadb8e869f423c6ede0b755d6ef7645368cdaf1b835d216185bb936",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/services/adventurer_party_service.py": {
+    "upstream_sha256": "353af6f9f4104b6b879ffd0eb13d6de9163d229033804d8d64bbe030495a7e07",
+    "portable_sha256": "f44aa45ffcb3d0d83c3ab17aa984b884fd51c5f9b93345dad674f7b5f91c0d38",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/services/adventurer_prompt_service.py": {
+    "upstream_sha256": "c24d7bfff58999808aa941062618039c9ff103a33b906aa7a4d14a98b0edc8a0",
+    "portable_sha256": "5b5abedf04c52033e4c95d9269abd0390767f44ee757752cd695dbfb72bc8670",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer/services/adventurer_service.py": {
+    "upstream_sha256": "c7e4513fa706b7347de058dd8e606046c0fba90cb79a25dee6e2fb00733de56e",
+    "portable_sha256": "c7e4513fa706b7347de058dd8e606046c0fba90cb79a25dee6e2fb00733de56e",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/services/adventurer_shop_service.py": {
+    "upstream_sha256": "45e97cacb1e8b141ad57728f72cc27d0e6e059901d28b6260bcf0d598d9dab2f",
+    "portable_sha256": "45e97cacb1e8b141ad57728f72cc27d0e6e059901d28b6260bcf0d598d9dab2f",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer/utils.py": {
+    "upstream_sha256": "20ba5806eabd363381f5d0fd35dd98bae0b8e0cf6321ace7a88eabc7c6e44f42",
+    "portable_sha256": "20ba5806eabd363381f5d0fd35dd98bae0b8e0cf6321ace7a88eabc7c6e44f42",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/__init__.py": {
+    "upstream_sha256": "34b019451be0101f30d8a6b35b625ef4328af3183250bbd1efe2a2aa2625afed",
+    "portable_sha256": "34b019451be0101f30d8a6b35b625ef4328af3183250bbd1efe2a2aa2625afed",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/cold_storage.py": {
+    "upstream_sha256": "d894b092fb401e2c15f3ce7e7ca303f53b5f24c4a4d94cbcbf5266c769196f5f",
+    "portable_sha256": "d894b092fb401e2c15f3ce7e7ca303f53b5f24c4a4d94cbcbf5266c769196f5f",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/data/campaigns/baiwei_banquet.json": {
+    "upstream_sha256": "f4334ede3e0c41647e0ffb34b8c1b409324a46dd53eb826eda7c8af58c681552",
+    "portable_sha256": "f4334ede3e0c41647e0ffb34b8c1b409324a46dd53eb826eda7c8af58c681552"
+  },
+  "backend/plugins/adventurer_s1/models.py": {
+    "upstream_sha256": "d8b366718fc7a9c0cccc37404aae03808c005b699d32ebdd1e5dd4beea4cc2b5",
+    "portable_sha256": "0bc48719d9527397e3cd2f2be2c67d575a488e8cb0a0f7fc792ce5ccb04034ab",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/plugin.py": {
+    "upstream_sha256": "41e0efb39c664ae6469f418639532bee8221d2140ec5e056a23cb8f98c3a90ae",
+    "portable_sha256": "eece93260c9e3f6dd468de9ab29f8b917d3d04be4b1849dcaa148c777d8edad1",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/routes.py": {
+    "upstream_sha256": "df4209cc31f1d790a5f1297e3a4b68daff8f571520e8334ed95d55bb785be7a9",
+    "portable_sha256": "28beaa0950e3cf59ce1bb023b3b1e93354aebe63bebd19abda7284d2f2ffc398",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/s1_item_types.py": {
+    "upstream_sha256": "b33c7d198e561bbd6d23ceae7ff5eec1e59b2fa3cbb0b191296216842f79427d",
+    "portable_sha256": "b33c7d198e561bbd6d23ceae7ff5eec1e59b2fa3cbb0b191296216842f79427d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/seed.py": {
+    "upstream_sha256": "3caf21ff1052841a98e294d8d2810130ab45e4f4b8a4f7cbf155e5813727c95e",
+    "portable_sha256": "0311a91ae804274e3867f69ff579bda8c9b2620e85f64feb99a50e9f6e46b7f3",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/__init__.py": {
+    "upstream_sha256": "64b87da6cd904fd24bafa301a3bba537728b9f29e93ffb70fe9159e6419af8ea",
+    "portable_sha256": "64b87da6cd904fd24bafa301a3bba537728b9f29e93ffb70fe9159e6419af8ea",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_admin_service.py": {
+    "upstream_sha256": "66f36db091594f6046f0005f08001a05a17e8a74885801ab4845f8f4fe1ebdd2",
+    "portable_sha256": "000b967daf51729b0b7ceabba0093a499f51fe1faf3eb51a609aeb1b1269ee2e",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_ai_recovery.py": {
+    "upstream_sha256": "0dd02c3735523dee0de4e3d494827c54c9a112c063376fb301bbab59051e127b",
+    "portable_sha256": "0dd02c3735523dee0de4e3d494827c54c9a112c063376fb301bbab59051e127b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_archive_appeal_service.py": {
+    "upstream_sha256": "9d9a2dfe66be4c6b2289164106a414215a1b8d9d3ed01871fa834dd9a42a1389",
+    "portable_sha256": "7eb30d750c12ffb5179e2755c10f9a7eeebc0d9b3236583ac45158934fd8bd79",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_board_version_service.py": {
+    "upstream_sha256": "dfe0317ebaab6235082714d78a09b6bd2aa950fc1c60f524ba778b615585c7bb",
+    "portable_sha256": "dfe0317ebaab6235082714d78a09b6bd2aa950fc1c60f524ba778b615585c7bb",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_building_ai_recovery_service.py": {
+    "upstream_sha256": "9eba89f8de1abce0d626c192cbb7efecf619c4f0ae337691a544f5585bc05af9",
+    "portable_sha256": "75ba6167623c84cbd1e1699face4667b4071db70b7ba8a294d6fdf6198cb22a0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_building_handler.py": {
+    "upstream_sha256": "0ad7ce271f60ea23a04b0fb5834a89f91b77b4ff285a27d720f17552760010ee",
+    "portable_sha256": "aa428ffdb6218ec100712a4240f7b0cc54718d055da53910d39aaf23724421aa",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_building_settlement_service.py": {
+    "upstream_sha256": "76c7c4ecc0abb571afde4f4752afed305ec959245c78612bea14ac0d1c40488c",
+    "portable_sha256": "76c7c4ecc0abb571afde4f4752afed305ec959245c78612bea14ac0d1c40488c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_building_upgrade_config.py": {
+    "upstream_sha256": "77e363eb96deda170c727f86365c5a3c264d2e6732767242316c57c234814c15",
+    "portable_sha256": "77e363eb96deda170c727f86365c5a3c264d2e6732767242316c57c234814c15",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_codename_repair_service.py": {
+    "upstream_sha256": "d3977e1dddc81e3ffce20d67ddddf8c516143ac5357f6f76080424be7c220cf2",
+    "portable_sha256": "a216bcd2c94eb89d62bc29ecd0f1236ece3874a288925cc02941b89cd5354351",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_config_service.py": {
+    "upstream_sha256": "b3510031653fa9d97a65ccf45841b5af6dfd865b29dc872cc41e6a0f6d9039f3",
+    "portable_sha256": "b3510031653fa9d97a65ccf45841b5af6dfd865b29dc872cc41e6a0f6d9039f3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_currency_service.py": {
+    "upstream_sha256": "a1eca79433b2f7829a7a7b223827f60e4646453cc866bf3f06f1b47af97842f6",
+    "portable_sha256": "8cb0f4ac8ae42e98b2a78ba3bd009dc5fe7f8c1be0560d8707136619a284e621",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_data_appeal_ai_service.py": {
+    "upstream_sha256": "6fd113341f0cd469b37283dfc5e84ac7314f0d936fb78d5c5a02da26ea3bae41",
+    "portable_sha256": "a00f59f41120d73bfcf55d77bfb3cbdf12099f02810cf1366153911c8534ebd5",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_data_appeal_destructive_contract.py": {
+    "upstream_sha256": "5dba3ff4e54855cb161427e9c29574478b207f991511a7967c3435a3a5c4ed75",
+    "portable_sha256": "5dba3ff4e54855cb161427e9c29574478b207f991511a7967c3435a3a5c4ed75",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_data_appeal_operation_contract.py": {
+    "upstream_sha256": "a9d6d2cb2139285721d189ff0001bf3c1e43eac2757ff56d3fe5c288de829ab0",
+    "portable_sha256": "a9d6d2cb2139285721d189ff0001bf3c1e43eac2757ff56d3fe5c288de829ab0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_data_appeal_review_ai_service.py": {
+    "upstream_sha256": "0091221300bc2c07d7e84682421533850072363eaf97cc6d6cd4d0453c3dbfb1",
+    "portable_sha256": "4f316b02637ad0dcba3faf98565d22b1391e2824ee192027f70bbae8b57df306",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_data_appeal_service.py": {
+    "upstream_sha256": "e1dc4c5e5be7184e8f72a7a5032940ec617fe46030cfe4f306c14b43acaf60c0",
+    "portable_sha256": "b810f9b79401282507c10ab55103740d1a4307d75669cf61ff0e7813c9a16cd2",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_desc_backfill_ai_service.py": {
+    "upstream_sha256": "65047f9a205c3325b2ccb8e8ba625c6287c4c003b560f0047f161befa1f6dee2",
+    "portable_sha256": "7d10f1fa8704838a66fdd9227389493007f3c32615ddd877c93f97a51ff049b1",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_expedition_codename_repair_service.py": {
+    "upstream_sha256": "c70d7afb835c686fa4582165e172acec75bc5e32027de6ff6ac8d394899f5462",
+    "portable_sha256": "7fb1682bbccf75fb6729f7753899ad2f92e413f42e23c523c041182435ac184c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_expedition_log_category_service.py": {
+    "upstream_sha256": "db65e7eedaeec148ef920bcbab20b8fdaef0db39234edad04e1fc1855170a134",
+    "portable_sha256": "db65e7eedaeec148ef920bcbab20b8fdaef0db39234edad04e1fc1855170a134",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_expedition_log_member_service.py": {
+    "upstream_sha256": "d971200992bba65306766615796ed45e5f85345d8e1cb26be2226d9dd057cdb0",
+    "portable_sha256": "d971200992bba65306766615796ed45e5f85345d8e1cb26be2226d9dd057cdb0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_expedition_observer_ai_service.py": {
+    "upstream_sha256": "c290a63f39615f102270703de3b9e4e29429ad67c80b1bda6258cfdf60dbd460",
+    "portable_sha256": "f7576a72d1035f625a879b7abceb7f38c1ceb23dc46051f63dde641bfdcd3c2a",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_expedition_runner.py": {
+    "upstream_sha256": "a78e451d7cc1f31e3fbe24d210f7bb079f3e7588f24770b9d903235af38aac27",
+    "portable_sha256": "0becc0125d24945ff9405e7f5fb482b4d1ea46e577d911d6e032bc5fbc634bc1",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_expedition_settlement_guard_ai_service.py": {
+    "upstream_sha256": "ae8bab88522ebe152cebdda51d5884213bd4b7f230faa1344e811948e0e293a9",
+    "portable_sha256": "a4d3a61e2ac62618f6c3ed2c4bf06089e563356d04b7d03ac6964ffe7a2da90a",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_expedition_throttle_service.py": {
+    "upstream_sha256": "fb433dd2af4198791ee7494d61d38b7e46a6fed7b4d4291f4ff23ef098688a6f",
+    "portable_sha256": "0ac35e7c330f0767feca285326c7c8c65a731567d32e100be6edc854a44535e9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_home_service.py": {
+    "upstream_sha256": "7027d31ed67347fc2caff1fd735af3c8c75c58febd138de96334bffdd7e072d8",
+    "portable_sha256": "7027d31ed67347fc2caff1fd735af3c8c75c58febd138de96334bffdd7e072d8",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_hot_spring_chatter_service.py": {
+    "upstream_sha256": "dcecb4b103397445b21f722693c228b4e8e93219646c859db9270a9d02a1b0f9",
+    "portable_sha256": "636b27fe9b20dd4eb5eb3dcf45400b9717a8f3d284bc8edfd74984186d3587dc",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_hot_spring_seat_service.py": {
+    "upstream_sha256": "9e3f7ba2943eabf3ec11143fb70b5092b5e8872cf64da0c9477982af2b2a4e91",
+    "portable_sha256": "d71c15ada4a0aac2852b677afe89302d2ff9b92834e11c74fa43daacefe410b0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_log_service.py": {
+    "upstream_sha256": "c3b379ed1c97934b6e2742bc4297c7f23c5636d8726e162d88cb3668a24cebaf",
+    "portable_sha256": "c3b379ed1c97934b6e2742bc4297c7f23c5636d8726e162d88cb3668a24cebaf",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_market_service.py": {
+    "upstream_sha256": "368504df93061fdc19bcf708e61d91da362f2d220fef95b0aa3aab6c9bf84c2d",
+    "portable_sha256": "6a42899b8c51ef37d06543ec797afb7c3782666484139615d5d72d348e08e64e",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_matchmaking_service.py": {
+    "upstream_sha256": "5edfc3902e177a68cc290162e93069536d1b4cab0edf3a65e7794dbcaf9046b6",
+    "portable_sha256": "18886511d92cd24846f7eed60650ccb8bde19587936cb4d36dbf001ea61ec730",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_material_service.py": {
+    "upstream_sha256": "f33ce872b079dade0b11169bee37ff4ae030aa32f65878168954b6f18251e5aa",
+    "portable_sha256": "f33ce872b079dade0b11169bee37ff4ae030aa32f65878168954b6f18251e5aa",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_parser_service.py": {
+    "upstream_sha256": "294b62182b52b89a9816da86f18c2d056d325d86100520a8731626d787cac664",
+    "portable_sha256": "294b62182b52b89a9816da86f18c2d056d325d86100520a8731626d787cac664",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_party_service.py": {
+    "upstream_sha256": "b57ac8d82ad439280e9f08de95d6a11fe6c3f340dce539c4614f55ea4585ebd2",
+    "portable_sha256": "f77a583d889df549337c69d0dbc4103fbb7698a8fc53dba58e3be53a95facbbc",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_player_text_correction_service.py": {
+    "upstream_sha256": "e89e849d09ead4fa0f7b10edaf1ac2c191ce9e2571815c846c7d3369c6011797",
+    "portable_sha256": "f795d0ae79fdec7c7aaccbf9456d4f9542bd3641e1475788bcd89b81f3e36ee4",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_prompt_service.py": {
+    "upstream_sha256": "30abeb2371c6f5caacf3327bf98c23c06bd94c0758e258174a75c6407853185b",
+    "portable_sha256": "cda743a6b0fa50748b5f1bfb204001c37f0131153eb76927098ee11adc8d3352",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_recovery_service.py": {
+    "upstream_sha256": "592d205ff36b1ea41bedcddc65c9687be5702ea62ba4abec87ec3f6a3564536c",
+    "portable_sha256": "b45056d8fb4ec299a330a2694d7cd05522b312d298a80f9f044882031775daca",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_service.py": {
+    "upstream_sha256": "d1d90f99eca65b6dac7ad2c72b5daf1a92b47fb76902094e674a812145e8506f",
+    "portable_sha256": "652adbb3402c2fdad580134152870f247cc763460d181607ade912d15a06a9ea",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_settings_service.py": {
+    "upstream_sha256": "38db2dd14c616628d924851eeba084cfe7db4eeee5440d70e086b6c7e495a31f",
+    "portable_sha256": "2cd3241e7c7fea5de830d0bb02122b6880c81a5e8a7c37ab1f09c497c866a724",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_state_transition_service.py": {
+    "upstream_sha256": "cc51f7b2eea30aa743f367af1249a67c03b42e117a36a7e181cdb4f1576b5355",
+    "portable_sha256": "09c27109ff714f47c70f92ee677ee9d423524a52e56f7904a6d521b806577382",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_support_vote_service.py": {
+    "upstream_sha256": "439fbe53e24451df3e388252a791ef37e04d4db617a12595195dfc2a151b512f",
+    "portable_sha256": "c76253a9b0892e0f7ffad5f03928d8ef6726a42dad2c46ef4522b756841f17de",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_task_service.py": {
+    "upstream_sha256": "377602b896dd4fab8780e5927242ffd3e907730226d4473d9aa57f0074032833",
+    "portable_sha256": "ed8295f334c6cb34b71578915aa2a487185465cfa1c03b0d52edf25b2976aada",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_tavern_chatter_service.py": {
+    "upstream_sha256": "adbbaef225e92cc2b8a3d950aea06aaf1dea9834f3c8923a6cea47fc4f8e106b",
+    "portable_sha256": "c6051b7d9fdaccdca3f3b98e11a749493e37928142f9b669f5883833296c6dcb",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_tavern_seat_service.py": {
+    "upstream_sha256": "5962cd9b550682b7e2354400e3656169b92286e99258052a09ec7fd2a9480724",
+    "portable_sha256": "5e9979d59b45b5de5ce818bd85b11274ac985e835c73d16db9aec0ec8d4c83d6",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_tavern_service.py": {
+    "upstream_sha256": "16c59b3e34a42cca94f25b9696259130c528c602723f4d4d4fccf27856b04c48",
+    "portable_sha256": "a489f5990149ebabb40c7b3116492f299848458d6866e46e665b5707121f5a0f",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_tea_house_chatter_service.py": {
+    "upstream_sha256": "2a8d439f7a5113c134aa588b059eae866e9c64a478d63fe7ea9c1d4e0e06ea63",
+    "portable_sha256": "63fb202c0a273851b149f47f9387b1c600498725d87c783e523a07f28da8262b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_tea_house_seat_service.py": {
+    "upstream_sha256": "a70a95c63607fc0e307dc38eb9115ac60bc3c9a4ca648a2f9320d8fe07fa2105",
+    "portable_sha256": "38167cac1239a9cdae8a21c253671ab931f596f03ce7cb59f6c35fefae54114c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_trait_recovery_ai_service.py": {
+    "upstream_sha256": "8579936d317f4f5687d7133c1305da1494648c993ef2c8407fab31eb6e113555",
+    "portable_sha256": "39f6742b48670f406e24b0ce39e85b41e4836e4f1fd23767e57c3808472bc50c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_trait_recovery_service.py": {
+    "upstream_sha256": "7397637c72bb28c5417dceef3ee7ced1434904fcd4c380061fe60480e3c0b951",
+    "portable_sha256": "fecc6471b6efab388f3903e09b60d9abca60d12e80f05e176a978fcbb39b41ae",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/adventurer_s1_treasure_map_drop_service.py": {
+    "upstream_sha256": "3ee0e981bfd56ffc5e2fcb439e9a04bf9abd2dfbb0050ee1d10bcccc0eeabdd3",
+    "portable_sha256": "3ee0e981bfd56ffc5e2fcb439e9a04bf9abd2dfbb0050ee1d10bcccc0eeabdd3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_admin_database_read_service.py": {
+    "upstream_sha256": "49610e7e290616ac93def3816907f590cab6223af82c2fa37b6ee879e3dc30f8",
+    "portable_sha256": null
+  },
+  "backend/plugins/adventurer_s1/services/s1_admin_scan_snapshot_service.py": {
+    "upstream_sha256": "47d1ae7e46420abb86d9a53694390a8441d05c9595046435a704caa7de7d88b3",
+    "portable_sha256": "47d1ae7e46420abb86d9a53694390a8441d05c9595046435a704caa7de7d88b3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_adventurer_stat_service.py": {
+    "upstream_sha256": "cb7dc84bd2a699da0d0bb09086016c0b669ad8ac5ef8e6d01ed1d395bc30dad9",
+    "portable_sha256": "cb7dc84bd2a699da0d0bb09086016c0b669ad8ac5ef8e6d01ed1d395bc30dad9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ai_asset_reference_service.py": {
+    "upstream_sha256": "2a82f2a8ade607c9ea46915ad6385bfbcadfedbdcaa06ce5ae799861521e4681",
+    "portable_sha256": "2a82f2a8ade607c9ea46915ad6385bfbcadfedbdcaa06ce5ae799861521e4681",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ai_failure_evidence.py": {
+    "upstream_sha256": "4c82815c6f8e0c8767094dc97fa1664654bc80100e481ef10ff66d7848237381",
+    "portable_sha256": "4c82815c6f8e0c8767094dc97fa1664654bc80100e481ef10ff66d7848237381",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ai_feedback_service.py": {
+    "upstream_sha256": "68833a5422f35dee9e4f38474934b14941f7f1e3937590d07f0ee92ffbcab9b0",
+    "portable_sha256": "710f34432d586fa7d63cd336e4e4b9031f25b61e26690e46c0aab36ca5fc547b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ai_input_budget.py": {
+    "upstream_sha256": "9b2e5d5fff58f2544828f0861497dbbfab6e11892b5086bd407b928f097d6d87",
+    "portable_sha256": "9b2e5d5fff58f2544828f0861497dbbfab6e11892b5086bd407b928f097d6d87",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ai_input_policy_service.py": {
+    "upstream_sha256": "604c37d91d8b07f6e0e5e21b167c26d030adb7ccf4fe8073929570d95e6ccf9a",
+    "portable_sha256": "85cfba8175afe42d5a064e316221a4b3f8eee4cc778a2882785eb209483774a9",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_ai_json_response_service.py": {
+    "upstream_sha256": "2590758c6faae1e7cceaeeb936087abcd8aece1eca8981ef44bdcb54eed9656e",
+    "portable_sha256": "2590758c6faae1e7cceaeeb936087abcd8aece1eca8981ef44bdcb54eed9656e",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ai_output_normalization.py": {
+    "upstream_sha256": "66ee43e817d7e64c9cb69d0ba904d7d23ba0d7e61fddae9506784344257a737f",
+    "portable_sha256": "66ee43e817d7e64c9cb69d0ba904d7d23ba0d7e61fddae9506784344257a737f",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ai_player_name_service.py": {
+    "upstream_sha256": "088fb30568cc607595a0a4de1b44a6b618d5be4574b9c37cf0140ac511684d5e",
+    "portable_sha256": "088fb30568cc607595a0a4de1b44a6b618d5be4574b9c37cf0140ac511684d5e",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ai_prompt_shared.py": {
+    "upstream_sha256": "014bb326f8cae2cc537b97dda9aeb800e4d1356524e1c209b3b41f67d6369716",
+    "portable_sha256": "9d6c5e07a4fc7fda80f947e05e603984011b094bf7b9c82fdaa8b763afadecbb",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_ai_runtime_config_service.py": {
+    "upstream_sha256": "53cce13b210c2d7004fc56479a13c379b00835d19b32a964eeb0b832ddc4eb86",
+    "portable_sha256": "62de542ac6588faf2811ae68466669a9c6b9b9a1a88d31da9198aa0399538ca3",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_ambient_npc_cat_templates.py": {
+    "upstream_sha256": "f54e4eb1ae2a5c47f73d624445375af44633ce68341bd96a1ab6e65a0c343532",
+    "portable_sha256": "f54e4eb1ae2a5c47f73d624445375af44633ce68341bd96a1ab6e65a0c343532",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ambient_npc_catalog.py": {
+    "upstream_sha256": "9b4c95457d7f540bf9cc3118ecfef8e20ab49157af53f90eb1a5adfef340034d",
+    "portable_sha256": "9b4c95457d7f540bf9cc3118ecfef8e20ab49157af53f90eb1a5adfef340034d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ambient_npc_gift_ai_service.py": {
+    "upstream_sha256": "3cd2094dbcf8110c38ba30f551b2a901e6794422a404c516bb3d455088d77b7b",
+    "portable_sha256": "3cd2094dbcf8110c38ba30f551b2a901e6794422a404c516bb3d455088d77b7b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ambient_npc_service.py": {
+    "upstream_sha256": "8cdc876d7fe3d8383b929fa7366e46554ae44112638580615d4f3f154ba87aa7",
+    "portable_sha256": "ae6728e42fbcc976d06a9cb5a4d82c47af9581d933409593329e72226ba6a1af",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_appeal_departure_guard.py": {
+    "upstream_sha256": "01e6beacb3b75a5981d33b64935ac53910f8f1042eea84da469d3cab5fbf2dd9",
+    "portable_sha256": "01e6beacb3b75a5981d33b64935ac53910f8f1042eea84da469d3cab5fbf2dd9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_appeal_evolution_evidence_service.py": {
+    "upstream_sha256": "0f9f70573b22345a2db43910b5e120982730984b179bd7b37bad9717d4de6b5f",
+    "portable_sha256": "0f9f70573b22345a2db43910b5e120982730984b179bd7b37bad9717d4de6b5f",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_appeal_fact_sheet_ai_service.py": {
+    "upstream_sha256": "12d65f4d7129e85d1de724c8512281b0120869a27c4bab7173f861f1e0c54fd2",
+    "portable_sha256": "4567206c04394a1d1dcf642a94380e279ac77be030c52335dd7070c6b73a3039",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_appeal_hidden_drop_guard.py": {
+    "upstream_sha256": "bf04ede88834f12becbcdd2128d8c8a7d1e8e3cb4d56ae72b79b15d9393d6573",
+    "portable_sha256": "bf04ede88834f12becbcdd2128d8c8a7d1e8e3cb4d56ae72b79b15d9393d6573",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_appeal_lineage_guard.py": {
+    "upstream_sha256": "7a7ee49ac8f3febce0aa44fac0c939f1887e950969da1e5e811c455286fb48a7",
+    "portable_sha256": "7a7ee49ac8f3febce0aa44fac0c939f1887e950969da1e5e811c455286fb48a7",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_appeal_project_service.py": {
+    "upstream_sha256": "13c7da763d1354bd94ddbd897e46387ee904895add4aefb23972f23a5097b919",
+    "portable_sha256": "c3f1adeb2a66fad4f134e4e8cb92d423867a4091043a9af4d01a10629c3b8be4",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_appeal_rarity_restore_service.py": {
+    "upstream_sha256": "c137559d36c48bdde3790bfb0863ae575f40991bd4c6186bdcf99bec1b2b3c87",
+    "portable_sha256": "c137559d36c48bdde3790bfb0863ae575f40991bd4c6186bdcf99bec1b2b3c87",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_asset_description_merge_service.py": {
+    "upstream_sha256": "838cd4eb7ba630eebf02075344d22e7d8983db2cf04c6061f24d8e09f82890ca",
+    "portable_sha256": "838cd4eb7ba630eebf02075344d22e7d8983db2cf04c6061f24d8e09f82890ca",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_asset_description_update_ai_service.py": {
+    "upstream_sha256": "8a8a1939c868d13fb3504dd07637b947ed9579dccb322c11612125e737518e88",
+    "portable_sha256": "7b3b71643bcee1938a949dedd50ae6cd0309dd600a3d2861ad96e79dde986a95",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_asset_input_projection.py": {
+    "upstream_sha256": "f4f90e6b2e87c0aa2e9845ea9ffa2547dce4c477ecc7bfa7ab16bf0fce496d5c",
+    "portable_sha256": "f4f90e6b2e87c0aa2e9845ea9ffa2547dce4c477ecc7bfa7ab16bf0fce496d5c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_asset_mechanism_revision_service.py": {
+    "upstream_sha256": "dd75e44815a3df6e5600ae63fda7213195add97ba0467a6f011adf7b927b56e2",
+    "portable_sha256": "a9887f8dee9a7ed54f49b1a18b0c2c8e21bf716705680efd8550c232ce7b761e",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_asset_recovery_contract.py": {
+    "upstream_sha256": "d0623fe3346a5f35206288f09b6f90a6c7a07b26ecedd49e6b83fe4b90223313",
+    "portable_sha256": "d0623fe3346a5f35206288f09b6f90a6c7a07b26ecedd49e6b83fe4b90223313",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_asset_recovery_service.py": {
+    "upstream_sha256": "0e7fe272583cd2e8baa5f192a59202bba2c1aaaa81f33c9e1d69de050e8e1587",
+    "portable_sha256": "a86c990234f3718f8e61df9c6d7fd7a04312f34950f6fabe272c6e73ecf1b7be",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_asset_transfer_service.py": {
+    "upstream_sha256": "2d67e72e1c1d1c8641dc047277e5314c2fb63ab51c59a64e0149161c120ebf32",
+    "portable_sha256": "98c2125a42941a1d14cc31254a2d325d31ea2b8c9e7f94f73a5ea949914954ca",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_balance_policy_service.py": {
+    "upstream_sha256": "eb934404b9a960c588faaa7bf928e929fb0a5be3107c2f95264d168b68ae198a",
+    "portable_sha256": null
+  },
+  "backend/plugins/adventurer_s1/services/s1_blacksmith_forge_intent.py": {
+    "upstream_sha256": "51c0691c85ebfcc7146fc2adc7beaaf4c1790049019ad91d9e270369c9155ca4",
+    "portable_sha256": "51c0691c85ebfcc7146fc2adc7beaaf4c1790049019ad91d9e270369c9155ca4",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_bug_appeal_qty_guard.py": {
+    "upstream_sha256": "99bead42723646f4187b989d0b195bf8c7c0cca0055266fb97338d8a80716fb3",
+    "portable_sha256": "99bead42723646f4187b989d0b195bf8c7c0cca0055266fb97338d8a80716fb3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_bug_qty_shortfall_service.py": {
+    "upstream_sha256": "4f22d5b5c833a36d5ab0ea01f467a2f96a99006311f93980b22b56c3b22a726f",
+    "portable_sha256": "8228bc8cc3e18ebdd75c637807c670a42602011224cffff064708e87854edb33",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_bug_reclaim_service.py": {
+    "upstream_sha256": "45fda9043980c44af5ee5343d20dc31ce043e03b9d063b582c8012130877e788",
+    "portable_sha256": "84d8428a77c107636b4e1ac94ff22eaf93cc12058a9b1b5476caf1cdaa96943d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_building_ai_ownership_service.py": {
+    "upstream_sha256": "68550780f17504c913bca0b7513349e1f7e494032e57e5aabe2608e5134d3d15",
+    "portable_sha256": "b853ed480e6383c18e93d4e27568b29138618261ec3a52fa2633f8a8f7fe603d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_building_ai_service.py": {
+    "upstream_sha256": "04e30195e8ab24fced27c92459e26b6c7f6f44379add709a706ebfc00fd89b6d",
+    "portable_sha256": "8c9249c927ed6ef0acdad68658cd604c08332267e8a9a3f447f2288ea890ab9c",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_building_client_sanitize.py": {
+    "upstream_sha256": "05c905874f1ff445b052c609f1bd19fdfadbbbda0f354260da57a01b8e25a525",
+    "portable_sha256": "05c905874f1ff445b052c609f1bd19fdfadbbbda0f354260da57a01b8e25a525",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_building_undo_service.py": {
+    "upstream_sha256": "c33887a4ee24143e7d5eb3955df320f68774424654413ec2a0f9d64344afd125",
+    "portable_sha256": "76ce8285aa028b96f3b60c02bd0cd3a7ce006e02dad8f0b51fec61e8e07856cd",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_building_usage_queue_service.py": {
+    "upstream_sha256": "2358824813c26f0f98fb1cfd96759c0a911bde731d7a310d0fdc78e9c3c57d84",
+    "portable_sha256": "84e86ced048baceafaa77ca150e7d67c7413de529f65bcee8735d653ffecd0b6",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_buyback_service.py": {
+    "upstream_sha256": "9f7a6b5675cca685b1604961ec2d368cc4e0f627015dd6021d81f6e2976f3214",
+    "portable_sha256": "99e8c7493b0aa4fa23b9602ec6d893c512a08cc4e758164be9b11d47dc097346",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_challenge_contract.py": {
+    "upstream_sha256": "4372436baee622849b06b9048538b2412bf6584f43c5e72f710e763260bdea77",
+    "portable_sha256": "4372436baee622849b06b9048538b2412bf6584f43c5e72f710e763260bdea77",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_continuation_ai_service.py": {
+    "upstream_sha256": "f515190f20dce2b0e41d2d0f1bf9ba5861c3935cade08537e25485db349512d4",
+    "portable_sha256": "f515190f20dce2b0e41d2d0f1bf9ba5861c3935cade08537e25485db349512d4",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_continuation_contract.py": {
+    "upstream_sha256": "3db11dffa4c5f49a18aa84c3d94e9ccc7223e9a85ccf7b22f9ff63e684576cba",
+    "portable_sha256": "3db11dffa4c5f49a18aa84c3d94e9ccc7223e9a85ccf7b22f9ff63e684576cba",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_continuation_input.py": {
+    "upstream_sha256": "dbe13cf4e37bdb2d7e0458722bfe3df91f6c6b0f450a4675f3c6726eff51f845",
+    "portable_sha256": "dbe13cf4e37bdb2d7e0458722bfe3df91f6c6b0f450a4675f3c6726eff51f845",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_continuation_service.py": {
+    "upstream_sha256": "11ec0aa8586e0203545c263ca18437fcdb02bfe1ca27df55c4ec78134212e23f",
+    "portable_sha256": "52aac3e7e1f7efabf2eb4fd101f77e804fbeebc2a060ad073547edf9a36d7e76",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_dispatch_contract.py": {
+    "upstream_sha256": "e6557506a3fdeb8b51ab2c24d5bdafb7bc5a2b6f633e7d0a23f948d582282101",
+    "portable_sha256": "e6557506a3fdeb8b51ab2c24d5bdafb7bc5a2b6f633e7d0a23f948d582282101",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_dispatch_service.py": {
+    "upstream_sha256": "1f90ad867cea0c5ed55e6328a3cb9b68eabd142fc64459c07b33a34267e40d64",
+    "portable_sha256": "909ed00fe3cbfc6013f918c2a4474ea8a86b1b4ab44e853eacaf20e5a084626e",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_ending_service.py": {
+    "upstream_sha256": "34e1b2618afbdb514fbe762c68cd19fdf3abb61ee60f9cb337e9d2eed08e3de1",
+    "portable_sha256": "34e1b2618afbdb514fbe762c68cd19fdf3abb61ee60f9cb337e9d2eed08e3de1",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_evolution_ai_service.py": {
+    "upstream_sha256": "ac5883ed304c93f93e57402a9133ec06b454fa0f6ec9332614725b28ec8f1251",
+    "portable_sha256": "ac5883ed304c93f93e57402a9133ec06b454fa0f6ec9332614725b28ec8f1251",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_evolution_contract.py": {
+    "upstream_sha256": "c4aca85d8528f419b25f3c2034e8ada38e62dd6c409bd6b8bafc2b8ea6529135",
+    "portable_sha256": "c4aca85d8528f419b25f3c2034e8ada38e62dd6c409bd6b8bafc2b8ea6529135",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_evolution_service.py": {
+    "upstream_sha256": "bff75a7d7f5840ce1ce75697b9d8871f4c235da815d58474ca3088b7f0e9c160",
+    "portable_sha256": "c1288432298ae5ce0c79953c30b3e550beb89de2309403bc7638f615174344cf",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_revelation_contract.py": {
+    "upstream_sha256": "7adeaaeb8d0eb51cf95fed17dd8b7c43c337f5afb11f683b325258753461bf8d",
+    "portable_sha256": "7adeaaeb8d0eb51cf95fed17dd8b7c43c337f5afb11f683b325258753461bf8d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_stage_contract.py": {
+    "upstream_sha256": "54837a681d2f5d1df8522fe989c834f033359f018a0d9fc8ae43a70175329b76",
+    "portable_sha256": "54837a681d2f5d1df8522fe989c834f033359f018a0d9fc8ae43a70175329b76",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_stage_service.py": {
+    "upstream_sha256": "1981d247588c4cc9c023c3ec375339b81d73eb00acfc902320df199165304538",
+    "portable_sha256": "90d3750bb45367d014b2b44e5f15bc9482b1fa831c71f8b708d0efd1faac8a83",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_task_admission_service.py": {
+    "upstream_sha256": "9b9072450f5ad3b6a468fa79147bff57fef2b52821c579438f79e698d931ddf8",
+    "portable_sha256": "d677c6016480ffe66f1e40893903e8922f0983fdb6c8444fbdc6799fd578eef0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_time_contract.py": {
+    "upstream_sha256": "1ff1697d16d44b1a4e6f423fb6abdd31f6b7617ffbb103dc800faf6c05b2eaf0",
+    "portable_sha256": "1ff1697d16d44b1a4e6f423fb6abdd31f6b7617ffbb103dc800faf6c05b2eaf0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_campaign_world_service.py": {
+    "upstream_sha256": "3141716ee6dd74f3af1a5d990b9ee6204ab0cd1758487971e9ae436a02b771f8",
+    "portable_sha256": "3141716ee6dd74f3af1a5d990b9ee6204ab0cd1758487971e9ae436a02b771f8",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_capability_profile_contract.py": {
+    "upstream_sha256": "2b49d07d08318829d780ed1fb7e897510cc8681ef535f5258ba9d8958bda9da1",
+    "portable_sha256": "2b49d07d08318829d780ed1fb7e897510cc8681ef535f5258ba9d8958bda9da1",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_catalog_desc_pollution_repair_service.py": {
+    "upstream_sha256": "eec673f492ac193795d05cff4301b64a892325d6b15c384fbf87fd03d40d34ea",
+    "portable_sha256": "c039ae0f953759491ad05f9fee895cf2355fa9f346281fb0215e2bef56e35e3b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ceremony_hall_service.py": {
+    "upstream_sha256": "9a2f231c5bb03ff66170afaa0bcfd2678d30ec6e66460dc747ae48dcebad9114",
+    "portable_sha256": "9a2f231c5bb03ff66170afaa0bcfd2678d30ec6e66460dc747ae48dcebad9114",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_class_identity_service.py": {
+    "upstream_sha256": "5329806bae20697d663e64c7552e315a670004dd9aef091d35fb7118df442c70",
+    "portable_sha256": "5329806bae20697d663e64c7552e315a670004dd9aef091d35fb7118df442c70",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_class_repair_service.py": {
+    "upstream_sha256": "68bf05634da749f808255a8315c6abb6d96acc0b57e8a36d884a90c24c9ffffc",
+    "portable_sha256": "e43d72b511994bbe078ea333d531e726e384ffd763bc2bf7c9ed2e5da2eacf90",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_class_scroll_reclaim_service.py": {
+    "upstream_sha256": "cfea72f9e402fad77af81041028ec486a6a1ec9d20dcd7b3097c87c375c1e57a",
+    "portable_sha256": "4e51f0922f89c136685182d6e0ecd3bb63845bee40af46e342b62969147876e4",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_class_skill_scroll_repair_service.py": {
+    "upstream_sha256": "1d5a574c529658b32cca8f2ec54068f144b49bba7385c3061728ef279784d870",
+    "portable_sha256": "21310d9f725fff6466d1cfc181654a422ba2f955cf0768afd798e4eca05733ef",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_clue_bureau_boss_gen_ai_service.py": {
+    "upstream_sha256": "5add741acb1a4a633870f57754c19640f71cb3b71d897f12b742097afb7548ad",
+    "portable_sha256": "5add741acb1a4a633870f57754c19640f71cb3b71d897f12b742097afb7548ad",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_clue_bureau_catalog_service.py": {
+    "upstream_sha256": "1389a2837d3ba33f0cbb769ad25f44d81fea729229a4c304500e71ad49d807cd",
+    "portable_sha256": "23659b89f08f8c8e9a8334642a420565eaff84ab7ce7bec8d159899a70e15919",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_clue_bureau_service.py": {
+    "upstream_sha256": "89d522f32bdea6810b728be308a08bcec10984473b7c651476f7eec5f4701a9d",
+    "portable_sha256": "89d522f32bdea6810b728be308a08bcec10984473b7c651476f7eec5f4701a9d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_cold_storage_service.py": {
+    "upstream_sha256": "53c0d65ca1b886c03dca8d3e920409139efc13bd39b7101c54bc0659719ee032",
+    "portable_sha256": "a36c48ccda1b36f74a9250cb9c28c28987cc9b82bfc303823d3f434ee76d70f6",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_commission_gen_ai_service.py": {
+    "upstream_sha256": "e2e3ba898cd0e04c10abc752eb2581300e1559825f27d8dfbf6bd19cab3b18ff",
+    "portable_sha256": "645a70b1cb1d912fa948818c9a23e87b0e5c4703564b72c9c719a1c44fec57a8",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_commission_service.py": {
+    "upstream_sha256": "24277ea472078e9b7ef33764e0374fe471f6294586fbb6406588ca8e9ae73b19",
+    "portable_sha256": "8ddb16e031e0a957235dc334df78baefec45600b49049faa2b703c43cd751339",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_companion_evolution_integrity_scan_service.py": {
+    "upstream_sha256": "9f5b737d600ac5e406fa57b7edac2788427876210ec9caa7d6627f1ba417515a",
+    "portable_sha256": "9f5b737d600ac5e406fa57b7edac2788427876210ec9caa7d6627f1ba417515a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_companion_evolution_stage_repair_service.py": {
+    "upstream_sha256": "5df1d0f32b075c1c98e43be4de24a6624fbf06cfea26d225794d755bcccf8a98",
+    "portable_sha256": "5625a9c0ef4655baac80fb32c4ed388e646a32145771373393ea972c84684b8d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_companion_historical_repair_service.py": {
+    "upstream_sha256": "659031325f775a0908241d57c6a69608856bfac2dcf056cd1bd70ba9f9d0b7bb",
+    "portable_sha256": "e0dbf1b658035c443e0aaf51c448199cab599d97a24a5a2feca750ed3db5e12f",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_companion_historical_review_ai_service.py": {
+    "upstream_sha256": "d7b15e87c183fb42ce3c1b483a034e929d40636e6200238dc9693ea82d41ca57",
+    "portable_sha256": "d7b15e87c183fb42ce3c1b483a034e929d40636e6200238dc9693ea82d41ca57",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_companion_historical_review_contract.py": {
+    "upstream_sha256": "222b60ad629d31c5909d522d834c3c05bb43cbae350401d848432199e4f17f72",
+    "portable_sha256": "222b60ad629d31c5909d522d834c3c05bb43cbae350401d848432199e4f17f72",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_consumed_asset_continuity_contract.py": {
+    "upstream_sha256": "89459e937e51dc30bd40b3d33b7fae300e184c9a8d49280c5a3c55ce4be13551",
+    "portable_sha256": "89459e937e51dc30bd40b3d33b7fae300e184c9a8d49280c5a3c55ce4be13551",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_contribution_service.py": {
+    "upstream_sha256": "853177b35d44b9a895044b215b85dce92234a8fe760d4d3ac8750f2a5efb49b1",
+    "portable_sha256": "40f3d55d6fb991f2b85fb6789cdcffefc41c1d45d09ce927bb447fb8e25b9a3c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_countermeasure_context_selection_ai_service.py": {
+    "upstream_sha256": "8aebbf30a5f8cf5d3079120a1bb6ab47fe29b3d990bbdde69d0d7d83c0b89630",
+    "portable_sha256": "8aebbf30a5f8cf5d3079120a1bb6ab47fe29b3d990bbdde69d0d7d83c0b89630",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_countermeasure_evidence.py": {
+    "upstream_sha256": "e42d8ea3f58ae734b81f39370104ddbdf0f87355c77db308690eb5be776271e0",
+    "portable_sha256": "e42d8ea3f58ae734b81f39370104ddbdf0f87355c77db308690eb5be776271e0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_countermeasure_growth_service.py": {
+    "upstream_sha256": "31dfee4bc2b9661200ddbdd8a51237b89f77d3ccbf83c056b37555a1d101e881",
+    "portable_sha256": "31dfee4bc2b9661200ddbdd8a51237b89f77d3ccbf83c056b37555a1d101e881",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_countermeasure_knowledge_service.py": {
+    "upstream_sha256": "3b395226bfde74d8844ff95469a797a3251557ee70604fdad76fee24eb07a2b8",
+    "portable_sha256": "22193f3da420dfa6d8bda23ff93fc720683f0ea28567de5372ffb7e4858ea382",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_countermeasure_learning_ai_service.py": {
+    "upstream_sha256": "06f7aa8c3bec06d91f885eb7010cdf0fc6402a049ac8f6f605da586504ab7e5e",
+    "portable_sha256": "06f7aa8c3bec06d91f885eb7010cdf0fc6402a049ac8f6f605da586504ab7e5e",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_countermeasure_learning_contract.py": {
+    "upstream_sha256": "2677aae55e12b0760801a1c37d73348664dfc00c71644426f7854eef629b6675",
+    "portable_sha256": "2677aae55e12b0760801a1c37d73348664dfc00c71644426f7854eef629b6675",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_countermeasure_review_design_service.py": {
+    "upstream_sha256": "07ad3896a997cf062e01bb14e1ba73c0cb1a8eb992266ce75c4f7a69f493854c",
+    "portable_sha256": "07ad3896a997cf062e01bb14e1ba73c0cb1a8eb992266ce75c4f7a69f493854c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_cross_realm_mirror_service.py": {
+    "upstream_sha256": "5497ca290220bb1b4339ca07cf9555ae8f135688a5d91d206bd78342dcb9db6a",
+    "portable_sha256": "ae3693e7c06269ec1a870466253d49bdda21e9892af535468922e5c800e6b859",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_cross_realm_social_policy.py": {
+    "upstream_sha256": "6c547086b43f13daf457df575b18eaa1391df9bef616c25c204e87318edbee73",
+    "portable_sha256": "6c547086b43f13daf457df575b18eaa1391df9bef616c25c204e87318edbee73",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_daily_solo_ticket_repair_service.py": {
+    "upstream_sha256": "563c8e819e74220162ed300debb7e3e433d4cb35f72fe4061c9fb0262d137bc0",
+    "portable_sha256": "111d1a049ea4931c3196c60f51e74874c07082074488f9f54f42e1f5bc9b8b01",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_data_appeal_input_service.py": {
+    "upstream_sha256": "71865bfcfbba3f00238e5a60ac95dbbdcb3825dd1b6e69195f3b2073e03a9b34",
+    "portable_sha256": "71865bfcfbba3f00238e5a60ac95dbbdcb3825dd1b6e69195f3b2073e03a9b34",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_deployment_identity_service.py": {
+    "upstream_sha256": "9918d91707443a51e8895ca27964a98e1bced71fc34356c8fa485329c39e3594",
+    "portable_sha256": "4ce7c8a97f4a72fa8b000dacf743bce4c45c7d37e2ebc501afa75ffedf42090b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_description_ai_service.py": {
+    "upstream_sha256": "57f9f91ce32f9e845dc3747da884eff84e7355d9284e9d6f84b7617245a126c7",
+    "portable_sha256": "76a8d8e787bdd5959cfadbea3bb09ac459b773a4d295c86d7f7e598429019129",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_description_backlog_service.py": {
+    "upstream_sha256": "55f79808d8093ac63fdca876cf7caf90b23da9f228cda0d2d485402b3d66d40e",
+    "portable_sha256": "55f79808d8093ac63fdca876cf7caf90b23da9f228cda0d2d485402b3d66d40e",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_description_feedback_service.py": {
+    "upstream_sha256": "889ac6907d6bb155230df30ea9f54b3e26ea1dcd0fd7aaf94344dd351e15d8a4",
+    "portable_sha256": "0e63272fc3ed80583d0cda2206c42836134078eed4b59a64e1c4e32dfc2e0047",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_description_repair_contract.py": {
+    "upstream_sha256": "e48ffbe720f2726fe058ab938b0bf5f8127022b829a90825b29f48fbe59be95f",
+    "portable_sha256": "e48ffbe720f2726fe058ab938b0bf5f8127022b829a90825b29f48fbe59be95f",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_description_summary_review_ai_service.py": {
+    "upstream_sha256": "aa64132b099072835230747e7b8870893781ec6228f8f9ecf4c7b9efb29ff529",
+    "portable_sha256": "e88cccd71ca505e7847eca5d587899b5bbcc2f04e67d74b55b29271443138faa",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_dining_service.py": {
+    "upstream_sha256": "d8ecb3af3834d5127123a9daeef1c5fc726468e3a29d580b355df36a856a0dcc",
+    "portable_sha256": "d8ecb3af3834d5127123a9daeef1c5fc726468e3a29d580b355df36a856a0dcc",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_dungeon_ecology_identity_service.py": {
+    "upstream_sha256": "9c803b4ea2bba0f8b10e4a583c714084f2637315c4b41054a47338a6d93f7839",
+    "portable_sha256": "9c803b4ea2bba0f8b10e4a583c714084f2637315c4b41054a47338a6d93f7839",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_dungeon_rename_service.py": {
+    "upstream_sha256": "b97646833a75550e650978f8784d953ba4920d1a0c1d807a3acd6fe762c257a6",
+    "portable_sha256": "dc25353695e4c1fd8cb700017255c6d42ca00d48c783223f13ae2c03f6b1a7da",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_dynamic_map_bounty_service.py": {
+    "upstream_sha256": "1b5598ab1cba02041b66b7b71872846cbc5bbc2bbc7a501b305913625a385e48",
+    "portable_sha256": "0876c883c959141dd825ebcfac426ae70496fb23a14145ca53c4fe44cebf4b19",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_ember_kitchen_contract.py": {
+    "upstream_sha256": "1c4fd26796c0fb347d0e3283a2f211391548677d4bb1fd72c553c79b393adece",
+    "portable_sha256": "1c4fd26796c0fb347d0e3283a2f211391548677d4bb1fd72c553c79b393adece",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_encounter_draft_contract.py": {
+    "upstream_sha256": "b3eb9f59614f5ebf0c3f7fb3a7d45de965759386a46b49b33cff62382dfb0263",
+    "portable_sha256": "b3eb9f59614f5ebf0c3f7fb3a7d45de965759386a46b49b33cff62382dfb0263",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_encounter_preparation_contract.py": {
+    "upstream_sha256": "f696c3f77e6eea925133b83ec94449f8c076af59f2e91a2d7baa3f8fe5754bf9",
+    "portable_sha256": "f696c3f77e6eea925133b83ec94449f8c076af59f2e91a2d7baa3f8fe5754bf9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_encounter_preparation_service.py": {
+    "upstream_sha256": "f5dbb2910b395fbbf7b70a6482e27e18368cb9118fefaf8152506c5c6e845ddf",
+    "portable_sha256": "f5dbb2910b395fbbf7b70a6482e27e18368cb9118fefaf8152506c5c6e845ddf",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_existing_asset_update_contract.py": {
+    "upstream_sha256": "5c20ad96d7b824b4537ff49505c9a1285531bcd453376248cbaf66a9b4768945",
+    "portable_sha256": "5c20ad96d7b824b4537ff49505c9a1285531bcd453376248cbaf66a9b4768945",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_expedition_ai_timeout_contract.py": {
+    "upstream_sha256": "621aef4fa183c39f7010d683330ad600f7c9c9c3e5b747c5651a2e8b919739d3",
+    "portable_sha256": "621aef4fa183c39f7010d683330ad600f7c9c9c3e5b747c5651a2e8b919739d3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_expedition_consumption_repair_service.py": {
+    "upstream_sha256": "b6a717e9dc50b67bb15e430d00262655d59b144cbc27b291cef39c7f4d0f68ce",
+    "portable_sha256": "ad62b1620c312f56a0f2c4037e78e8022c6574162ca708e320063fcc5674cb3d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_expedition_equipment_update_repair_service.py": {
+    "upstream_sha256": "21c97a0cfa056ba0a968314b36407822b8e958a59095bfda18cc8c88d7040bb6",
+    "portable_sha256": "daf7c3f6c15ee1bcc91dd3676d8d5c73aec91562ecbe7bf8f41e0a1628878687",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_expedition_locus_service.py": {
+    "upstream_sha256": "9f7f35c90bf5a585fe72aa219d027f0175956d67136a0fa527767a1f3d4df766",
+    "portable_sha256": "78c117935b14f9f65978b21c8d9d8a6d9f079e5656303916d67f6fbfa17c2ea1",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_expedition_log_dedup_global_preview_service.py": {
+    "upstream_sha256": "a848c558a2fd1b0f1f05ff610108a17028e791b873b23f25d8103e728f96f8dc",
+    "portable_sha256": "57ec1d3abb6699d99284279be11692bc482123f23cf2fce19af83f532bfec293",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_expedition_log_dedup_preview_service.py": {
+    "upstream_sha256": "c28edac4b99b1290fd08da25b399d419d56bcff6a859cd60d703c474e263a658",
+    "portable_sha256": "eb2e66782d0efb141cc91cea7220ba7ae83dfe5f0508324af5ff8680a5391a5e",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_expedition_objective_mode_service.py": {
+    "upstream_sha256": "687cd680bd8dd74fa4365823ef1b7d61fb88ba322490eaa20de6e937e086d527",
+    "portable_sha256": "687cd680bd8dd74fa4365823ef1b7d61fb88ba322490eaa20de6e937e086d527",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_expedition_resolution_contract.py": {
+    "upstream_sha256": "f9d29d63a93c51278c361af510cfc73838ee139662069cd5f8292cf8ecc36a63",
+    "portable_sha256": "f9d29d63a93c51278c361af510cfc73838ee139662069cd5f8292cf8ecc36a63",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_expedition_settlement_conflict_repair_service.py": {
+    "upstream_sha256": "e385c4f9e672e7d70f01a91c11928e1b0f6d04baa215b3571267bf5f7ecf4325",
+    "portable_sha256": "f5ced4be519308da4f691552168ae189e5cafaebb549404787b8dcb79793eab9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_expedition_settlement_receipt_service.py": {
+    "upstream_sha256": "39188df85bcaed82a94b18b68f560fb5aa8405b8095d1c5bf8d55ccce06106ec",
+    "portable_sha256": "39188df85bcaed82a94b18b68f560fb5aa8405b8095d1c5bf8d55ccce06106ec",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_expedition_skill_repair_service.py": {
+    "upstream_sha256": "c03a9ed3efac735937dff35e616947b6ab65dd13d708d88e9c3ad1ca4b2ef3bc",
+    "portable_sha256": "c03a9ed3efac735937dff35e616947b6ab65dd13d708d88e9c3ad1ca4b2ef3bc",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_export_service.py": {
+    "upstream_sha256": "946064244009692df4c6929f4bdaf7b71d7b9688c442895fbe1a7fc7f0372b2a",
+    "portable_sha256": "7ceb88783ef74cdc6ae335cfb7c09ca3c72c4925457c588297f8c09d3e39e754",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_faction_profile_service.py": {
+    "upstream_sha256": "5b7585059ca561e88a0f9cffaeac801b29ded672b74aff772e16f376dcb6c7b5",
+    "portable_sha256": "95c41dbacc8ef339053a60377664bff3b9ec82eeb22f68bd7df2cf36b67eec1c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_fate_companion_service.py": {
+    "upstream_sha256": "42be52e571aa50312ee5d83e9239168d6352ad6e604b8f525f0ff8711fb8f676",
+    "portable_sha256": "42be52e571aa50312ee5d83e9239168d6352ad6e604b8f525f0ff8711fb8f676",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_fate_destructive_change_contract.py": {
+    "upstream_sha256": "a8c40318016c7b963019cbfc82372acdefab4594b594d8c61915ccb73a8450e4",
+    "portable_sha256": "a8c40318016c7b963019cbfc82372acdefab4594b594d8c61915ccb73a8450e4",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_fate_historical_review_ai_service.py": {
+    "upstream_sha256": "7950156d5fca30f5fa48d4213220e152c1545bc58bca51a187a577be91550af9",
+    "portable_sha256": "7950156d5fca30f5fa48d4213220e152c1545bc58bca51a187a577be91550af9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_fate_historical_review_contract.py": {
+    "upstream_sha256": "0070a4d67c07ded5a1e4a501b8c036655c5cd987611e560bec6934c961ac4c42",
+    "portable_sha256": "0070a4d67c07ded5a1e4a501b8c036655c5cd987611e560bec6934c961ac4c42",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_fate_journey_service.py": {
+    "upstream_sha256": "cf876323edc8ce526367daeb26bba0526ea9c0309234de45bf00d30b28058169",
+    "portable_sha256": "96e0f0cef45b8d3455568f530f4133fdf87b7b659440a76f65d1d10ee1fa6409",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_fate_settlement_repair_service.py": {
+    "upstream_sha256": "21981c43bdb05d5020d030983b2441d1ba233d1edc0dbf29992a969c56fa9796",
+    "portable_sha256": "8662d13ba093749cfc5cd4f5ab8c564e45c0f94fb50a21e5ce7b1af67ed62e9c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_first_encounter_learning_service.py": {
+    "upstream_sha256": "996378f5e54705a9e5ba8b4d63c9367bc802580c7711fd0be844acbcb069eef7",
+    "portable_sha256": "996378f5e54705a9e5ba8b4d63c9367bc802580c7711fd0be844acbcb069eef7",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_free_appeal_contract.py": {
+    "upstream_sha256": "3170307eddc8e52e4939fa0d22cb4bb2199793e2cfb2c33b39b2d42da851fcde",
+    "portable_sha256": "3170307eddc8e52e4939fa0d22cb4bb2199793e2cfb2c33b39b2d42da851fcde",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_gain_anomaly_service.py": {
+    "upstream_sha256": "403262e09033e6fdf595cf1a1a132bc64d692afe1e7bb629cb581a32a8d5d83a",
+    "portable_sha256": "09920bb2ad0a2c5bd003030285d7bfc6869c1858de791105f2889c4ef19c1017",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_gambling_gold_reconciliation_service.py": {
+    "upstream_sha256": "b6cc0ea34b092c05a495d5cbbe2a9a65fc6a821794b36150cfaa8afe351674b0",
+    "portable_sha256": "b6cc0ea34b092c05a495d5cbbe2a9a65fc6a821794b36150cfaa8afe351674b0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_gambling_service.py": {
+    "upstream_sha256": "b24ea8f14d79cdfa2a4a3805d92a8463caa6e889c1db880fb9b27c353d16e87a",
+    "portable_sha256": "06550a597a85fc4b70f2618242820c394fa9dae7043a42f2f70beccf6b30ecbb",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_gold_settlement_contract.py": {
+    "upstream_sha256": "e80061398a245f83836c95fabdad5041999bfe91f87c0bf650e2352e786f1404",
+    "portable_sha256": "e80061398a245f83836c95fabdad5041999bfe91f87c0bf650e2352e786f1404",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_hidden_boss_service.py": {
+    "upstream_sha256": "72dc566441d372a79f79fa26be3dc94f4c548df726c85c6ffef4883edc5638a9",
+    "portable_sha256": "41f1774ee484e956620ee07bb0060205dfcc468094875363324a0a7b2b21ed1c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_hidden_dungeon_exchange_service.py": {
+    "upstream_sha256": "949124f45dd19c1919bc2bd71eb5260b424f0236c82b5d656fab7cfe36e7f68b",
+    "portable_sha256": "949124f45dd19c1919bc2bd71eb5260b424f0236c82b5d656fab7cfe36e7f68b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_hidden_dungeon_service.py": {
+    "upstream_sha256": "940d2c8072f23bf17efb5daa57dd414492d1c39813aa5a41b977aad773be21ae",
+    "portable_sha256": "940d2c8072f23bf17efb5daa57dd414492d1c39813aa5a41b977aad773be21ae",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_independent_dungeon_service.py": {
+    "upstream_sha256": "b99a1361614ada21edc0b71861d84be83c7564dcdefcd995093764455e16496d",
+    "portable_sha256": "b99a1361614ada21edc0b71861d84be83c7564dcdefcd995093764455e16496d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_independent_material_catalog.py": {
+    "upstream_sha256": "9abbaf9bca2fdb9a4614c65b5f3d1c0ac9c97b0e51c9e94bfd9d18ec03e9671d",
+    "portable_sha256": "9abbaf9bca2fdb9a4614c65b5f3d1c0ac9c97b0e51c9e94bfd9d18ec03e9671d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_insurance_service.py": {
+    "upstream_sha256": "c9d352561fde2fd0b7387662fb5408ccd4ec64bdc43b83782824fb91c18fe1a2",
+    "portable_sha256": "058708cdbc25feffcb1a122dbcbf12ab3c993babee950af791545703024c4c7b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_assembly_contract.py": {
+    "upstream_sha256": "1417695c11f6b32e6fe01ac14d2b176ecddb91e2f30975b7563e34df8b470a88",
+    "portable_sha256": "1417695c11f6b32e6fe01ac14d2b176ecddb91e2f30975b7563e34df8b470a88",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_authority_contract.py": {
+    "upstream_sha256": "e2f1edc0576091533dc0a66bac5e98265d5f28c977ae2b91b0cdfcd496724a1e",
+    "portable_sha256": "e2f1edc0576091533dc0a66bac5e98265d5f28c977ae2b91b0cdfcd496724a1e",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_authority_service.py": {
+    "upstream_sha256": "ccd6671040fe339b1240e14d3aa6240b96745630e1ce58812c9e6b6d2aa05a38",
+    "portable_sha256": "ccd6671040fe339b1240e14d3aa6240b96745630e1ce58812c9e6b6d2aa05a38",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_catalog_history_repair_service.py": {
+    "upstream_sha256": "d7a1972f40f129fb2f7c2385993f5e7267a5bc7a1a655eaa786c23969edc623f",
+    "portable_sha256": "6cd41e76e2f945917aaa6e4582ab7f55766341ad9d3d399e43589288bdfc459d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_catalog_lock_service.py": {
+    "upstream_sha256": "ada3f7187d4f94dfff639244583c72fdc980b21907f745ca92b45dd8b928e543",
+    "portable_sha256": "ada3f7187d4f94dfff639244583c72fdc980b21907f745ca92b45dd8b928e543",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_catalog_service.py": {
+    "upstream_sha256": "edcd9d6fe71b2d22b2441082af3624d2403981fae83750ccbb97e1a8580e60f0",
+    "portable_sha256": "00d72b83de65f8474ef826836d9d6ed6aae8b23754077b549c44908dbb14b078",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_grant_service.py": {
+    "upstream_sha256": "58be866e93e3547f70e0a51ac0453a3d75b55f3da995370459e1e26a591d9b28",
+    "portable_sha256": "020e23af880ecebeda9f525a3fc75ea1d3d4f91755d2a9c472d6f9d30a65537f",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_instance_service.py": {
+    "upstream_sha256": "03097d62065bb1f4acd5761dd7cc95c2cd43b6fc8394cac1aac19e0af7ff4f8a",
+    "portable_sha256": "03097d62065bb1f4acd5761dd7cc95c2cd43b6fc8394cac1aac19e0af7ff4f8a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_protection_service.py": {
+    "upstream_sha256": "1158367d91e8270b5df898500d1017caf64786a8898416000d5c9c29720ee386",
+    "portable_sha256": "c9d233c6e745e91760b0dcdb48e30ee860bce69addf33bbea7f96a1f69051b84",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_quantity_service.py": {
+    "upstream_sha256": "576f442e7e043e1b0aae39ff3db6d667ebd30a0cc757ecb7625a192726cf0099",
+    "portable_sha256": "576f442e7e043e1b0aae39ff3db6d667ebd30a0cc757ecb7625a192726cf0099",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_rarity_repair_service.py": {
+    "upstream_sha256": "33169be04e593371a86a6c0129d20cc2526783a115226fbf49ae7544c4db1708",
+    "portable_sha256": "523f90ff97aa09189882a3f35a91612fd4381ee02c0b9541bd1158fd076ed27a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_type_repair_service.py": {
+    "upstream_sha256": "e7485b691314f319f14adfe7b03d84ee57e4f85ec59addd67a54b273065d1028",
+    "portable_sha256": "01a74edd8909046348c480d5dff560e1987264ad3e7813ad8be5640bb8c86603",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_use_condition_service.py": {
+    "upstream_sha256": "6649424c88f38294157155fe20eb8ffbe26f4c15bea2cda0c736d5f218de1066",
+    "portable_sha256": "331496309b9c7d3e156b45034b22fd8f0f28500749da78de1e6271e82f469b36",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_item_world_unique_service.py": {
+    "upstream_sha256": "9a10c07bc7a2b86afbc663325d1298138335ec2e62b391875c066cf9fb401ccc",
+    "portable_sha256": "9a10c07bc7a2b86afbc663325d1298138335ec2e62b391875c066cf9fb401ccc",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_level_cap_service.py": {
+    "upstream_sha256": "835fa1483ba15a2a799a0fc3206430a453e7e1033cefd70b8e2fc77ad68ac221",
+    "portable_sha256": "835fa1483ba15a2a799a0fc3206430a453e7e1033cefd70b8e2fc77ad68ac221",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_life_change_contract.py": {
+    "upstream_sha256": "5a3e64b7082a21ab9efa307752f31cfffe94078441a98acbafe5f6ea585cfd9a",
+    "portable_sha256": "5a3e64b7082a21ab9efa307752f31cfffe94078441a98acbafe5f6ea585cfd9a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_limited_shop_admin_service.py": {
+    "upstream_sha256": "473f86822c3a94f9f23d4ed5f0744c60005ed8f2610f2a63cb74ad6604e878d6",
+    "portable_sha256": "473f86822c3a94f9f23d4ed5f0744c60005ed8f2610f2a63cb74ad6604e878d6",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_limited_shop_service.py": {
+    "upstream_sha256": "23fc42fa5a7a6e4b9dc04702138d33fd5faae62defd8bd6c6b7e5a232f038409",
+    "portable_sha256": "23fc42fa5a7a6e4b9dc04702138d33fd5faae62defd8bd6c6b7e5a232f038409",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_low_consumption_overcredit_reclaim_service.py": {
+    "upstream_sha256": "8f7f35236540d2802b2117ccd25253ae232b0e4ad90aa9681132dfbffba0b5af",
+    "portable_sha256": "fa00da068484e99336f1d77d08719aa0fe65418a67f4edcc429f00e28fb79c1b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_lucky_wheel_service.py": {
+    "upstream_sha256": "c0ad7662c4a2a72db4d3862e80760c4b411f1fc6a7f9f018f01fad5459d97646",
+    "portable_sha256": "c0ad7662c4a2a72db4d3862e80760c4b411f1fc6a7f9f018f01fad5459d97646",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_mimo_client_config.py": {
+    "upstream_sha256": "c74e8851e521314e8c780d5fefdad0d7f94d86182c66f005f675858def8e1194",
+    "portable_sha256": "c74e8851e521314e8c780d5fefdad0d7f94d86182c66f005f675858def8e1194",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_mooncake_catalog.py": {
+    "upstream_sha256": "d3d4ef77e107f46822a0b7780769a3289e4a6fce63d36a623363da45aaf61fce",
+    "portable_sha256": "d3d4ef77e107f46822a0b7780769a3289e4a6fce63d36a623363da45aaf61fce",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_narrative_lease_service.py": {
+    "upstream_sha256": "91dc7c958d6dad4ed695ccdb63b600ec76a1451c68b7ed49eeaeae081f57c83c",
+    "portable_sha256": "4f8daa21cb4ed351ecade5c0dff7f01c02d10f52054a7fed46b2ebac853f5bd0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_observer_item_delta.py": {
+    "upstream_sha256": "a59b37df6ee4b8de1e66838bc816f4aa60feb8065f7e36f6ff9396c88c33f18c",
+    "portable_sha256": "a59b37df6ee4b8de1e66838bc816f4aa60feb8065f7e36f6ff9396c88c33f18c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_observer_retry_policy.py": {
+    "upstream_sha256": "6cd2155431e870e4b9145be7c78734fcd7a5b84a376b33718fe350a3460a8762",
+    "portable_sha256": "6cd2155431e870e4b9145be7c78734fcd7a5b84a376b33718fe350a3460a8762",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_outline_pressure_contract.py": {
+    "upstream_sha256": "1b3a007fa9454a1e43e37f2a3e192d80ffe539b5d69300cb67592ba921cd7957",
+    "portable_sha256": "1b3a007fa9454a1e43e37f2a3e192d80ffe539b5d69300cb67592ba921cd7957",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_persistent_content_safety_service.py": {
+    "upstream_sha256": "b192c0e9aa6d3e963280ca0129ff4ad010e87504e81a1bf2016bba069db77b43",
+    "portable_sha256": "b192c0e9aa6d3e963280ca0129ff4ad010e87504e81a1bf2016bba069db77b43",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_placeholder_skill_recall_service.py": {
+    "upstream_sha256": "198c3b1423cd33794fc19711460d5972e6bbdca85d279b36ea25479157269834",
+    "portable_sha256": "d7699fa0a943088a1aab7ca14b40e21de8a119816aaeb4d3f46b1c6c40c92eb7",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_player_equipment_integrity_service.py": {
+    "upstream_sha256": "92d4c7042a77bc2ee9e564f5fe24ae78445db4d75b6b142a8c00f2930baab325",
+    "portable_sha256": "6fa4ced6682808464dc9b141cac6752dfc3e643a75bfc16e482a3494fad0ba04",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_player_error_service.py": {
+    "upstream_sha256": "8f7fcd7c35cbfba5eedc53e93ad295ed4a73c2f23d50f990120f4d401cc4a00b",
+    "portable_sha256": "8f7fcd7c35cbfba5eedc53e93ad295ed4a73c2f23d50f990120f4d401cc4a00b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_player_projection_service.py": {
+    "upstream_sha256": "901d93022bd8ac3dd79839bd14a7c4d89690c9476b238f3055628239b7b65381",
+    "portable_sha256": "901d93022bd8ac3dd79839bd14a7c4d89690c9476b238f3055628239b7b65381",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_realm_gateway_service.py": {
+    "upstream_sha256": "119ba65d2fee8b725dca6ac327d3dae62f76f3c7ef6c521844e3432a591bd575",
+    "portable_sha256": "119ba65d2fee8b725dca6ac327d3dae62f76f3c7ef6c521844e3432a591bd575",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_realm_runtime_proxy_service.py": {
+    "upstream_sha256": "66f3e8192713d0dae2eefe9d51e9c8f6ec2c60ea7aabe5d543d846d56e923bef",
+    "portable_sha256": "66f3e8192713d0dae2eefe9d51e9c8f6ec2c60ea7aabe5d543d846d56e923bef",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_realm_service.py": {
+    "upstream_sha256": "607b76498b6f1ecd50433253c3a901570a8a7ea00379d0b8620ef8940c7ea12b",
+    "portable_sha256": "25bfa715f5510c8c63261e609888a6194e16b390a3139c83061c3d6a59cf05a3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_region2_runtime_ai_isolation_service.py": {
+    "upstream_sha256": "b20084c3df139eedb66722d29dde49099caac33c8b72596d8622f947f2fbd390",
+    "portable_sha256": "b20084c3df139eedb66722d29dde49099caac33c8b72596d8622f947f2fbd390",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_region2_runtime_contract_service.py": {
+    "upstream_sha256": "e82a2e697eb11e1d42d27963d244a15f03e7a3d1868dc2559c29e7f346d12d08",
+    "portable_sha256": null
+  },
+  "backend/plugins/adventurer_s1/services/s1_region2_runtime_host_service.py": {
+    "upstream_sha256": "40dd240df18ecc3ebd6ee8b2ee362fe595b3e0fa6eed6a26102827d0e1961e3f",
+    "portable_sha256": null
+  },
+  "backend/plugins/adventurer_s1/services/s1_region2_runtime_identity_service.py": {
+    "upstream_sha256": "d980018048c68b31c12a3cb9c282ab0dc8ebd8a2ce2dd7469a4afccb69837a26",
+    "portable_sha256": "9d8a3d30961889e9c09f2d7d87297e4a85e4edf6a5ed00dfbe581a9fff6078d0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_region2_runtime_process_lease_service.py": {
+    "upstream_sha256": "ac08bebf877c932c5d41c15bf6d0250ede47ee1fb2fecca42f8d5f9500be270a",
+    "portable_sha256": "ac08bebf877c932c5d41c15bf6d0250ede47ee1fb2fecca42f8d5f9500be270a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_region2_runtime_relay_service.py": {
+    "upstream_sha256": "b1a4c79fb615094ccc9afc2a3121885ab351580abcfe3fd495d05861a72acf4d",
+    "portable_sha256": null
+  },
+  "backend/plugins/adventurer_s1/services/s1_region2_runtime_scheduler_service.py": {
+    "upstream_sha256": "112c571a83ba4c0b49590921a1509868d2104d7ddcc32c48b6f994cee8814df2",
+    "portable_sha256": null
+  },
+  "backend/plugins/adventurer_s1/services/s1_reservation_history_service.py": {
+    "upstream_sha256": "f7a30a5f1893d142f19b4448ceca31a591814e5c19541e9fa0c8d5778a722de3",
+    "portable_sha256": "f7a30a5f1893d142f19b4448ceca31a591814e5c19541e9fa0c8d5778a722de3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_reservation_ip_service.py": {
+    "upstream_sha256": "cf0a4cc2f1c983800991ec58bf341cac71e51206dcf12ef18b477261a1427787",
+    "portable_sha256": "cf0a4cc2f1c983800991ec58bf341cac71e51206dcf12ef18b477261a1427787",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_reward_item_preview_service.py": {
+    "upstream_sha256": "d782c711cec6d7c206da9f0b82ff8b1ee7f31e655b347689f145f70c99056844",
+    "portable_sha256": "d782c711cec6d7c206da9f0b82ff8b1ee7f31e655b347689f145f70c99056844",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_runtime_socket_relay_service.py": {
+    "upstream_sha256": "f9f27bb2db434cfbd5813d7087f886215a1e7c03955600eeae602b44171679e3",
+    "portable_sha256": null
+  },
+  "backend/plugins/adventurer_s1/services/s1_same_name_replacement_desc_repair_service.py": {
+    "upstream_sha256": "b6ba994e2f4a2e725c5d99696c1540890456c3bd4185783a8586d20fd97704e9",
+    "portable_sha256": "9dc7886ea50e7ff5a9a4d52f31ac23578c4eacac81fb5963e714495d4914c42c",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_scavenge_service.py": {
+    "upstream_sha256": "a103ed4e518b3f27fd6095ca597f7edc6cd07662d56390335a57434258675db6",
+    "portable_sha256": "a103ed4e518b3f27fd6095ca597f7edc6cd07662d56390335a57434258675db6",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_secret_auction_service.py": {
+    "upstream_sha256": "29b6977fbef445bc5a8fc52710985abfd0c563989d9c3e5b304c9b828959965b",
+    "portable_sha256": "444992fb7db0c530c3852f4658549136345fb960c020af7f9d4aafc4cf4f104d",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_settlement_field_projection.py": {
+    "upstream_sha256": "d532d2b025efbb846d918c8b0331e6ec3c2b1f1684c2f604554db33fc9969078",
+    "portable_sha256": "d532d2b025efbb846d918c8b0331e6ec3c2b1f1684c2f604554db33fc9969078",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_skill_school_service.py": {
+    "upstream_sha256": "f9d86796cf9258084a014aebc9855d38a6d4c41b4eb62d10a7c105d3eac758f5",
+    "portable_sha256": "ba6b4e5d9378852d2887e1e6de94aeccec695c8dbf06191f98aeba0274fb70c9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_socket_service.py": {
+    "upstream_sha256": "395270d5c6849c4cef1f7cecbd6c5a73b7cea1d6a42246e57c2b6874da2db69a",
+    "portable_sha256": "395270d5c6849c4cef1f7cecbd6c5a73b7cea1d6a42246e57c2b6874da2db69a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_special_dungeon_ticket_penalty_service.py": {
+    "upstream_sha256": "b9cdd18b79a4d318f82972a7a430c10bc42e373c7562bb6b96407a35428c24e2",
+    "portable_sha256": "b9cdd18b79a4d318f82972a7a430c10bc42e373c7562bb6b96407a35428c24e2",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_squad_service.py": {
+    "upstream_sha256": "fd41876c89e85d8cd96e64ad1cafa7b6afca9b622611e5f36caee1bdac51d8f8",
+    "portable_sha256": "7db88fe5354bbfb8d83aa2e997ef505879a3a0356fd674e6cf0eb4df889820b8",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_story_thread_service.py": {
+    "upstream_sha256": "93e673e685b17d29f021089813cd19668b5577dff4ecb8a7c22fd69f27881286",
+    "portable_sha256": "454529bc33afa7143e9ded08194b88c71da8d95c5a79c266ea26029919c24fd2",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_tailor_workshop_contract.py": {
+    "upstream_sha256": "468b6bdd3e0d073fcfe2e03dcbba604a7417fbdac1416db44ab0881572038e26",
+    "portable_sha256": "468b6bdd3e0d073fcfe2e03dcbba604a7417fbdac1416db44ab0881572038e26",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_tavern_activity_ai_service.py": {
+    "upstream_sha256": "644dec2b640ca9f4f598789f0dc237c6efe8be74bcde5e2b5e482f672dfc17e8",
+    "portable_sha256": "644dec2b640ca9f4f598789f0dc237c6efe8be74bcde5e2b5e482f672dfc17e8",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_tavern_activity_service.py": {
+    "upstream_sha256": "c80aeb742df54f07fb286b0ed0f855e3c472d175b9279c11df7a45533e7e8b96",
+    "portable_sha256": "db4dc03fe4845b6498c85f02fc58d9bb79438c51545b5f1c662cb1e3bb0a1141",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_tavern_poker_engine.py": {
+    "upstream_sha256": "cb6d37c007ab4c274756068f5a761f5a50e9375ff8df32b9ea64b4f308c3c2df",
+    "portable_sha256": "cb6d37c007ab4c274756068f5a761f5a50e9375ff8df32b9ea64b4f308c3c2df",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_tavern_relief_ai_service.py": {
+    "upstream_sha256": "45d5735c9b6a4e0cb19d72550913eaeded9eb3d8667aeb363cebdf56e1813665",
+    "portable_sha256": "23017f569dbda5be15ea7c17b252419737be83c57cde5718c9e4e90c0dac3108",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_team_loot_contract.py": {
+    "upstream_sha256": "333d153ac5f75f4d58530556db0d093519d1b67a9da29c0a8f919b44458039d9",
+    "portable_sha256": "333d153ac5f75f4d58530556db0d093519d1b67a9da29c0a8f919b44458039d9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_team_loot_routes.py": {
+    "upstream_sha256": "4e7e1a42b603c7709529cd4771a6913e9ee69b2d201e47f16d825ab460e5adab",
+    "portable_sha256": "4e7e1a42b603c7709529cd4771a6913e9ee69b2d201e47f16d825ab460e5adab",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_team_loot_service.py": {
+    "upstream_sha256": "e2b8a36f9fa4d21e5371d9a43cd937fe30e271bfd3e59e2a80c5175d0bc7eb13",
+    "portable_sha256": "e037b92f653efbecc32852de7fc2553776b25cccd59638263f78819d73d0c2eb",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_temporary_location_service.py": {
+    "upstream_sha256": "56cd3683633de5f095ccb224d7feba0f9a3eedb793215db9263d1bfb715449d9",
+    "portable_sha256": "56cd3683633de5f095ccb224d7feba0f9a3eedb793215db9263d1bfb715449d9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_title_service.py": {
+    "upstream_sha256": "7df8d374844bd784c77227de49a16010a7c766f4ccf56776e957db7456175dff",
+    "portable_sha256": "3d603961bb74142d922e8dc6430bb1de240fe548d05417f8e4d2f4bc3ca8b081",
+    "unchanged_except_python_compat": false
+  },
+  "backend/plugins/adventurer_s1/services/s1_token_usage_service.py": {
+    "upstream_sha256": "f2efd2676dea8dcb79c51df0adffebb10b4974443144ab9005d26bb4ae1760a3",
+    "portable_sha256": "6b8576fd3fce69ea05191254c36660dcfbd15e097a4c8c162bbb448437ec62f8",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_tombstone_service.py": {
+    "upstream_sha256": "e0af62068343413060916909c98b351f37c5847a1db8c15a6642296efcab2786",
+    "portable_sha256": "a7ed5542ea0e3b44e5f4b19ef165bc533d1aa693cbcedd744eee56cc6f305cec",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_trait_asset_dependency_service.py": {
+    "upstream_sha256": "dff98def5025b52402855cae048f49c21530ea69f0cd8b42c64c5cd10d178b2b",
+    "portable_sha256": "dff98def5025b52402855cae048f49c21530ea69f0cd8b42c64c5cd10d178b2b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_trait_context_backfill_service.py": {
+    "upstream_sha256": "d517734f368fedfd35f3b2ba9eae32ef28b1eb313f5da603bf0dc3c55bbad353",
+    "portable_sha256": "eace2c951b76d1b4c4c2ef6c1cac2e48d152e2e2644a755de2adcebb007c34c4",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_trait_context_projection_service.py": {
+    "upstream_sha256": "e780c5d466edfac5fa45fa93be004c21ff0ab979d703fcf14e1ab21f84972e44",
+    "portable_sha256": "e780c5d466edfac5fa45fa93be004c21ff0ab979d703fcf14e1ab21f84972e44",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_trait_context_selection_service.py": {
+    "upstream_sha256": "8a9b1778c827bcd77a04f0fc8ec5d7369fd251eb34fd747ad39a3698526ae04a",
+    "portable_sha256": "8a9b1778c827bcd77a04f0fc8ec5d7369fd251eb34fd747ad39a3698526ae04a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_trait_description_ai_service.py": {
+    "upstream_sha256": "71bd4460e156b779c394043f0664da37a8b30747d395ad46fb2eb45015b83edc",
+    "portable_sha256": "b90e2067339e2cd03f5987518031f33d1f920d869a740ca45e71b9993c2ecbb0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_trait_loadout_service.py": {
+    "upstream_sha256": "465e35fcb16b773672d8b76cf808cd9894bf26d8ef57ebb23ab4c3efdc3b3356",
+    "portable_sha256": "465e35fcb16b773672d8b76cf808cd9894bf26d8ef57ebb23ab4c3efdc3b3356",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_visible_name_policy.py": {
+    "upstream_sha256": "5783961fea7d5fbea797451dffbcfbc5063483579d4477f26fb32b169f602dd5",
+    "portable_sha256": "5783961fea7d5fbea797451dffbcfbc5063483579d4477f26fb32b169f602dd5",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_visible_name_repair_service.py": {
+    "upstream_sha256": "1ee08b305aa8403c1934190de7d08511ed772bff14006c49bc056cca316f27e7",
+    "portable_sha256": "9b1155ceb5f8fda5f4bd582a164880ad02a83a310abf34e3d2ed374af3039f96",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_waiting_player_npc_service.py": {
+    "upstream_sha256": "776319e39f503bf34981493a9786e4f815a1a2f3dd8545859d4bc23db64de813",
+    "portable_sha256": "b66a724f8cf4bc70b530771a1045ab5c9d7153a722e8e04e1f27518b9ba350c8",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_actor_profile_backfill_ai_service.py": {
+    "upstream_sha256": "d71e84ab783e0cbaa42835f80dcfcce5e9534e25065c6608a922c215b600a4a9",
+    "portable_sha256": "d71e84ab783e0cbaa42835f80dcfcce5e9534e25065c6608a922c215b600a4a9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_actor_service.py": {
+    "upstream_sha256": "e158a4cb10d9a654f3452b0ffd672dee7a2407dd70d2faa5973c1a8de3a98141",
+    "portable_sha256": "6f31bab0406f57a169d815a966a57b1d5cb121dcd83f7b76a09d2f261c37e17f",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_background_prompt.py": {
+    "upstream_sha256": "e04107aa6a89be4d0ea2632d0f36b31f64672c19ae493bd449de561a37b3eb46",
+    "portable_sha256": "e04107aa6a89be4d0ea2632d0f36b31f64672c19ae493bd449de561a37b3eb46",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_campaign_service.py": {
+    "upstream_sha256": "4ead18d9b0b57451fd03e282d53ee079dc6c9ea3738a1b92da0232e20b1b3e72",
+    "portable_sha256": "d92f7385d7046717490a7c11b03e69f19b06703e240a9c0f90f80154ae805f3b",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_identity_service.py": {
+    "upstream_sha256": "f46aae069fa879347e6ddc9788bfe7365e5071a82dfce8eff46b7d68939f6e80",
+    "portable_sha256": "f46aae069fa879347e6ddc9788bfe7365e5071a82dfce8eff46b7d68939f6e80",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_intel_gen_ai_service.py": {
+    "upstream_sha256": "bddaacf9f982071abb9de481868db6bfe4c37af2dca683049b5d00c3bc9f76c0",
+    "portable_sha256": "bddaacf9f982071abb9de481868db6bfe4c37af2dca683049b5d00c3bc9f76c0",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_location_state_contract.py": {
+    "upstream_sha256": "482bd2a35de57d3204649a9d611b5991f1b86105fb5a0d889ea6eb9c640e3d14",
+    "portable_sha256": "482bd2a35de57d3204649a9d611b5991f1b86105fb5a0d889ea6eb9c640e3d14",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_location_state_service.py": {
+    "upstream_sha256": "ded974e6cdcb5a2146f3ff8703e68a4bf52a8300ff29de97763e5e7c82c2b99f",
+    "portable_sha256": "e3a07235dfab7f888dbbe7453813fb71f087c1a5d430886d0ce60e9278b0526a",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_outline_contract.py": {
+    "upstream_sha256": "fe28277c882f73b3199e6c0c14efbb534c446a892bc564c15ace96fd8186c155",
+    "portable_sha256": "fe28277c882f73b3199e6c0c14efbb534c446a892bc564c15ace96fd8186c155",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_outline_lease_service.py": {
+    "upstream_sha256": "4988acfa571c0aebe4171af053fc631b557b258eaba26caa895f276f03bf81d6",
+    "portable_sha256": "4988acfa571c0aebe4171af053fc631b557b258eaba26caa895f276f03bf81d6",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_outline_service.py": {
+    "upstream_sha256": "b68ad09e166f61d5bdc7e29a30223d64d8fe70d735a7442314ecd218f8921384",
+    "portable_sha256": "8398f945d35f60550a519439a77029f105bcfe10b72bb833aa7e23f83b7dc2b3",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/services/s1_world_risk_prompt.py": {
+    "upstream_sha256": "19dbd7a4a440aa60d0ffba50eded0b53b69189626f5ba98b590ebfd99cdea331",
+    "portable_sha256": "19dbd7a4a440aa60d0ffba50eded0b53b69189626f5ba98b590ebfd99cdea331",
+    "unchanged_except_python_compat": true
+  },
+  "backend/plugins/adventurer_s1/team_loot_models.py": {
+    "upstream_sha256": "6de6274a321f29583cdfb7a0ae644fa69825f02acb2079b069734b3e8c8dde12",
+    "portable_sha256": "b000c7b0c87f86e773110075659edc1518d9b989d99110e93cea6522e1cfa500",
+    "unchanged_except_python_compat": true
+  },
+  "backend/services/model_provider_transport.py": {
+    "upstream_sha256": "6dd881a62f52a6569d05eb1bdb5174fbe2cf255fd7fdf75d99b06b92c649d0d9",
+    "portable_sha256": "6dd881a62f52a6569d05eb1bdb5174fbe2cf255fd7fdf75d99b06b92c649d0d9",
+    "unchanged_except_python_compat": true
+  },
+  "backend/utils/ai_field_names.py": {
+    "upstream_sha256": "0f3e0c899e1f7bf08668c2f72270686915234f13a5c17a643a5077d510e431ba",
+    "portable_sha256": "0f3e0c899e1f7bf08668c2f72270686915234f13a5c17a643a5077d510e431ba",
+    "unchanged_except_python_compat": true
+  },
+  "backend/utils/db_operation_tracker.py": {
+    "upstream_sha256": "85fee423de228e2b1e1c2cf87039c8d62bbf34dc3b36744450a5dfbabb8162af",
+    "portable_sha256": "85fee423de228e2b1e1c2cf87039c8d62bbf34dc3b36744450a5dfbabb8162af",
+    "unchanged_except_python_compat": true
+  },
+  "docs/adventurer_design.md": {
+    "upstream_sha256": "bfa8427f223ebfc6709253b1ff286bb2c59145535f336f0857ba16f9dd1cda0d",
+    "portable_sha256": "8f9ddfd4a4671ee70e4a25344b87d762f93ea20198c794d44cd943372da8ec5b"
+  },
+  "docs/s1_prompt_authoring_rules.md": {
+    "upstream_sha256": "d07d35dd9ac1e3612a82094cc796affa9c36331d26d3f9085da8b4ec243c3f05",
+    "portable_sha256": "cc4dd400223cc82f3a79c0545663f6f4950c4d97fe2f190d18871d7184964a29"
+  },
+  "frontend-v2/src/assets/adventurer-s1-sponsor.jpg": {
+    "upstream_sha256": "c01666c016d90bf3e8fa578abf0a5033079eadc658dc79967176a9eb7c9434dd",
+    "portable_sha256": null
+  },
+  "frontend-v2/src/plugins/adventurer_s1/api/publicRealmLogs.ts": {
+    "upstream_sha256": "f9e3f063acee71b224baabe9d7d126f923eb972508e4f2cb4ea3683d8d6a9034",
+    "portable_sha256": null
+  },
+  "frontend-v2/src/plugins/adventurer_s1/api/teamLoot.ts": {
+    "upstream_sha256": "4d7fee42797b5bf5f24e3b468fa6e200baae74725b274adb230ccc1e36d30daa",
+    "portable_sha256": "4d7fee42797b5bf5f24e3b468fa6e200baae74725b274adb230ccc1e36d30daa"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminAdventurerPanel.vue": {
+    "upstream_sha256": "6fe0e31d31f43aefdc2b8c99e31d1dad8f84368c6fa75e1ae3c0b90270079b6d",
+    "portable_sha256": "5100f6f1e6b281f1f3991bd2ac0bdaaf3d3a65b510847d7fa2cf246aa8362571"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminAiFeedbackPanel.vue": {
+    "upstream_sha256": "c9f9d0f0ac4659f7ea09639629f64ee0bca9ca8039e50ff62cdeb01bdadee1de",
+    "portable_sha256": "c9f9d0f0ac4659f7ea09639629f64ee0bca9ca8039e50ff62cdeb01bdadee1de"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminAiKillSwitch.vue": {
+    "upstream_sha256": "07f9f3b8e22a8bf415f5e49b179ac04ad3bc5c073087dc0754f5ae1e047efbd5",
+    "portable_sha256": "07f9f3b8e22a8bf415f5e49b179ac04ad3bc5c073087dc0754f5ae1e047efbd5"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminBalanceSwitch.vue": {
+    "upstream_sha256": "657ef4e1cac6f264075591ebfc8b763c0f41c6be3015a4cadec182e72b124f10",
+    "portable_sha256": null
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminBuildingPanel.vue": {
+    "upstream_sha256": "931a2a42edcd1a75f2f5e0615881a138d04f4753ab504fb5cda93d1eeef09013",
+    "portable_sha256": "931a2a42edcd1a75f2f5e0615881a138d04f4753ab504fb5cda93d1eeef09013"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminClueBureauPanel.vue": {
+    "upstream_sha256": "eeb39f30adab4ffb95456ac854412fb2fad8bcfc3265ffedb21faa5cff453f73",
+    "portable_sha256": "eeb39f30adab4ffb95456ac854412fb2fad8bcfc3265ffedb21faa5cff453f73"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminDataAppealPanel.vue": {
+    "upstream_sha256": "adc427049d5f47683d3573b51528f8ffcf3158e641918a9ad6d5489b4b80880d",
+    "portable_sha256": "adc427049d5f47683d3573b51528f8ffcf3158e641918a9ad6d5489b4b80880d"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminFateSettlementRepairPanel.vue": {
+    "upstream_sha256": "67db38c7406baf1634499bdec6a2029b941e7da21bc8195cef074d68d458ff4c",
+    "portable_sha256": "67db38c7406baf1634499bdec6a2029b941e7da21bc8195cef074d68d458ff4c"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminGainAnomalyPanel.vue": {
+    "upstream_sha256": "7e41f80613c6f39503ef6072b40283b1b3ea70ef6d9f8efe79987342b81365f6",
+    "portable_sha256": "885454e52455deb5a8fe1d19b9e362ae336b82a0d10a61b2c1846acb7532738e"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminHubPanel.vue": {
+    "upstream_sha256": "42aeea66279f45fe7e9a20c2bc26f48ec32d5a3522ebc30e8a3b0e5fb93f8451",
+    "portable_sha256": "0a15ed9a2538c841cb6994a517bb88b910b4f775b9ba9aed17ee7be9b26ee084"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminItemCatalogPanel.vue": {
+    "upstream_sha256": "7d06643d20911d602542d89bb32df4c7c644ad5f518ae20a4b87812a173d0462",
+    "portable_sha256": "2233831c5fd2f9cad2100326e1a6e5bd931a77b374aa9d6668ced5265c256fab"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminItemCoreFields.vue": {
+    "upstream_sha256": "b6b24ba3039a5176dd3c3a16e9fe4e55011b771f0537d33d715e8f0133ae0367",
+    "portable_sha256": "b6b24ba3039a5176dd3c3a16e9fe4e55011b771f0537d33d715e8f0133ae0367"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminItemHolderSearchPanel.vue": {
+    "upstream_sha256": "f29b5d338407bc39ce9c04d61ffbe27b6db3441503f6cebcdae0dc58929c731c",
+    "portable_sha256": "f29b5d338407bc39ce9c04d61ffbe27b6db3441503f6cebcdae0dc58929c731c"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminItemUsesLeftField.vue": {
+    "upstream_sha256": "9e64744075ee28d133e770330755a729026cf56aed1820052e03c628f9cc95d5",
+    "portable_sha256": "9e64744075ee28d133e770330755a729026cf56aed1820052e03c628f9cc95d5"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminLimitedShopPanel.vue": {
+    "upstream_sha256": "a483c7111d221a7dbb5ab5cf9f0e4764d56410d0598a286e4e81368eb91b8eca",
+    "portable_sha256": "96189ec08621797053b3e8ead4e6ba7b016fda7c2ee22a87b4ab3ddf52c22043"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminLuckyWheelPanel.vue": {
+    "upstream_sha256": "dfcc20925c40f9b78f06d28a96c14e65811f081ea3b7613491762635175272db",
+    "portable_sha256": "dfcc20925c40f9b78f06d28a96c14e65811f081ea3b7613491762635175272db"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminPartyMatchPanel.vue": {
+    "upstream_sha256": "c34e6281b8b9b7563bda4f4514503f93fc2efdb5a922f13813e3ec6e5ae81545",
+    "portable_sha256": "c34e6281b8b9b7563bda4f4514503f93fc2efdb5a922f13813e3ec6e5ae81545"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminReadonlyDataAppealPanel.vue": {
+    "upstream_sha256": "74b1eb0e389564841adbecaf119bb1613641bd4323a353dac34b4985d7fc4ee8",
+    "portable_sha256": "74b1eb0e389564841adbecaf119bb1613641bd4323a353dac34b4985d7fc4ee8"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminReadonlyStoryThreadPanel.vue": {
+    "upstream_sha256": "c2dc0ed050cf6f79157a84789f1f93d6c8ed0b8818ac0704cef702dfa0542cc8",
+    "portable_sha256": "c2dc0ed050cf6f79157a84789f1f93d6c8ed0b8818ac0704cef702dfa0542cc8"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminReservationPanel.vue": {
+    "upstream_sha256": "fef9d40a9b39ddadfee776af9dcb49a76b9abd400b77eccce5f19190ef61b41d",
+    "portable_sha256": "a5ab7f9580498d13bcdcfdc1b223c23fb6637e02cfe64aceedf3176d4dfb97b3"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminRuntimeSettingsPanel.vue": {
+    "upstream_sha256": "bd5bbfa1446b74452cbbfeaa2942747b60d0d0c2ac0a7c2a5d12392f8e31360a",
+    "portable_sha256": "8460e396599e13404999635765f919a00c3591ed079dcb27e2839fb5f3e436f2"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminSecretAuctionPanel.vue": {
+    "upstream_sha256": "d18bc374a7c6367de1d79dfaf0e2d1b848d60938299117ad541caa4e71ad4fff",
+    "portable_sha256": "d18bc374a7c6367de1d79dfaf0e2d1b848d60938299117ad541caa4e71ad4fff"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminStoryThreadPanel.vue": {
+    "upstream_sha256": "c7f82c8f6c24ad290ee8b2d813141877b4db59d69e572d8c10282f93f7ba06e1",
+    "portable_sha256": "c7f82c8f6c24ad290ee8b2d813141877b4db59d69e572d8c10282f93f7ba06e1"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminTitlePanel.vue": {
+    "upstream_sha256": "10df7d4d39a7999d09ef7366da623bd15ab54677d24d748aee9f84d4b3d7ddd2",
+    "portable_sha256": "55ed1c087d06fa4c475ca751d44db865bc54a900b3f4813a9f08d8568f1a0faa"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminTraitCompressPanel.vue": {
+    "upstream_sha256": "207e37b070ffb36b03a9a0daad032c4127f6a27fe7a99584fbac0dd04335a601",
+    "portable_sha256": "207e37b070ffb36b03a9a0daad032c4127f6a27fe7a99584fbac0dd04335a601"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdminWorldOutlinePanel.vue": {
+    "upstream_sha256": "2621ef0900506d8cd25642563812bd59c38bb353c2763c63b0d2bd0b200507cf",
+    "portable_sha256": "2621ef0900506d8cd25642563812bd59c38bb353c2763c63b0d2bd0b200507cf"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdventurerCard.vue": {
+    "upstream_sha256": "54b5434036d0c066704bb21032f19b85e5dc82eee3922d198fa0fac7da830f61",
+    "portable_sha256": "367a11841b4959af99455feca7ac8495804356e8277ba21d4ad7e14514c26fbd"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdventurerDetailModal.vue": {
+    "upstream_sha256": "c7fb61cbbee2bdb196dfbc82c9d9862b0c06242664c1291f9baeaca67bd570bf",
+    "portable_sha256": "1a85720c0409ba93e03c6e5dc27696d668d212a343ddcaa273412ec62b3ac8e1"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AdventurerLogsModal.vue": {
+    "upstream_sha256": "aaf5cc020ff11baeae98d7b22bc1a4963700753c2f1975e23fecba306c105129",
+    "portable_sha256": "aaf5cc020ff11baeae98d7b22bc1a4963700753c2f1975e23fecba306c105129"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AiFeedbackControl.vue": {
+    "upstream_sha256": "283033aff72ac988e40b5eefb79f84e558b01288c390fb0eb051a2bd28227b72",
+    "portable_sha256": "283033aff72ac988e40b5eefb79f84e558b01288c390fb0eb051a2bd28227b72"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AmbientNpcEncounter.vue": {
+    "upstream_sha256": "2bd0678706910be61f50f3d0466b82b54889f1e0e95a63e45c3ecc208e31622d",
+    "portable_sha256": "2bd0678706910be61f50f3d0466b82b54889f1e0e95a63e45c3ecc208e31622d"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/AppealProjectsModal.vue": {
+    "upstream_sha256": "02b4f400616374409a20345fc70fbabc4d5eb47bf7c45f5089f30790ba31c635",
+    "portable_sha256": "02b4f400616374409a20345fc70fbabc4d5eb47bf7c45f5089f30790ba31c635"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/ArchiveAppealPanel.vue": {
+    "upstream_sha256": "9ca822fe1fb61fa0f947ddca839f60393f611cb30a31e3d2b062d5f0a0845995",
+    "portable_sha256": "9ca822fe1fb61fa0f947ddca839f60393f611cb30a31e3d2b062d5f0a0845995"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/BuildingCard.vue": {
+    "upstream_sha256": "75d99b1f0ead529786e75259fb65c17bfe0cfd2436dfecf1c3ce1f2a8732a31b",
+    "portable_sha256": "75d99b1f0ead529786e75259fb65c17bfe0cfd2436dfecf1c3ce1f2a8732a31b"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/BuildingDetailModal.vue": {
+    "upstream_sha256": "60d86b21dd063c0265cd9ded45df7bd66390a9f52070f74d0201ef56fb09a3e0",
+    "portable_sha256": "60d86b21dd063c0265cd9ded45df7bd66390a9f52070f74d0201ef56fb09a3e0"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/BuybackPanel.vue": {
+    "upstream_sha256": "a73a51b84e97192698c6a4467ddf56ac3730c58cdb8771e1582ac69d43ebefe9",
+    "portable_sha256": "a73a51b84e97192698c6a4467ddf56ac3730c58cdb8771e1582ac69d43ebefe9"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/CampaignChallengeEditor.vue": {
+    "upstream_sha256": "1caf50f11b9720558d96d79aac7c8c0697f22cc408056f7b39c2f14bbfd86bc7",
+    "portable_sha256": "1caf50f11b9720558d96d79aac7c8c0697f22cc408056f7b39c2f14bbfd86bc7"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/CampaignContinuationPanel.vue": {
+    "upstream_sha256": "4493e66059b4d34101cae289b33d9b682720a0a384a93fa6a69a2bdbf8c8ef68",
+    "portable_sha256": "4493e66059b4d34101cae289b33d9b682720a0a384a93fa6a69a2bdbf8c8ef68"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/CampaignEndingEditor.vue": {
+    "upstream_sha256": "76a4825c3adaeeabc9d70b287b06fb8ca37514814bc32a1b13cec88d090c0ad1",
+    "portable_sha256": "76a4825c3adaeeabc9d70b287b06fb8ca37514814bc32a1b13cec88d090c0ad1"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/CampaignHallPanel.vue": {
+    "upstream_sha256": "488f6ab1952590c463d867c35348fd03ea1fd76d8ac815c7ee596a1f41c104f8",
+    "portable_sha256": "488f6ab1952590c463d867c35348fd03ea1fd76d8ac815c7ee596a1f41c104f8"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/CampaignRevelationEditor.vue": {
+    "upstream_sha256": "881de1f4915e8a18f7150af91d2f7dbc127a4a06345809c8459287440d98cdb6",
+    "portable_sha256": "881de1f4915e8a18f7150af91d2f7dbc127a4a06345809c8459287440d98cdb6"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/CampaignStageAdminPanel.vue": {
+    "upstream_sha256": "ae461048258b6bd47716a9737d1993b3cbcc17b8b9286eccc78ecaa4250216e7",
+    "portable_sha256": "ae461048258b6bd47716a9737d1993b3cbcc17b8b9286eccc78ecaa4250216e7"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/CampaignStagePlanEditor.vue": {
+    "upstream_sha256": "6354eb228794429ea0ecc1b53056bdb3599c3df431deb4f9f42a8f1aaf666e71",
+    "portable_sha256": "6354eb228794429ea0ecc1b53056bdb3599c3df431deb4f9f42a8f1aaf666e71"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/CodenameTextCorrectionModal.vue": {
+    "upstream_sha256": "1f0aa2b4c758a358523123a4a0366a81a79c9294587fe38bbee12862f2970f60",
+    "portable_sha256": "1f0aa2b4c758a358523123a4a0366a81a79c9294587fe38bbee12862f2970f60"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/CommissionBoardPanel.vue": {
+    "upstream_sha256": "23ed2f6ab2826b478fb6c31598820a1b7fd1a2b343c9a03b157f1a100f53af5d",
+    "portable_sha256": "23ed2f6ab2826b478fb6c31598820a1b7fd1a2b343c9a03b157f1a100f53af5d"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/CompanionEvolutionLedgerModal.vue": {
+    "upstream_sha256": "bc43d781b1808be30bfa4eaef255d61205a05910db00bc367a0a14ac7756a0ee",
+    "portable_sha256": "bc43d781b1808be30bfa4eaef255d61205a05910db00bc367a0a14ac7756a0ee"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/ContributorsModal.vue": {
+    "upstream_sha256": "308236816939308879fe401ab42707fcb685a591af2fb408862ab2ef1e8dbde5",
+    "portable_sha256": "308236816939308879fe401ab42707fcb685a591af2fb408862ab2ef1e8dbde5"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/CreateAdventurerPanel.vue": {
+    "upstream_sha256": "8a879ae24eaea2f8de7fc7fb7b636652d4ee0423168b54704be6b8c18862913d",
+    "portable_sha256": "1efc89b6e005638843552ec068ff47bce50fa3ca4c20ee737721e6deaacfd60d"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/DataAppealModal.vue": {
+    "upstream_sha256": "3660bff9eb5dc2c2d6d490c92a7cbf5681741fc62502f579e936e1f6aa326cb8",
+    "portable_sha256": "3660bff9eb5dc2c2d6d490c92a7cbf5681741fc62502f579e936e1f6aa326cb8"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/DormRoomModal.vue": {
+    "upstream_sha256": "79c5b18ce3c2c77755a04ed9ae10f606e8df9356d466c12d00a23bad42c6e266",
+    "portable_sha256": "9654aab5af20132f8d6c8dc5108fe99aab256d9737663a6611039472ead8b03d"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/EvolutionActivityInputs.vue": {
+    "upstream_sha256": "498d42d40fc7b993eb6ad49c74997faf08c323327699128cbeefc258f4f5bcc6",
+    "portable_sha256": "498d42d40fc7b993eb6ad49c74997faf08c323327699128cbeefc258f4f5bcc6"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/ExpeditionLogModal.vue": {
+    "upstream_sha256": "76b1e4876697f5afa5ad73d2054af84cc4bf1d452ac0b894067b6a24a5edc298",
+    "portable_sha256": "76b1e4876697f5afa5ad73d2054af84cc4bf1d452ac0b894067b6a24a5edc298"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/ExpeditionMemberUpdates.vue": {
+    "upstream_sha256": "f9eeaf88f9ef55045a97fa2ad9932a2541f07784e22abec66371cfa65e145a1d",
+    "portable_sha256": "f9eeaf88f9ef55045a97fa2ad9932a2541f07784e22abec66371cfa65e145a1d"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/FateJourneyPanel.vue": {
+    "upstream_sha256": "982e5a4f184a2708ea9d539101b8ee85d00c3059af4a0b21870351bcf2ddc752",
+    "portable_sha256": "982e5a4f184a2708ea9d539101b8ee85d00c3059af4a0b21870351bcf2ddc752"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/GamblingPanel.vue": {
+    "upstream_sha256": "b61db225a56ced6059e4296b5a8f10d52fdb28db2588175d853f9acaa7a78584",
+    "portable_sha256": "b61db225a56ced6059e4296b5a8f10d52fdb28db2588175d853f9acaa7a78584"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/HiddenDungeonExchangePanel.vue": {
+    "upstream_sha256": "5970cc5988bd1047b7b02340825918858ef93e6fade74464e895cb1bed08ab5c",
+    "portable_sha256": "5970cc5988bd1047b7b02340825918858ef93e6fade74464e895cb1bed08ab5c"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/HiddenRelicTitleArtwork.vue": {
+    "upstream_sha256": "98666bc63af8992f864bf182280e42cf24bb915ae286972601fd3226ff6b3926",
+    "portable_sha256": "98666bc63af8992f864bf182280e42cf24bb915ae286972601fd3226ff6b3926"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/HotSpringPanel.vue": {
+    "upstream_sha256": "b1bbcdbac4cb765eb1a82e0ea4cc961007c3946014df32367af5315e2d238320",
+    "portable_sha256": "b1bbcdbac4cb765eb1a82e0ea4cc961007c3946014df32367af5315e2d238320"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/InsurancePanel.vue": {
+    "upstream_sha256": "7cc243ccb7c8a9ee89584858c6fb1205df0b89aa1741e8172c6c6b751f5939c4",
+    "portable_sha256": "7cc243ccb7c8a9ee89584858c6fb1205df0b89aa1741e8172c6c6b751f5939c4"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/InventoryListToolbar.vue": {
+    "upstream_sha256": "e051057846cd55e58e12087a378d8cc17a9b0bc3d99829644446a25220ed945f",
+    "portable_sha256": "e051057846cd55e58e12087a378d8cc17a9b0bc3d99829644446a25220ed945f"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/InventorySelectionItemSummary.vue": {
+    "upstream_sha256": "ff07ad2c51849f9ad8c5b024bb01005cf41f0134dd9ba80d24fac7fa480126fa",
+    "portable_sha256": "ff07ad2c51849f9ad8c5b024bb01005cf41f0134dd9ba80d24fac7fa480126fa"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/ItemDescription.vue": {
+    "upstream_sha256": "e7aa1c381295106fb84ad3714954a49f1cff5d254b4679dc5a1b10eadeaf7aef",
+    "portable_sha256": "e7aa1c381295106fb84ad3714954a49f1cff5d254b4679dc5a1b10eadeaf7aef"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/LuckyWheelPanel.vue": {
+    "upstream_sha256": "09fac9716edaa5129640ee024b3f7d874a1482815978430c0cf4793e43ab0840",
+    "portable_sha256": "09fac9716edaa5129640ee024b3f7d874a1482815978430c0cf4793e43ab0840"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/MarketBuyOrdersPanel.vue": {
+    "upstream_sha256": "55f795ffa05bcf2f1938ce245d8b013a18a43076d5958876c1880f2a4b79e3da",
+    "portable_sha256": "55f795ffa05bcf2f1938ce245d8b013a18a43076d5958876c1880f2a4b79e3da"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/MarketPanel.vue": {
+    "upstream_sha256": "20deb461c0bbfdb492035ad3b272a6bdad7a75a98e91c07bd130ad5638a408a5",
+    "portable_sha256": "20deb461c0bbfdb492035ad3b272a6bdad7a75a98e91c07bd130ad5638a408a5"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/PublicRealmLogFeed.vue": {
+    "upstream_sha256": "c1d13a48b9781304874b69e13451d7c79aedd63d282122c400eaa083ff2e8c06",
+    "portable_sha256": null
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/PublicRealmLogReader.vue": {
+    "upstream_sha256": "86b4f5c2e41bb80106298fb36544b55310a0d71c704bea76fd65d2f0d3edbdcb",
+    "portable_sha256": null
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/ReservationAppearanceHistory.vue": {
+    "upstream_sha256": "ce22e0b7141c30be65b18978f5960c370076c060ba38ba6a1114f2cf79377c42",
+    "portable_sha256": "ce22e0b7141c30be65b18978f5960c370076c060ba38ba6a1114f2cf79377c42"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/RewardItemPreviewModal.vue": {
+    "upstream_sha256": "23848321dbb2c3296926bc797b1c0aa193c99f49f0a71077e6c7f77237b511c6",
+    "portable_sha256": "23848321dbb2c3296926bc797b1c0aa193c99f49f0a71077e6c7f77237b511c6"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/S1BetaNotice.vue": {
+    "upstream_sha256": "da597ea83cd945d072734d4949d977c4abe470d9cdd70494954bd340352fb0de",
+    "portable_sha256": "da597ea83cd945d072734d4949d977c4abe470d9cdd70494954bd340352fb0de"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/S1ConfirmDialog.vue": {
+    "upstream_sha256": "fd19e6c7b6b658eb45c4d37cfabcba910caf37db536781df5e755d6103155934",
+    "portable_sha256": "fd19e6c7b6b658eb45c4d37cfabcba910caf37db536781df5e755d6103155934"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/S1MoreActions.vue": {
+    "upstream_sha256": "bca4d8ac91a320c89e6a254039d7acafff49a324f14d24c1a3c3b2187c9f3e84",
+    "portable_sha256": "bca4d8ac91a320c89e6a254039d7acafff49a324f14d24c1a3c3b2187c9f3e84"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/SecretAuctionPanel.vue": {
+    "upstream_sha256": "633f24ed2d25a6ea7532ccfd824eeb4595c9136fad83b9d3ac7a008b299c76e5",
+    "portable_sha256": "633f24ed2d25a6ea7532ccfd824eeb4595c9136fad83b9d3ac7a008b299c76e5"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/ShopPanel.vue": {
+    "upstream_sha256": "39db72e8d88073edb3544bb569c0144d0d0e75b3b9273b4c6b82a9758af163bb",
+    "portable_sha256": "39db72e8d88073edb3544bb569c0144d0d0e75b3b9273b4c6b82a9758af163bb"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/SkillSchoolPanel.vue": {
+    "upstream_sha256": "3907e6abc71b8127d5d701250230a73cbb510d2964fcb33f8ccd8f9805860cab",
+    "portable_sha256": "3907e6abc71b8127d5d701250230a73cbb510d2964fcb33f8ccd8f9805860cab"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/SponsorTipModal.vue": {
+    "upstream_sha256": "5f1d6b932026c52b1abab27a7ca2c2b579cc72e644a0d271fa3c0753c72fdd51",
+    "portable_sha256": null
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/SquadEmblem.vue": {
+    "upstream_sha256": "6ba0319e704546ac1414193424c0ad5396420f42c5a686eb1728428ac8e5768c",
+    "portable_sha256": "6ba0319e704546ac1414193424c0ad5396420f42c5a686eb1728428ac8e5768c"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/SquadEmblemEditor.vue": {
+    "upstream_sha256": "bb34c77e6e0bfbe462512c153aeff94809c54ac4b2f8cbb834674b3f6dac32ae",
+    "portable_sha256": "bb34c77e6e0bfbe462512c153aeff94809c54ac4b2f8cbb834674b3f6dac32ae"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/SquadModal.vue": {
+    "upstream_sha256": "a978d9b074b133addcad4cdb739222827b0addb1117d2a71fb2c5b15fa82220e",
+    "portable_sha256": "a978d9b074b133addcad4cdb739222827b0addb1117d2a71fb2c5b15fa82220e"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/StarlightCeremonyHall.vue": {
+    "upstream_sha256": "17e46e0f6deb0efe2467a8beaa95381f1396902d606dd60015450254530bd7f1",
+    "portable_sha256": "17e46e0f6deb0efe2467a8beaa95381f1396902d606dd60015450254530bd7f1"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TaskBoardAdminModal.vue": {
+    "upstream_sha256": "4b498e03ab034c388f700908d1f13ab2c88e97a09d376b606835f7e65e2f44cd",
+    "portable_sha256": "4b498e03ab034c388f700908d1f13ab2c88e97a09d376b606835f7e65e2f44cd"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TaskBoardPanel.vue": {
+    "upstream_sha256": "7b2ac6d7542bb3fe3eab42634d568c9d358460718a78970ae8e91420ac068242",
+    "portable_sha256": "7b2ac6d7542bb3fe3eab42634d568c9d358460718a78970ae8e91420ac068242"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TavernActivityPanel.vue": {
+    "upstream_sha256": "255d63b985ef37175c60cd40572666d196257b77464c305ce20efb0041561d07",
+    "portable_sha256": "255d63b985ef37175c60cd40572666d196257b77464c305ce20efb0041561d07"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TavernReliefModal.vue": {
+    "upstream_sha256": "c099c92e996f5c609d41b67a4b3018bd3e24961368d95870680ccfd3fe2cbc9c",
+    "portable_sha256": "c099c92e996f5c609d41b67a4b3018bd3e24961368d95870680ccfd3fe2cbc9c"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TavernUpgradePanel.vue": {
+    "upstream_sha256": "8f5691c69797b6c6fb1f57cd99733554b7150325979a0a4f7575a6d3a6250489",
+    "portable_sha256": "c8f59e6bbb9547be3eab28acc597361039af7bf7e54a659d8657861598412528"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TeaHousePanel.vue": {
+    "upstream_sha256": "3ac5fad26363628950fe67cfc9cefbb9fc6ea1758e43b6c551eba6d817053dba",
+    "portable_sha256": "3ac5fad26363628950fe67cfc9cefbb9fc6ea1758e43b6c551eba6d817053dba"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TeamLootNotice.vue": {
+    "upstream_sha256": "38c2f5119add522fd6a4b54441bbd03ff77463143a0126a37f0b530abc77a890",
+    "portable_sha256": "38c2f5119add522fd6a4b54441bbd03ff77463143a0126a37f0b530abc77a890"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TeamLootPanel.vue": {
+    "upstream_sha256": "ff2ef2522057b1e004f2d7a10c1f4be34893710e7a8c93e11b0cbda2d5616051",
+    "portable_sha256": "ff2ef2522057b1e004f2d7a10c1f4be34893710e7a8c93e11b0cbda2d5616051"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TitleFrameArtwork.vue": {
+    "upstream_sha256": "61887d349828583c4ca603b561717d6d84025a275c16414bddfd2f0eb9d5ca5d",
+    "portable_sha256": "d19e2af7dafbf52cfa619a89e09de438d1cec57be1b98ccaeae1a07b9c498726"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TitlePreviewModal.vue": {
+    "upstream_sha256": "cc0176c7ff036590255dfdb9e689a64beeb04891bee0ef4b2be22dc0a28f21ed",
+    "portable_sha256": "2acc772d0a0e9dd37a69881a8f413a842d17de2a01844c4e0dae6aae177ab91d"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TombstoneDetailModal.vue": {
+    "upstream_sha256": "81206a58fa8eff1cf986ae84c9ab9b10ce926f32b3a819bcadd0d8e7a47ead89",
+    "portable_sha256": "81206a58fa8eff1cf986ae84c9ab9b10ce926f32b3a819bcadd0d8e7a47ead89"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/TombstonePanel.vue": {
+    "upstream_sha256": "6e812ddd26c71fb21bde11727ff7f879706f683012e15cd6b1d2aca29d0742f9",
+    "portable_sha256": "6e812ddd26c71fb21bde11727ff7f879706f683012e15cd6b1d2aca29d0742f9"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/components/campaignStageTypes.ts": {
+    "upstream_sha256": "90c474c14a747b57ba2b8b1e7b858bc29acb40dcf9aa1c29aef6bfe2a5aee132",
+    "portable_sha256": "90c474c14a747b57ba2b8b1e7b858bc29acb40dcf9aa1c29aef6bfe2a5aee132"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/adminItemForm.ts": {
+    "upstream_sha256": "aa2313cfd9c7ab05652930fbb3348d4b5f5450e5cbdcc6d8914e1d6a41c27cc1",
+    "portable_sha256": "aa2313cfd9c7ab05652930fbb3348d4b5f5450e5cbdcc6d8914e1d6a41c27cc1"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/s1AiBalanceRecovery.ts": {
+    "upstream_sha256": "7650993ecf51de8b37167e2341eae920619f60355e2c4efeecf618da8e9c60a7",
+    "portable_sha256": null
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/s1HomeLoad.ts": {
+    "upstream_sha256": "a42dbb2eaa34756d0dcb100f0f5fc5036094bca4351258c08cce4bd7b044ab6c",
+    "portable_sha256": "a42dbb2eaa34756d0dcb100f0f5fc5036094bca4351258c08cce4bd7b044ab6c"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/useAmbientNpcEncounter.ts": {
+    "upstream_sha256": "8c61284eb941ed53874e2eee74ea0378e10f6ea47b08195cd727131578245319",
+    "portable_sha256": "a3e1055d11de42a4809d745e0f5e67390e760d7965dbd767cbd70cc0fa9650ec"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/useBuildingConstructionProgress.ts": {
+    "upstream_sha256": "c80241c9aee9d83d611992aa9d65561ebfd9037f87d2e389f15f31eba4c4d085",
+    "portable_sha256": "c80241c9aee9d83d611992aa9d65561ebfd9037f87d2e389f15f31eba4c4d085"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/useInventoryListControls.ts": {
+    "upstream_sha256": "2fbfeab3d601ca8b392014a238a74afec26ec5afc87bbdeb81cb6da00aa56b7a",
+    "portable_sha256": "2fbfeab3d601ca8b392014a238a74afec26ec5afc87bbdeb81cb6da00aa56b7a"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/useLiveTick.ts": {
+    "upstream_sha256": "4d1c81fd48545835d24375c41fbc038910eac64c161925eb607a1c8140f9a42d",
+    "portable_sha256": "4d1c81fd48545835d24375c41fbc038910eac64c161925eb607a1c8140f9a42d"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/useNameColors.ts": {
+    "upstream_sha256": "a7451a838c778a1067dbf5f6ff5e5d79077db37bf4bf211cacf327e07d066c1c",
+    "portable_sha256": "a7451a838c778a1067dbf5f6ff5e5d79077db37bf4bf211cacf327e07d066c1c"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/useReaderBackground.ts": {
+    "upstream_sha256": "102a1509735a0521bca0e8d60e811b4677f11cd77b6f28baa8c870ed1a16e1fc",
+    "portable_sha256": "102a1509735a0521bca0e8d60e811b4677f11cd77b6f28baa8c870ed1a16e1fc"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/useReaderSettings.ts": {
+    "upstream_sha256": "03f8fe74fd4ff5a62fc8ad84c064c0962df4554033120d404cdd759abd9f2ba0",
+    "portable_sha256": "03f8fe74fd4ff5a62fc8ad84c064c0962df4554033120d404cdd759abd9f2ba0"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/useS1AppealRefresh.ts": {
+    "upstream_sha256": "bc34a09483ac819bd157346f512f446095facb9035078241dd4b01b6f94c0b93",
+    "portable_sha256": "bc34a09483ac819bd157346f512f446095facb9035078241dd4b01b6f94c0b93"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/useS1TitleEffects.ts": {
+    "upstream_sha256": "592063984e20336ae4559cd3ad58bccd3ab91aee505f98a809bfdc44fd4f46cf",
+    "portable_sha256": "592063984e20336ae4559cd3ad58bccd3ab91aee505f98a809bfdc44fd4f46cf"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/composables/useViewportActivity.ts": {
+    "upstream_sha256": "bef4f3d914776871d8a19bf02fe8f5503b4c055e150c4e607d370cad695844a3",
+    "portable_sha256": "bef4f3d914776871d8a19bf02fe8f5503b4c055e150c4e607d370cad695844a3"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/index.ts": {
+    "upstream_sha256": "870fefadb8887a0c393b74a0ca01cf62f6ea9ed18f5ef9a692ae7c06469f39f8",
+    "portable_sha256": "870fefadb8887a0c393b74a0ca01cf62f6ea9ed18f5ef9a692ae7c06469f39f8"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/itemTypes.ts": {
+    "upstream_sha256": "8fb63d3c97f79043756b9858663a49a19121e9d7c3fe50910a01e4f9a0b62d9b",
+    "portable_sha256": "8fb63d3c97f79043756b9858663a49a19121e9d7c3fe50910a01e4f9a0b62d9b"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/routes.ts": {
+    "upstream_sha256": "0d3aa0c4e50860007304cf824688291d556a215b19a0630c53a2e5d4a1ce4880",
+    "portable_sha256": "0d3aa0c4e50860007304cf824688291d556a215b19a0630c53a2e5d4a1ce4880"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/squadEmblem.ts": {
+    "upstream_sha256": "75cf5a4f4c454ca9c1f00ab9e576b87e17c9042eb5383bedac48fcf8c1910518",
+    "portable_sha256": "75cf5a4f4c454ca9c1f00ab9e576b87e17c9042eb5383bedac48fcf8c1910518"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/stores/adventurerS1.ts": {
+    "upstream_sha256": "3518e0f4159867e71cf5ddd532ddf07e1585a614780882e0382692bd9a6589aa",
+    "portable_sha256": "a5c9e175fe3410fffa2e3648ee6073615bf7c8e6014e6720035838c13b6702a9"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/styles/mobile.scss": {
+    "upstream_sha256": "4338f54507616c3138ea71e79f1fd45bf3ea2843d851d1d9bc9620a8e1c5575c",
+    "portable_sha256": "4338f54507616c3138ea71e79f1fd45bf3ea2843d851d1d9bc9620a8e1c5575c"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/styles/title-effects.scss": {
+    "upstream_sha256": "bda8c0449cf48146f0b113cede3a1c8a5b774187beea4f2d353b8743cb9947d9",
+    "portable_sha256": "bda8c0449cf48146f0b113cede3a1c8a5b774187beea4f2d353b8743cb9947d9"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/utils.ts": {
+    "upstream_sha256": "aea7fed2f5cac47080947496ee63a7cef5b6be01563c080ba906e4e0f3923be9",
+    "portable_sha256": "34ca91e94fb9efa054a73b4d008b4e598f3b26b99ad9a7764bb985a9062bdf4d"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/utils/adventurerExport.ts": {
+    "upstream_sha256": "46cddf06d5788d80bf99f1b273b55e80e3aef25beae39462a013f2f3eb5c9a1a",
+    "portable_sha256": "9b8d9aab204c9ad5853264e7be8119e751f753c4d9feffbeec2316cc631d8df4"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/utils/limitedShopTime.ts": {
+    "upstream_sha256": "0509a791deb1fc461b9fc8b319803ccf1515234fca15681597d70a3f183df121",
+    "portable_sha256": "0509a791deb1fc461b9fc8b319803ccf1515234fca15681597d70a3f183df121"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/utils/taskBoard.ts": {
+    "upstream_sha256": "bd60a12c7294a7a7fc628fd612741090a813d94f1d428664e08e1dd003525db1",
+    "portable_sha256": "bd60a12c7294a7a7fc628fd612741090a813d94f1d428664e08e1dd003525db1"
+  },
+  "frontend-v2/src/plugins/adventurer_s1/views/AdventurerS1View.vue": {
+    "upstream_sha256": "07646c4aaf58c7725d9c5cdfc876189e57b8917fbf7fcf4f5d183cfa12b04176",
+    "portable_sha256": "b37023173874c80c4d22d5b77d992ab08608865510792e9313dfe2ac38135170"
+  }
+}

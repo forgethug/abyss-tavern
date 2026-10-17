@@ -1,0 +1,9 @@
+# Replace with your own domain. Caddy obtains/renews HTTPS certificates.
+game.example.com {
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:5500 {
+        transport http {
+            response_header_timeout 620s
+        }
+    }
+}

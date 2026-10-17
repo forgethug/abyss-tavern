@@ -1,0 +1,136 @@
+// 页面与 Teleport 弹窗使用相同的宿主主题，避免继承外层组件的默认深色文字。
+.s1-mobile-surface {
+  color: var(--color-text);
+  --color-text-muted: var(--color-text-secondary);
+}
+
+// 只共享窄屏容器护栏。字号和主次操作的视觉尺寸由各组件负责。
+@media (max-width: 640px) {
+  .s1-mobile-surface {
+    min-width: 0;
+    overflow-wrap: anywhere;
+
+    :where(button, [role='button']) {
+      min-height: 32px;
+      max-width: 100%;
+      box-sizing: border-box;
+      touch-action: manipulation;
+    }
+
+    input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):not([type='file']):not([type='hidden']),
+    select,
+    textarea {
+      min-width: 0;
+      max-width: 100%;
+      min-height: 36px;
+      box-sizing: border-box;
+      // 保留 iOS 输入时不自动放大页面所需的字号，收紧的是控件留白。
+      font-size: 16px !important;
+      line-height: 1.35;
+    }
+
+    input[type='checkbox'],
+    input[type='radio'] {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    :where(button, a, input, select, textarea, summary, [tabindex]):focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+
+    :where(section, article, header, footer, nav, form, fieldset) {
+      min-width: 0;
+    }
+
+    :where(h2, h3, h4, h5, p, label) { overflow-wrap: anywhere; }
+
+    :is(.modal-close, .close-btn, .detail-close, .support-vote-close, .search-clear-btn) {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    :is(.pagination, .pager) {
+      max-width: 100%;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    // 说明正文与小标签保持层次；探险阅读器继续使用玩家自己的字号设置。
+    :is(.inventory-selection-summary__description, .inventory-selection-summary__meta,
+      .shop-item-desc, .buyback-item-desc, .policy-description, .task-desc,
+      .detail-desc, .item-desc, .equip-desc, .trait-desc) {
+      font-size: 13px;
+      line-height: 1.65;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  .s1-mobile-overlay {
+    box-sizing: border-box;
+    height: 100vh;
+    height: 100dvh;
+    padding: 8px !important;
+    padding: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right))
+      max(8px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left)) !important;
+    align-items: center !important;
+    overscroll-behavior: contain;
+  }
+
+  .s1-mobile-dialog {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    max-height: calc(100vh - 16px) !important;
+    max-height: calc(100dvh - max(8px, env(safe-area-inset-top)) - max(8px, env(safe-area-inset-bottom))) !important;
+    border-radius: 12px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    // 避免动画 transform 让内层 fixed 弹窗被祖先裁切。
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .s1-mobile-dialog > .s1-mobile-dialog-header {
+    flex-shrink: 0;
+    min-width: 0;
+  }
+
+  .s1-mobile-dialog > .s1-mobile-dialog-body {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+  }
+
+  .s1-mobile-dialog .s1-mobile-dialog-footer {
+    // 头尾随各弹窗自身布局排列，避免悬浮遮住正文或覆盖组件的按钮网格。
+    flex-shrink: 0;
+    min-width: 0;
+    flex-wrap: wrap;
+
+    > button { white-space: normal; }
+  }
+
+  .s1-mobile-overlay.is-fullscreen {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+      env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
+  }
+  .s1-mobile-dialog.is-fullscreen {
+    max-height: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  // 所有被标记的遮罩均按 v-if 挂载；关闭最后一层时自然恢复页面滚动。
+  @supports selector(body:has(.s1-mobile-overlay)) {
+    body:has(.s1-mobile-overlay) { overflow: hidden; }
+  }
+}

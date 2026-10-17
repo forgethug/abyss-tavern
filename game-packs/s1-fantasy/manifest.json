@@ -1,0 +1,72 @@
+{
+  "pack_id": "s1_fantasy",
+  "display_name": "深渊酒馆",
+  "platform_api_version": "0.1",
+  "runtime_api_version": "0.1",
+  "pack_version": "0.0.2-runtime-preview",
+  "source_mode": "tracked_snapshot",
+  "runtime_status": "migration_in_progress",
+  "runtime_environment_keys": [
+    "ADVENTURER_AI_EXPEDITION_TASK_LOCK_TTL_SECONDS",
+    "ADVENTURER_AUTO_RETRY_GENERATING_MAX_ATTEMPTS",
+    "ADVENTURER_AUTO_RETRY_GENERATING_MINUTES",
+    "ADVENTURER_EXPEDITION_AI_MAX_RETRIES",
+    "ADVENTURER_EXPEDITION_AI_TIMEOUT_SECONDS",
+    "ADVENTURER_EXPEDITION_AI_VALIDATION_FEEDBACK_LIMIT",
+    "ADVENTURER_EXPEDITION_STRICT_CONSUMED_MATCH",
+    "ADVENTURER_PREPARE_AI_COMPARE_ENABLED",
+    "ADVENTURER_PREPARE_AI_COMPARE_MAX_TOKENS",
+    "ADVENTURER_PREPARE_AI_COMPARE_MODEL",
+    "ADVENTURER_PREPARE_AI_MAX_CARRY_ITEMS",
+    "ADVENTURER_PREPARE_AI_MAX_TOKENS",
+    "ADVENTURER_PREPARE_AI_MODEL",
+    "ADVENTURER_PREPARE_AI_TIMEOUT_SECONDS",
+    "ADVENTURER_S1_AUTO_DISPATCH_ON_FULL",
+    "ADVENTURER_S1_AI_DEFAULT_PROFILE_ID",
+    "ADVENTURER_S1_AI_FEATURE_ASSIGNMENTS_JSON",
+    "ADVENTURER_S1_AI_PROFILES_JSON",
+    "ADVENTURER_S1_AI_PROVIDER",
+    "ADVENTURER_S1_MIMO_USE_DEEPSEEK_FALLBACK",
+    "DEEPSEEK_API_BASE",
+    "DEEPSEEK_API_KEY",
+    "DEEPSEEK_MODEL",
+    "MIMO_API_BASE",
+    "MIMO_API_KEY",
+    "MIMO_MODEL",
+    "MIMO_TIMEOUT_SECONDS"
+  ],
+  "runtime_import_paths": [
+    "source-snapshot/backend"
+  ],
+  "model_capabilities": [
+    "narrative_generation",
+    "structured_generation",
+    "semantic_review"
+  ],
+  "capabilities": [
+    "character",
+    "party",
+    "expedition",
+    "observer",
+    "settlement",
+    "world_state"
+  ],
+  "entrypoints": {
+    "backend_snapshot": "source-snapshot/backend/plugins/adventurer_s1",
+    "legacy_trpg_dependency_snapshot": "source-snapshot/backend/plugins/adventurer",
+    "frontend_snapshot": "source-snapshot/frontend-v2/src/plugins/adventurer_s1",
+    "runtime_host": "../../runtime_host",
+    "runtime_entrypoint": "run.py",
+    "runtime_adapter": "runtime_adapter/s1_adapter.py",
+    "runtime_api_prefix": "/api/adventurer-s1",
+    "frontend_plugin": "adventurer_s1",
+    "control_plane_proxy": "/api/taverns/{slug}/runtime"
+  },
+  "verified_surface": {
+    "model_tables_minimum": 142,
+    "source_routes": 588,
+    "scheduler_tasks": 38,
+    "seeded_skill_templates": 16,
+    "seeded_starter_items": 17
+  }
+}

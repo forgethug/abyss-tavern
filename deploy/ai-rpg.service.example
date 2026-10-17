@@ -1,0 +1,17 @@
+[Unit]
+Description=AI RPG Platform
+After=network.target
+
+[Service]
+Type=simple
+User=ai-rpg
+WorkingDirectory=/opt/ai-rpg
+Environment=PLATFORM_ENV_FILE=/etc/ai-rpg/platform.env
+ExecStart=/opt/ai-rpg/.venv/bin/python /opt/ai-rpg/backend/serve.py
+Restart=on-failure
+TimeoutStopSec=90
+KillMode=control-group
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

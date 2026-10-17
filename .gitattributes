@@ -1,0 +1,4 @@
+# Audited snapshots have byte-level manifests. Keep their original line endings
+# even when a contributor's Git uses core.autocrlf=true on Windows.
+game-packs/s1-fantasy/source-snapshot/** -text
+game-packs/original-anomaly/source-snapshot/** -text

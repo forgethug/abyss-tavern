@@ -1,0 +1,14 @@
+html.s1-title-effects-disabled {
+  .title-frame-artwork,
+  .title-frame-artwork *,
+  .title-card-atmosphere::before,
+  .title-card-atmosphere::after,
+  .title-frame-rail,
+  .detail-fate-atmosphere::before,
+  .detail-fate-atmosphere::after,
+  .pq-member-crest[class*='title-mini--'],
+  .pq-member-crest[class*='title-mini--']::before,
+  .pq-member-crest[class*='title-mini--']::after {
+    animation: none !important;
+  }
+}

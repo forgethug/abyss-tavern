@@ -1,0 +1,12 @@
+{
+ "target_dungeon":"哥布林矿坑",
+ "objective_situation":"矿坑入口的三名哥布林守卫正阻拦进入者。它们占据通道，以短矛驱赶接近的冒险者，身后的货箱装着劫来的钱币。",
+ "world_state_change_allowed":false,
+ "commission_objectives":[],
+ "lethal_pressure":["哥布林守卫用短矛攻击进入狭窄通道的目标。"],
+ "lethal_pressure_structures":[{"pressure_index":0,"coverage_mode":"individual","capability_refs":[{"profile_index":0,"capability_indexes":[0]}],"resolution_modes":["hp_damage"]}],
+ "special_event_delta":{"present":false,"ordinary_baseline":"","material_delta":"","causal_entry":"","player_visible_signature":""},
+ "encounter_capability_profiles":[{"subject":"矿坑哥布林守卫","scope":"group","identity_summary":"在矿坑入口驻守的哥布林，靠抢夺物资维持生活。","current_agenda":"阻挡进入者并守住身后的货箱。","basis_level":1,"typical_profile":{"force":"baseline","mobility":"baseline","cognition":"low","durability":"low","perception":"baseline"},"current_profile":{"force":"baseline","mobility":"baseline","cognition":"low","durability":"low","perception":"baseline"},"condition":"normal","number_pressure":"low","capabilities":["使用短矛刺击近身的目标，矛头可造成穿刺伤害，木杆可被强力斩击折断。"],"limitations":["短矛不能攻击远处的目标，缺乏护甲。"]}],
+ "world_intel_usages":[],"world_actor_usages":[],"active_faction_keys":[],"trait_context_tags":[],"temporary_location":null
+}
+
