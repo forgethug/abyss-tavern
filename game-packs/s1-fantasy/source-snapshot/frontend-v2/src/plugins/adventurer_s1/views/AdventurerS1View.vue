@@ -2297,6 +2297,7 @@ type TabId = 'tavern' | 'activity' | 'building' | 'my-adventurers' | 'adventurer
 type MatchTicketDisplayData = Partial<Pick<
   MatchTicketData,
   | 'allow_solo_fill'
+  | 'ready_member_threshold'
   | 'matched_party_dungeon'
   | 'matched_party_dungeon_level_desc'
   | 'member_count'
@@ -2968,12 +2969,13 @@ function matchTicketStatusLabel(status: string): string {
 
 function formatMatchTicketMembers(ticket: MatchTicketDisplayData): string {
   const count = ticket.member_count ?? 0
-  if (ticket.queue_type === 'group' && count >= 4) {
+  const minimum = ticket.ready_member_threshold ?? 1
+  if (ticket.queue_type === 'group' && count >= minimum) {
     return ticket.allow_solo_fill
       ? `${count} 人（可进本，也可补路人至最多 6 人）`
       : `${count} 人（可直接排队进本）`
   }
-  return `${count} 人（4 人起成团，最多 6 人）`
+  return `${count} 人（${minimum} 人起成团，最多 6 人）`
 }
 
 function memberTitleFrameClass(member: { active_title?: AdventurerTitle | null }): string {
@@ -3004,9 +3006,9 @@ function matchTicketDisplayTime(ticket: MatchTicketData): string | null {
 function formatQueueAhead(ticket: MatchTicketData): string {
   const ahead = Math.max(0, ticket.queue_parties_ahead ?? 0)
   const prefix = ahead === 0 ? '前方暂无匹配报名' : `前方还有 ${ahead} 个匹配报名`
-  if (ticket.queue_type === 'group' && ticket.member_count >= 4) {
+  if (ticket.queue_type === 'group' && ticket.member_count >= (ticket.ready_member_threshold ?? 1)) {
     return ticket.allow_solo_fill
-      ? `${prefix}；本队已达进本门槛，若有同地图/兼容单排会补位至 5-6 人。`
+      ? `${prefix}；本队已达进本门槛，若有同地图/兼容单排可补位，最多 6 人。`
       : `${prefix}；本队不匹配路人，将按当前人数进本。`
   }
   return `${prefix}；正在等待人数/地图/档位匹配，排队中。`

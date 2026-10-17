@@ -20,6 +20,7 @@ project_ai_calls = runpy.run_path(str(Path(__file__).with_name('s1_ai_call_proje
 project_platform_source = runpy.run_path(str(Path(__file__).with_name('s1_platform_projection.py')))['project_platform_source']
 modernize_python = runpy.run_path(str(Path(__file__).with_name('portable_python_compat.py')))['modernize_python']
 project_lazy_ui = runpy.run_path(str(Path(__file__).with_name('s1_lazy_ui_projection.py')))['project_lazy_ui']
+project_matchmaking = runpy.run_path(str(Path(__file__).with_name('s1_matchmaking_projection.py')))['project_matchmaking']
 
 SCOPES = [
     ':(glob)backend/migrations/*s1*.py', ':(glob)backend/db_repository/s1_*.py',
@@ -194,6 +195,7 @@ def project_source(relative: str, raw: bytes) -> bytes | None:
     projected = project_platform_source(relative, projected, strip_css=_public_projection['strip_css'])
     if projected is None:
         return None
+    projected = project_matchmaking(relative, projected)
     if relative.endswith('.py'):
         source = projected.decode('utf-8-sig')
         if relative.endswith('/services/adventurer_s1_service.py'):

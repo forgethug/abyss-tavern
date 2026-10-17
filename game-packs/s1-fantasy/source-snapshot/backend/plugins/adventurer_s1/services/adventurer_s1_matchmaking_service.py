@@ -1,6 +1,20 @@
 """S1 匹配队列：报名 → 按排队时间成团 → 复用现有 Party/探险发车链路。"""
 from runtime_core.time import utc_now as _portable_utc_now
 import hashlib
+from flask import g, has_request_context
+
+
+def _match_min_size():
+    """Read the tavern setting once per HTTP request; ticks read it afresh."""
+    from plugins.adventurer_s1.services.adventurer_s1_settings_service import S1SettingsService
+    cache_key = '_s1_match_min_size'
+    if has_request_context() and hasattr(g, cache_key):
+        return getattr(g, cache_key)
+    value = int(S1SettingsService.get('party_min_size'))
+    if has_request_context():
+        setattr(g, cache_key, value)
+    return value
+
 import random
 import secrets
 from datetime import datetime, timedelta
@@ -814,10 +828,10 @@ def _ticket_payload(
             and ticket.status in ('forming', 'queued')
             and not ticket.campaign_dispatch_id and not ticket.campaign_task_title
         )
+    payload['ready_member_threshold'] = _match_min_size()
     if ticket.status == 'queued':
         ahead = queue_ahead_map.get(ticket.id) if queue_ahead_map is not None else _estimate_queue_parties_ahead(ticket.id)
         payload['queue_parties_ahead'] = ahead or 0
-        payload['ready_member_threshold'] = 4
     return payload
 
 
@@ -1152,7 +1166,7 @@ def _member_rank_compatible_with_ticket(adv: AdventurerS1, ticket: AdventurerS1M
 
 
 def _select_min_ready_match_ids(tickets: list[AdventurerS1MatchTicket], anchor_index: int) -> set[int]:
-    """预估当前 anchor 是否已具备进本人数：优先 6 人，不足 6 时最低 4 人。"""
+    """预估当前 anchor 是否已具备进本人数：优先补位，最低人数遵循酒馆设置。"""
     anchor = tickets[anchor_index]
     anchor_count = _ticket_member_count(anchor)
     if anchor_count <= 0 or anchor_count > 6:
@@ -1192,7 +1206,7 @@ def _select_min_ready_match_ids(tickets: list[AdventurerS1MatchTicket], anchor_i
             if member_total >= 6:
                 break
 
-    return selected_ids if member_total >= 4 else set()
+    return selected_ids if member_total >= _match_min_size() else set()
 
 
 def _estimate_queue_parties_ahead(ticket_id: int) -> int:
@@ -2492,6 +2506,7 @@ class AdventurerS1MatchmakingService:
 
     @staticmethod
     def _match_one_party() -> int | None:
+        min_size = _match_min_size()
         duplicate_members_changed = False
         matched_party_id: int | None = None
         with notify_task_cancellations_after_commit() as cancellation_changed, db_manager.transaction():
@@ -2610,7 +2625,7 @@ class AdventurerS1MatchmakingService:
                         if member_total >= 6:
                             break
 
-                if member_total < 4:
+                if member_total < min_size:
                     continue
                 target_size = min(member_total, 6)
 

@@ -709,7 +709,7 @@
   },
   "backend/plugins/adventurer_s1/routes.py": {
     "upstream_sha256": "df4209cc31f1d790a5f1297e3a4b68daff8f571520e8334ed95d55bb785be7a9",
-    "portable_sha256": "28beaa0950e3cf59ce1bb023b3b1e93354aebe63bebd19abda7284d2f2ffc398",
+    "portable_sha256": "a9086ef92cfe5530626938ca320e01f56ef98477755407519c0febfdc10d641c",
     "unchanged_except_python_compat": false
   },
   "backend/plugins/adventurer_s1/s1_item_types.py": {
@@ -874,7 +874,7 @@
   },
   "backend/plugins/adventurer_s1/services/adventurer_s1_matchmaking_service.py": {
     "upstream_sha256": "5edfc3902e177a68cc290162e93069536d1b4cab0edf3a65e7794dbcaf9046b6",
-    "portable_sha256": "18886511d92cd24846f7eed60650ccb8bde19587936cb4d36dbf001ea61ec730",
+    "portable_sha256": "9461620bc5d1ce35907348440da1729272b42c07bb3599c3ae294baafa120de8",
     "unchanged_except_python_compat": false
   },
   "backend/plugins/adventurer_s1/services/adventurer_s1_material_service.py": {
@@ -2590,6 +2590,6 @@
   },
   "frontend-v2/src/plugins/adventurer_s1/views/AdventurerS1View.vue": {
     "upstream_sha256": "07646c4aaf58c7725d9c5cdfc876189e57b8917fbf7fcf4f5d183cfa12b04176",
-    "portable_sha256": "b37023173874c80c4d22d5b77d992ab08608865510792e9313dfe2ac38135170"
+    "portable_sha256": "d0d9a333cb85cc82ac8a172afd98c88a16026073c0bdd8b65261f9b4b644e17b"
   }
 }

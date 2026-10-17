@@ -6945,6 +6945,9 @@ def admin_update_expedition_config():
             return error(err or f'{field} 更新失败')
         updated[field] = S1SettingsService.get(field)
 
+    if 'party_min_size' in updated:
+        from plugins.adventurer_s1.services.adventurer_s1_matchmaking_service import invalidate_matchmaking_read_cache
+        invalidate_matchmaking_read_cache()
     S1SettingsService.sync_expedition_settings_to_app_config()
     rescheduled = S1SettingsService.reschedule_expedition_scheduler_jobs()
     return success({
