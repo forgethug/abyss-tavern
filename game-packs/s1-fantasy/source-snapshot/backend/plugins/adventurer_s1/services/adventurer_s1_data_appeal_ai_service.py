@@ -329,7 +329,7 @@ def _validate_data_appeal_ai_result(result: object) -> dict | None:
     return normalized
 
 @with_player_name_aliases
-def call_data_appeal_ai(appeal_id: int, player_note: str, snapshot_before: dict, appeal_adventurer: dict | None=None, expedition_evidence: dict | None=None, recent_activity: list | None=None, prior_appeal_grants: list | None=None, party_roster: list | None=None, team_pool_status: dict | None=None, appeal_fact_sheet: dict | None=None, appeal_category: str='other', token_usage_out: dict | None=None, runtime_metadata_out: dict[str, object] | None=None) -> dict | None:
+def call_data_appeal_ai(appeal_id: int, player_note: str, snapshot_before: dict, appeal_adventurer: dict | None=None, expedition_evidence: dict | None=None, recent_activity: list | None=None, prior_appeal_grants: list | None=None, party_roster: list | None=None, team_pool_status: dict | None=None, appeal_fact_sheet: dict | None=None, appeal_category: str='other', resolved_lookups: dict | None=None, token_usage_out: dict | None=None, runtime_metadata_out: dict[str, object] | None=None) -> dict | None:
     """调用 AI 生成 patch。返回解析后的 dict 或 None。
 
     一审不再注入全量 all_player_records；需核对其它条目时用 focus_refs / lookup_queries，
@@ -370,6 +370,8 @@ def call_data_appeal_ai(appeal_id: int, player_note: str, snapshot_before: dict,
     payload['selected_records'] = snapshot_before
     if prior_appeal_grants:
         payload['prior_appeal_grants'] = prior_appeal_grants
+    if resolved_lookups:
+        payload['resolved_lookup_evidence'] = resolved_lookups
     if recent_activity:
         payload['recent_activity'] = recent_activity
     if team_pool_status:

@@ -721,6 +721,10 @@ def validate_final_fate_destructive_review(
 
     if not isinstance(value, dict):
         return None, 'review_not_object'
+    from services.tavern_ai_stage_authority import verified_fate
+    policy = verified_fate(value, context)
+    if policy is not None and not needs_regeneration:
+        return policy, None
     projected = {
         key: value[key]
         for key in ('context_id', 'items')
@@ -923,6 +927,7 @@ def apply_final_fate_destructive_review(
         if decision in {
             'retire_without_successor',
             'replace_with_successors',
+            'admin_original_proposal',
         }:
             approved_by_path.setdefault(path, []).append(
                 str(action.get('name') or '')
@@ -996,6 +1001,7 @@ def _approved_actions(
             and item.get('decision') in {
                 'retire_without_successor',
                 'replace_with_successors',
+                'admin_original_proposal',
             }
         ):
             approved.append((action, item))

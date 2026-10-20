@@ -65,3 +65,13 @@ In the target tavern, open **管理 → 探险 → 运行与 AI → S1 AI 模型
 - **On:** reviewed summaries and trait context filtering reduce input length and token costs, with a risk of omitted information. Generating summaries and classifications also requires AI calls.
 
 Equipment, archived assets, and asset dependency rules still apply. Changes affect newly prepared inputs. Frozen expedition inputs and their reviews remain consistent; requests already sent are not canceled. Turning compression off stops new background asset compression tasks and prevents old summaries from being used in new inputs.
+
+## Optional AI stages
+
+The model configuration panel offers three independent switches: **Appeal second review**, **Expedition story review**, and **High-risk event auxiliaries (two AIs)**. All three are enabled by default, saved per tavern, and retained across restarts. Enabled stages still run only when their existing conditions require them.
+
+- Disable appeal second review to execute the first adjudicator’s proposal after backend validation, without a second AI supplementing or correcting it. Player-requested review remains available.
+- Disable expedition story review to settle validated main-story proposals without independent story review and its associated adjudication.
+- Disable high-risk auxiliaries to skip both the causal draft and life/resource consistency review. The main-story AI handles the event directly; objective outlines still follow their existing conditions.
+
+Disabling stages reduces calls, latency, and cost, but also removes their independent checks. Identity, ownership, structure, quantity, transaction, and duplicate-execution checks remain in place. Incomplete or unexecutable results follow the existing retry budget instead of being reported as successful. Saved settings apply to subsequent processing; work already in progress and requests already sent are not immediately cancelled.

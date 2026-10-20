@@ -171,9 +171,12 @@ def test_mentor_route_to_scheduled_completion(scenario, outcome):
     assert s.calls == ['building_skill_training']
 
 
-@pytest.mark.parametrize('review_outcome', ['allow', 'wrong_operation', 'unauthorized'])
+@pytest.mark.parametrize('review_outcome', ['allow', 'wrong_operation', 'unauthorized', 'disabled'])
 def test_appeal_submit_review_apply_and_revert(scenario, review_outcome):
     s = scenario
+    if review_outcome == 'disabled':
+        settings = s.api('GET', 'admin/ai/stage-settings', uid=99)
+        s.api('PUT', 'admin/ai/stage-settings', {**settings, 'appeal_second_review': False}, uid=99)
     s.responses['data_appeal'] = dict(summary='按要求新增技能', player_reject_reason='提出新增方案',
         core_request_satisfied=True, withdrawal_requested=False,
         request_checklist=[dict(label='新增技能', category='skill', is_core=True, status='done', resolution_basis='repair_supported', detail='按要求新增')],
@@ -187,12 +190,13 @@ def test_appeal_submit_review_apply_and_revert(scenario, review_outcome):
         return dict(verdict_contract_version=2, decision='allow', summary='操作完整', player_reason='方案完整', issues=[],
             verdicts=[dict(operation_id=row['operation_id'] if review_outcome == 'allow' else 'foreign-operation', request_ids=['request_1'], decision='allow', reason='操作匹配') for row in manifest],
             request_verdicts=[dict(request_id='request_1', decision='allow', resolution_basis='repair_supported', reason='方案完整')])
-    s.responses['data_appeal_review'] = review
+    if review_outcome != 'disabled':
+        s.responses['data_appeal_review'] = review
     submitted = s.api('POST', 'data-appeals', {'appeal_category': 'data_fix', 'targets': [], 'player_note': '请增加一项照明技能。'}, expected=201)
     s.api('POST', 'data-appeals', {'appeal_category': 'data_fix', 'player_note': '再次提交'}, expected=400)
     s.drain()
     rows = s.api('GET', 'data-appeals/mine')
-    if review_outcome != 'allow':
+    if review_outcome not in ('allow', 'disabled'):
         from plugins.adventurer_s1.models import AdventurerS1Skill
         assert rows[0]['status'] == 'processing', rows
         with s.app.app_context():
@@ -201,14 +205,15 @@ def test_appeal_submit_review_apply_and_revert(scenario, review_outcome):
         return
     assert rows[0]['status'] == 'approved', rows
     assert s.api('GET', 'data-appeals/mine', uid=2) == []
-    assert s.calls == ['data_appeal', 'data_appeal_review']
+    expected_calls = ['data_appeal'] if review_outcome == 'disabled' else ['data_appeal', 'data_appeal_review']
+    assert s.calls == expected_calls
     s.responses['data_appeal_player_review'] = {'decision': 'original_ai_correct', 'reason': '新增技能已经落地，原处理符合本次请求。'}
     s.api('POST', f'data-appeals/{submitted["id"]}/ai-review', {'request': '检查是否完成'}, uid=2, expected=400)
     s.api('POST', f'data-appeals/{submitted["id"]}/ai-review', {'request': '检查是否完成'})
     s.drain()
     assert s.api('GET', 'data-appeals/mine')[0]['player_review_status'] == 'done'
     s.api('POST', f'data-appeals/{submitted["id"]}/ai-review', {'request': '重复检查'}, expected=400)
-    assert s.calls == ['data_appeal', 'data_appeal_review', 'data_appeal_player_review']
+    assert s.calls == [*expected_calls, 'data_appeal_player_review']
     from extensions import db
     from plugins.adventurer_s1.models import AdventurerS1Skill
     from plugins.adventurer_s1.services.adventurer_s1_data_appeal_service import AdventurerS1DataAppealService
@@ -363,8 +368,11 @@ def test_unopened_special_dungeon_remains_unavailable(scenario):
 
 
 @pytest.mark.parametrize('dungeon', ['万象裂隙', '转职试炼场', '顿悟秘境', '祛厄药庐'])
-def test_special_dungeon_full_party_reward_settlement(scenario, monkeypatch, dungeon, caplog):
+@pytest.mark.parametrize('observer_enabled', [True, False])
+def test_special_dungeon_full_party_reward_settlement(scenario, monkeypatch, dungeon, caplog, observer_enabled):
     s = scenario
+    settings = s.api('GET', 'admin/ai/stage-settings', uid=99)
+    s.api('PUT', 'admin/ai/stage-settings', {**settings, 'expedition_observer': observer_enabled}, uid=99)
     from extensions import db
     from plugins.adventurer_s1.models import AdventurerS1, AdventurerS1Equipment, AdventurerS1ExpeditionLog, AdventurerS1WarehouseItem, AdventurerS1Skill, AdventurerS1Trait
     from plugins.adventurer_s1.services.s1_item_grant_service import grant_catalog_item
@@ -395,6 +403,8 @@ def test_special_dungeon_full_party_reward_settlement(scenario, monkeypatch, dun
         for member, update, gain_loss in zip(members, result['member_updates'], result['completion_check']['member_gain_loss'], strict=True):
             update['id'] = gain_loss['id'] = member['id']
             update['remaining_hp'] = member['hp']
+            if not observer_enabled:
+                update['history_story_append'] = f"{member['name']}完成本次探索，与同伴安全回到酒馆。"
         if dungeon != '万象裂隙':
             result['gold_settlement']['team_gain'] = {'amount': 0, 'evidence_event_indexes': []}
             result['summary'] = '四人完成本次机缘，安全回到酒馆。'
@@ -437,13 +447,14 @@ def test_special_dungeon_full_party_reward_settlement(scenario, monkeypatch, dun
             result['class_transfer_reviews'] = [{'member_id': mid, 'decision': 'settlement_consistent'}
                 for mid in class_scope['member_ids']]
         return result
-    s.responses['expedition_observer'] = observer
+    if observer_enabled:
+        s.responses['expedition_observer'] = observer
     log_id = s.api('POST', f'admin/party/{party["party_id"]}/force-dispatch', {}, uid=99)['log_id']
     s.drain()
     with s.app.app_context():
         diagnostic = db.session.get(AdventurerS1ExpeditionLog, log_id).full_log
     assert s.api('GET', f'logs/{log_id}')['status'] == 'in_progress', (diagnostic.get('generation_failure_detail'), s.calls)
-    assert s.calls == ['expedition_main', 'expedition_observer']
+    assert s.calls == (['expedition_main', 'expedition_observer'] if observer_enabled else ['expedition_main'])
     assert not any('AI 调用失败' in record.getMessage() or 'AI 输出契约失败' in record.getMessage()
                    or 'review_failure_degraded' in record.getMessage() for record in caplog.records)
     s.api('POST', f'admin/expedition/logs/{log_id}/force-complete', {}, uid=99)

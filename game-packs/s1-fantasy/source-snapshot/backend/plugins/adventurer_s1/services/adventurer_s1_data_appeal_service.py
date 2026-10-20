@@ -327,6 +327,10 @@ class AdventurerS1DataAppealService:
     def _collect_approved_destructive_action_ids(review_raw: dict | None) -> dict[str, set[int]]:
         """Resolve destructive authorization from v2 operation IDs or legacy IDs."""
         allowed = {section: set() for section in DATA_APPEAL_DESTRUCTIVE_ACTION_SECTIONS}
+        from services.tavern_appeal_policy import payload as policy_payload
+        policy = policy_payload(review_raw)
+        if policy:
+            return {section: destructive_action_source_ids(policy['patch'], section) for section in allowed}
         if not isinstance(review_raw, dict):
             return allowed
         verdicts = review_raw.get('verdicts')
@@ -360,6 +364,10 @@ class AdventurerS1DataAppealService:
     def _collect_custom_desc_clear_ids(review_raw: dict | None) -> dict[str, set[int]]:
         """二审 clear_fields 或 supplement 显式 custom_desc='' 的 ID。"""
         allowed = {'equipment': set(), 'warehouse': set()}
+        from services.tavern_appeal_policy import payload as policy_payload, explicit_clear_ids
+        policy = policy_payload(review_raw)
+        if policy:
+            return explicit_clear_ids(policy['patch'])
         if not isinstance(review_raw, dict):
             return allowed
         if review_raw.get('verdict_contract_version') == 2:
@@ -537,6 +545,10 @@ class AdventurerS1DataAppealService:
         if operation_contract_v2:
             from plugins.adventurer_s1.services.adventurer_s1_data_appeal_operation_contract import effective_data_appeal_operation_decisions
             effective_decisions = effective_data_appeal_operation_decisions(parsed.get('verdicts'))
+        from services.tavern_appeal_policy import payload as policy_payload
+        policy = policy_payload(parsed, appeal)
+        if policy:
+            return any(row.get('name') == item_name for row in policy['patch'].get('create_items', []) if isinstance(row, dict))
         expected_name = str(item_name or '').strip()
         for verdict in parsed.get('verdicts') or []:
             if not isinstance(verdict, dict):
@@ -7510,6 +7522,12 @@ class AdventurerS1DataAppealService:
             logger.warning('数据申诉身份门禁自动驳回 appeal=%s: %s', appeal_id, identity_err)
             return
 
+        policy_raw = appeal._parse_json_text(appeal.review_ai_raw_response) or {}
+        if policy_raw.get('skipped_by_admin') is True:
+            from services.tavern_appeal_policy import finalize
+            finalize(appeal)
+            return
+
         def _reject(reason: str, *, warn: bool=False) -> None:
             appeal.status = 'rejected'
             appeal.reviewed_by = None
@@ -8034,7 +8052,7 @@ class AdventurerS1DataAppealService:
         appeal.status = 'rejected'
         if exhausted_stage == 'execution':
             appeal.review_ai_status = 'done'
-            appeal.review_ai_summary = '独立复核已完成，但最终写入达到自动重试上限，自动处理已结束'
+            appeal.review_ai_summary = ('初审原稿通过后端校验，但最终写入达到自动重试上限，自动处理已结束' if review_raw.get('skipped_by_admin') else '独立复核已完成，但最终写入达到自动重试上限，自动处理已结束')
             appeal.ai_summary = '最终写入达到自动重试上限，自动处理已结束'
             appeal.core_request_satisfied = None
         else:
@@ -8073,6 +8091,10 @@ class AdventurerS1DataAppealService:
     @staticmethod
     def _appeal_frozen_review_ready_for_execution(appeal: AdventurerS1DataAppeal) -> bool:
         review_raw = appeal._parse_json_text(appeal.review_ai_raw_response) or {}
+        if review_raw.get('skipped_by_admin'):
+            from services.tavern_appeal_policy import parse_policy
+            policy = parse_policy(appeal)
+            return policy is not None and policy.get('contract_valid') is True
         request_verdicts = review_raw.get('request_verdicts')
         review_decision = str(review_raw.get('decision') or '').strip().lower()
         ready = appeal.review_ai_status == 'done' and review_decision in ('allow', 'reject', 'pending')
@@ -8397,6 +8419,13 @@ class AdventurerS1DataAppealService:
                 ai_kwargs['runtime_metadata_out'] = primary_ai_runtime_metadata
             if 'all_player_records' in ai_params:
                 ai_kwargs['all_player_records'] = AdventurerS1DataAppealService._build_all_player_records(appeal.adventurer_id)
+            from services.tavern_ai_stage_settings import enabled as stage_enabled
+            if not stage_enabled('appeal_second_review'):
+                previous_primary = AdventurerS1DataAppealService._parse_ai_raw_response(appeal) or {}
+                ai_kwargs['resolved_lookups'] = {
+                    'related_records': AdventurerS1DataAppealService.build_related_records_for_appeal_review(appeal.adventurer_id, snapshot_before=snapshot, focus_refs=previous_primary.get('focus_refs'), patch=previous_primary.get('patch')),
+                    'lookup_results': AdventurerS1DataAppealService.resolve_lookup_queries(appeal.adventurer_id, previous_primary.get('lookup_queries')),
+                }
             if resume_stage == 'review_ai':
                 raw = AdventurerS1DataAppealService._parse_ai_raw_response(appeal)
                 logger.info('数据申诉 appeal=%s 保留一审成品，仅重试独立复核', appeal_id)
@@ -8478,7 +8507,10 @@ class AdventurerS1DataAppealService:
             patch_contract_status: dict = {}
             expedition_log_id = AdventurerS1DataAppealService._resolve_expedition_log_id_for_appeal(appeal, evidence)
             allow_rarity_inc = AdventurerS1DataAppealService._should_allow_expedition_rarity_increase(patch_raw, appeal.snapshot_before or {}, appeal.adventurer_id, expedition_log_id)
-            normalized, patch_err = AdventurerS1DataAppealService.normalize_patch(patch_raw, appeal.snapshot_before, all_player_records=all_player_records, narrative_currency_cap=narrative_currency_cap, allow_all_player_record_ids=False, expedition_evidence=evidence, allow_rarity_increase=allow_rarity_inc, adventurer_id=appeal.adventurer_id, appeal_id=appeal_id, lineage_warnings_out=lineage_warnings, contract_status_out=patch_contract_status)
+            from services.tavern_ai_stage_settings import enabled as stage_enabled
+            from services.tavern_appeal_policy import explicit_clear_ids
+            policy_clear_ids = explicit_clear_ids(patch_raw) if not stage_enabled('appeal_second_review') else None
+            normalized, patch_err = AdventurerS1DataAppealService.normalize_patch(patch_raw, appeal.snapshot_before, all_player_records=all_player_records, narrative_currency_cap=narrative_currency_cap, allow_all_player_record_ids=False, allow_quantity_increase=not stage_enabled('appeal_second_review'), allow_custom_desc_clear_ids=policy_clear_ids, expedition_evidence=evidence, allow_rarity_increase=allow_rarity_inc, adventurer_id=appeal.adventurer_id, appeal_id=appeal_id, lineage_warnings_out=lineage_warnings, contract_status_out=patch_contract_status)
             primary_ai_contract_candidate = primary_ai_token_usage.get('envelope_contract_valid', True) is True and primary_pre_normalization_contract_valid and (patch_contract_status.get('contract_valid') is True) and (normalized is not None or patch_err == 'patch 中没有有效操作')
             if patch_contract_status.get('contract_valid') is not True and primary_ai_consumer_failure_code is None:
                 primary_ai_consumer_failure_code = 'consumer.patch_contract_invalid'
@@ -8504,12 +8536,12 @@ class AdventurerS1DataAppealService:
                         logger.info('数据申诉 appeal=%s 机械 quantity supplement 已生成（%s 条 update）', appeal_id, sum((len((mechanical_qty_supplement.get(sec) or {}).get('update') or []) for sec in ('equipment', 'warehouse'))))
                     elif mech_err:
                         logger.info('数据申诉 appeal=%s 机械 quantity supplement 未通过校验: %s', appeal_id, mech_err)
-                if mechanical_qty_supplement:
+                if mechanical_qty_supplement and stage_enabled('appeal_second_review'):
                     normalized = AdventurerS1DataAppealService._merge_data_appeal_patches(normalized or {}, mechanical_qty_supplement, allow_field_overwrite=True)
                     patch_err = None
                     raw['_backend_mechanical_quantity_requires_review'] = True
                     mechanical_qty_supplement = None
-            if not AdventurerS1DataAppealService._patch_has_item_record_benefit(normalized):
+            if stage_enabled('appeal_second_review') and not AdventurerS1DataAppealService._patch_has_item_record_benefit(normalized):
                 mech_rarity_raw = AdventurerS1DataAppealService._build_mechanical_rarity_upgrade_supplement_patch(snapshot, adventurer_id=appeal.adventurer_id, expedition_log_id=expedition_log_id)
                 if mech_rarity_raw:
                     mech_rarity_norm, mech_rarity_err = AdventurerS1DataAppealService.normalize_patch(mech_rarity_raw, appeal.snapshot_before or {}, allow_all_player_record_ids=False, expedition_evidence=evidence, allow_rarity_increase=True, adventurer_id=appeal.adventurer_id, appeal_id=appeal_id)
@@ -8536,7 +8568,12 @@ class AdventurerS1DataAppealService:
             force_item_rejection_review = AdventurerS1DataAppealService._has_rejected_expedition_item_request(request_checklist, evidence)
             needs_review = has_primary_request_needing_review or force_item_rejection_review or AdventurerS1DataAppealService._has_privileged_operations(normalized) or AdventurerS1DataAppealService._patch_has_trait_archive_updates(normalized) or AdventurerS1DataAppealService._patch_has_trait_archive_updates(patch_raw) or AdventurerS1DataAppealService._player_note_has_instruction_injection(note) or AdventurerS1DataAppealService._patch_has_description_rewrite_updates(normalized) or AdventurerS1DataAppealService._patch_has_description_rewrite_updates(patch_raw) or AdventurerS1DataAppealService._patch_has_asset_recovery_updates(normalized) or AdventurerS1DataAppealService._patch_has_asset_recovery_updates(patch_raw) or AdventurerS1DataAppealService._patch_has_trait_recovery_updates(normalized) or AdventurerS1DataAppealService._patch_has_trait_recovery_updates(patch_raw) or AdventurerS1DataAppealService._patch_makes_trait_recovery_easier(normalized, snapshot) or AdventurerS1DataAppealService._patch_makes_trait_recovery_easier(patch_raw, snapshot) or bool(patch_err) or bool(trait_desc_issues) or bool(item_qty_issues) or bool(delete_comp_issues) or bool(phantom_delete_issues) or AdventurerS1DataAppealService._patch_has_deletes(normalized or {}) or AdventurerS1DataAppealService._patch_has_deletes(patch_raw) or AdventurerS1DataAppealService._patch_references_outside_snapshot(patch_raw, snapshot) or has_substantive_name_update or AdventurerS1DataAppealService._patch_changes_item_type(normalized or {}, snapshot) or AdventurerS1DataAppealService._patch_changes_item_type(patch_raw, snapshot) or AdventurerS1DataAppealService._patch_increases_item_quantity(normalized, snapshot) or AdventurerS1DataAppealService._patch_increases_item_quantity(patch_raw, snapshot) or bool((evidence or {}).get('equipment_description_inheritance_candidates') if isinstance(evidence, dict) else False) or bool((evidence or {}).get('equipment_rarity_restore_candidates') if isinstance(evidence, dict) else False)
             review_runtime_metadata: dict[str, object] = {}
-            if needs_review:
+            from services.tavern_ai_stage_settings import enabled as stage_enabled
+            if not stage_enabled('appeal_second_review'):
+                from services.tavern_appeal_policy import create_policy
+                review_model = None
+                review_raw = create_policy(appeal, raw, normalized, patch_err, contract_valid=primary_ai_contract_candidate)
+            elif needs_review:
                 from plugins.adventurer_s1.services.adventurer_s1_data_appeal_review_ai_service import call_data_appeal_review_ai
                 review_model = None
                 review_raw = call_data_appeal_review_ai(appeal_id, player_note=note, snapshot_before=snapshot, appeal_adventurer=appeal_adventurer, related_records=related_records, lookup_results=lookup_results, recent_activity=recent_activity, expedition_evidence=evidence, deepseek_response=raw, normalized_patch=normalized, normalization_error=patch_err, prior_appeal_grants=prior_appeal_grants, party_roster=party_roster, team_pool_status=team_pool_status, appeal_fact_sheet=appeal_fact_sheet, appeal_category='data_fix' if is_data_fix else 'other', runtime_metadata_out=review_runtime_metadata)
@@ -8551,8 +8588,10 @@ class AdventurerS1DataAppealService:
             if not appeal:
                 logger.info('数据申诉独立复核中止 appeal=%s: 租约或工单状态已变化', appeal_id)
                 return
-            if resume_stage == 'review_ai':
+            if resume_stage == 'review_ai' and not review_raw.get('skipped_by_admin'):
                 review_raw = AdventurerS1DataAppealService._preserve_completed_review_retry_state(previous_review_raw, review_raw if isinstance(review_raw, dict) else None)
+                appeal.review_supplement_patch = None
+            if review_raw.get('skipped_by_admin'):
                 appeal.review_supplement_patch = None
             appeal.review_ai_model = review_model
             review_decision = None
@@ -8647,7 +8686,7 @@ class AdventurerS1DataAppealService:
                         logger.info('数据申诉 appeal=%s 复核 allow 回填 executable patch', appeal_id)
                     elif backfill_err:
                         logger.info('数据申诉 appeal=%s 复核 allow 回填 patch 仍未通过校验: %s', appeal_id, backfill_err)
-            if isinstance(review_raw, dict):
+            if isinstance(review_raw, dict) and not review_raw.get('skipped_by_admin'):
                 enforced_review_raw = AdventurerS1DataAppealService._enforce_review_executable_contract(review_raw, normalized_patch=normalized, supplement_patch=appeal.review_supplement_patch, patch_err=patch_err)
                 if enforced_review_raw is not review_raw:
                     review_ai_contract_candidate = False
@@ -12425,6 +12464,9 @@ class AdventurerS1DataAppealService:
         if pending_stage == 'execution' and (not AdventurerS1DataAppealService._appeal_frozen_review_ready_for_execution(appeal)):
             logger.warning('数据申诉拒绝进入空执行重试，改回二审 appeal=%s', appeal.id)
             pending_stage = 'review_ai'
+        from services.tavern_ai_stage_settings import enabled as stage_enabled
+        if pending_stage == 'review_ai' and not stage_enabled('appeal_second_review'):
+            pending_stage = 'primary_ai'
         review_raw = appeal._parse_json_text(appeal.review_ai_raw_response) or {}
         persisted_retry_flag = review_raw.pop('_backend_counts_toward_model_retry', None)
         if counts_toward_model_retry is None and pending_stage == 'review_ai' and (type(persisted_retry_flag) is bool):

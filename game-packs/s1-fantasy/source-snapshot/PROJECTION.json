@@ -784,7 +784,7 @@
   },
   "backend/plugins/adventurer_s1/services/adventurer_s1_data_appeal_ai_service.py": {
     "upstream_sha256": "6fd113341f0cd469b37283dfc5e84ac7314f0d936fb78d5c5a02da26ea3bae41",
-    "portable_sha256": "a00f59f41120d73bfcf55d77bfb3cbdf12099f02810cf1366153911c8534ebd5",
+    "portable_sha256": "4d985e3cb7a7329b9c408e49308e97acb523f7549b2c82314ffd577315faab04",
     "unchanged_except_python_compat": false
   },
   "backend/plugins/adventurer_s1/services/adventurer_s1_data_appeal_destructive_contract.py": {
@@ -804,7 +804,7 @@
   },
   "backend/plugins/adventurer_s1/services/adventurer_s1_data_appeal_service.py": {
     "upstream_sha256": "e1dc4c5e5be7184e8f72a7a5032940ec617fe46030cfe4f306c14b43acaf60c0",
-    "portable_sha256": "b810f9b79401282507c10ab55103740d1a4307d75669cf61ff0e7813c9a16cd2",
+    "portable_sha256": "a51f18806642374f7f51f74feabeb6135f823bb277fc5bdba1acbc6a15f049e8",
     "unchanged_except_python_compat": false
   },
   "backend/plugins/adventurer_s1/services/adventurer_s1_desc_backfill_ai_service.py": {
@@ -834,7 +834,7 @@
   },
   "backend/plugins/adventurer_s1/services/adventurer_s1_expedition_runner.py": {
     "upstream_sha256": "a78e451d7cc1f31e3fbe24d210f7bb079f3e7588f24770b9d903235af38aac27",
-    "portable_sha256": "0becc0125d24945ff9405e7f5fb482b4d1ea46e577d911d6e032bc5fbc634bc1",
+    "portable_sha256": "d77d058b66c8abb46ce184b79ceb3169caeb4ee78e5f641cdce7f5843ad6310d",
     "unchanged_except_python_compat": false
   },
   "backend/plugins/adventurer_s1/services/adventurer_s1_expedition_settlement_guard_ai_service.py": {
@@ -1088,8 +1088,8 @@
   },
   "backend/plugins/adventurer_s1/services/s1_appeal_rarity_restore_service.py": {
     "upstream_sha256": "c137559d36c48bdde3790bfb0863ae575f40991bd4c6186bdcf99bec1b2b3c87",
-    "portable_sha256": "c137559d36c48bdde3790bfb0863ae575f40991bd4c6186bdcf99bec1b2b3c87",
-    "unchanged_except_python_compat": true
+    "portable_sha256": "d41195d1e74c55c09dca0d70e1192957de00238e851ff65ece950cd931a1dd4d",
+    "unchanged_except_python_compat": false
   },
   "backend/plugins/adventurer_s1/services/s1_asset_description_merge_service.py": {
     "upstream_sha256": "838cd4eb7ba630eebf02075344d22e7d8983db2cf04c6061f24d8e09f82890ca",
@@ -1567,8 +1567,8 @@
   },
   "backend/plugins/adventurer_s1/services/s1_fate_destructive_change_contract.py": {
     "upstream_sha256": "a8c40318016c7b963019cbfc82372acdefab4594b594d8c61915ccb73a8450e4",
-    "portable_sha256": "a8c40318016c7b963019cbfc82372acdefab4594b594d8c61915ccb73a8450e4",
-    "unchanged_except_python_compat": true
+    "portable_sha256": "be04d0067177163543882975344d8d9057cd76e7bf2be003ec658ef621f33d74",
+    "unchanged_except_python_compat": false
   },
   "backend/plugins/adventurer_s1/services/s1_fate_historical_review_ai_service.py": {
     "upstream_sha256": "7950156d5fca30f5fa48d4213220e152c1545bc58bca51a187a577be91550af9",
@@ -1952,8 +1952,8 @@
   },
   "backend/plugins/adventurer_s1/services/s1_team_loot_service.py": {
     "upstream_sha256": "e2b8a36f9fa4d21e5371d9a43cd937fe30e271bfd3e59e2a80c5175d0bc7eb13",
-    "portable_sha256": "e037b92f653efbecc32852de7fc2553776b25cccd59638263f78819d73d0c2eb",
-    "unchanged_except_python_compat": true
+    "portable_sha256": "fe7cc3b981885fbd145a1449e22b53722ee48824da104460f4255784dbe1cacd",
+    "unchanged_except_python_compat": false
   },
   "backend/plugins/adventurer_s1/services/s1_temporary_location_service.py": {
     "upstream_sha256": "56cd3683633de5f095ccb224d7feba0f9a3eedb793215db9263d1bfb715449d9",
@@ -2218,7 +2218,7 @@
   },
   "frontend-v2/src/plugins/adventurer_s1/components/AdminTraitCompressPanel.vue": {
     "upstream_sha256": "207e37b070ffb36b03a9a0daad032c4127f6a27fe7a99584fbac0dd04335a601",
-    "portable_sha256": "207e37b070ffb36b03a9a0daad032c4127f6a27fe7a99584fbac0dd04335a601"
+    "portable_sha256": "b1a8143acadca2c344d3b48abd68f0a1ee3e76e15b246376c0ad0437e30c14eb"
   },
   "frontend-v2/src/plugins/adventurer_s1/components/AdminWorldOutlinePanel.vue": {
     "upstream_sha256": "2621ef0900506d8cd25642563812bd59c38bb353c2763c63b0d2bd0b200507cf",

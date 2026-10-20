@@ -127,6 +127,9 @@ class S1FantasyRuntimeAdapter:
         from extensions import db
         from runtime_core.pack_adapter import load_runtime_extension_factory
 
+        app.extensions['tavern_appeal_policy'] = load_runtime_extension_factory(
+            __file__, 'appeal_policy.py', 'create_policy_service'
+        )(app)
         tables_before_pack_import = set(db.metadata.tables)
         load_runtime_extension_factory(
             __file__, "server_compatibility.py", "install"
@@ -211,6 +214,8 @@ class S1FantasyRuntimeAdapter:
         )()
         from services.tavern_ai_input_settings import initialize
         initialize()
+        from services.tavern_ai_stage_settings import initialize as initialize_stages
+        initialize_stages()
 
     def _handler(self, task_type):
         return lambda payload: self._dispatch(task_type, payload)

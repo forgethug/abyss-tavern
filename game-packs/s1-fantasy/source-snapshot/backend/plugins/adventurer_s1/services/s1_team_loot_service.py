@@ -409,8 +409,10 @@ class S1TeamLootService:
         if evidence.get('_team_loot_source_hash') != team_loot_appeal_source_hash(log.full_log or {}):
             raise TeamLootError('共同实物的全文或出发名单已变化，需重新复核')
         review = appeal._parse_json_text(appeal.review_ai_raw_response) or {}
-        if review.get('verdict_contract_version') != 2:
-            raise TeamLootError('共同实物尚未取得逐项独立复核授权')
+        from services.tavern_appeal_policy import payload as policy_payload
+        policy = policy_payload(review, appeal)
+        if not policy and review.get('verdict_contract_version') != 2:
+            raise TeamLootError('共同实物尚未取得逐项执行授权')
         decisions = effective_data_appeal_operation_decisions(review.get('verdicts'))
         verdicts = {r.get('operation_id'): r for r in review.get('verdicts') or [] if isinstance(r, dict)}
         approved = {}
@@ -434,6 +436,9 @@ class S1TeamLootService:
                     or verdict.get('verified_evidence_event_indexes') != op.get('evidence_event_indexes')):
                 raise TeamLootError('共同实物的数量或取得留存证据未闭合')
             approved[(op.get('audit_match') or {}).get('registration_hash')] = op.get('operation_id')
+        if policy:
+            approved = {(op.get('audit_match') or {}).get('registration_hash'): op['operation_id']
+                for op in policy['operations'] if op.get('section') == TEAM_LOOT_FIELD}
         normalized, errors = normalize_team_loot(rows, events=(log.full_log or {}).get('events') or [])
         if errors or any(team_loot_registration_hash(row) not in approved for row in normalized):
             raise TeamLootError('共同实物提案与独立审核的精确操作不匹配')

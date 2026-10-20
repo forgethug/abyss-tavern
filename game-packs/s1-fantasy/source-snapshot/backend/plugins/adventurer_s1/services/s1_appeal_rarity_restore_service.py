@@ -175,6 +175,11 @@ def has_restore_verdict(appeal: object, section: str, record_id: int, rarity: st
         review = json.loads(getattr(appeal, 'review_ai_raw_response', None) or '{}')
     except (TypeError, ValueError):
         return False
+    from services.tavern_appeal_policy import payload as policy_payload
+    policy = policy_payload(review, appeal)
+    if policy:
+        return any(row.get('id') == record_id and row.get('rarity') == rarity
+            for row in (policy['patch'].get(section) or {}).get('update', []) if isinstance(row, dict))
     if not isinstance(review, dict) or review.get('verdict_contract_version') != 2:
         return False
     decisions = effective_data_appeal_operation_decisions(review.get('verdicts'))

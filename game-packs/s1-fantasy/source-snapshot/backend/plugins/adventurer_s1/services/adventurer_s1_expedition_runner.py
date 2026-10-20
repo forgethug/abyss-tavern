@@ -95,6 +95,7 @@ class S1RetryAction(str, Enum):
     RETRY_DEATH_RESOURCE_REVIEW = 'retry_death_resource_review'
     DEFER_AUXILIARY_STATE = 'defer_auxiliary_state'
     REGENERATE_RESOLUTION = 'regenerate_resolution'
+    SKIP_DISABLED_STAGE = 'skip_disabled_stage'
     REGENERATE_MAIN = 'regenerate_main'
     REJECT_REGENERATION = 'reject_regeneration'
     QUARANTINE_UNREVIEWED_STATE = 'quarantine_unreviewed_state'
@@ -2292,7 +2293,9 @@ def _validate_s1_same_name_gain_review_receipt(full_log: dict) -> list[str]:
         return ['稳定 ID 更新后的同名新发放无法由冻结装备身份唯一核对']
     receipt = full_log.get(_S1_SAME_NAME_GAIN_REVIEW_RECEIPT_FIELD)
     expected_context_digest = _s1_same_name_gain_review_context_digest(conflicts)
-    unavailable_preserved = bool(isinstance(receipt, dict) and receipt.get('status') == 'review_unavailable_original_preserved' and (receipt.get('source') == 'runner_final_mechanical_validation') and (receipt.get('reason_code') == 'observer_error_original_result_released') and (receipt.get('reviews') == []))
+    from services.tavern_ai_stage_authority import verify as verify_stage_policy
+    admin_preserved = isinstance(receipt, dict) and receipt.get('status') == 'skipped_by_admin' and receipt.get('reviews') == [] and verify_stage_policy(receipt.get('admin_policy'), 'same_name', expected_context_digest)
+    unavailable_preserved = admin_preserved or bool(isinstance(receipt, dict) and receipt.get('status') == 'review_unavailable_original_preserved' and (receipt.get('source') == 'runner_final_mechanical_validation') and (receipt.get('reason_code') == 'observer_error_original_result_released') and (receipt.get('reviews') == []))
     if not (isinstance(receipt, dict) and receipt.get('schema_version') == 2 and (receipt.get('status') == 'passed' or unavailable_preserved)):
         return ['稳定 ID 更新后的同名新发放缺少 Observer 结构化裁决回执']
     if receipt.get('context_digest') != expected_context_digest:
@@ -2374,6 +2377,12 @@ def _rebind_s1_same_name_gain_receipt_after_description_finalization(reviewed_re
     if expected_context != final_context:
         return
     rebound_receipt = {**deepcopy(receipt), 'context_digest': _s1_same_name_gain_review_context_digest(final_context)}
+    if receipt.get('status') == 'skipped_by_admin' and reviewed_context != final_context:
+        # Description finalization has verified the only changed fields above.
+        from services.tavern_ai_stage_authority import _signature
+        policy = rebound_receipt['admin_policy']
+        policy['payload'] = rebound_receipt['context_digest']
+        policy['signature'] = _signature('same_name', {k: v for k, v in policy.items() if k != 'signature'})
     if _validate_s1_same_name_gain_review_receipt({**finalized_result, 'audit_member_snapshot': audit_member_snapshot, _S1_SAME_NAME_GAIN_REVIEW_RECEIPT_FIELD: rebound_receipt}):
         return
     finalized_result[_S1_SAME_NAME_GAIN_REVIEW_RECEIPT_FIELD] = rebound_receipt
@@ -4979,6 +4988,8 @@ def _call_main_expedition_ai(members, item_dict, target_dungeon, dungeon_info, s
     codename_to_real = build_codename_to_real_from_alias(name_alias, id_to_name)
     is_special_opportunity_dungeon = bool(special_dungeon_context) or is_s1_special_dungeon(target_dungeon)
     high_risk_context = {'has_special_event': has_special_event, 'is_extreme_crisis': is_extreme_crisis, 'special_event_type': special_event_type, 'special_event_risk_tier': special_event_risk_tier, 'hidden_boss_context': hidden_boss_context, 'campaign_dispatch': campaign_dispatch}
+    from services.tavern_ai_stage_settings import enabled as stage_enabled
+    high_risk_stage_enabled = stage_enabled('high_risk_adjudication')
     high_risk_adjudication_required = requires_s1_high_risk_adjudication(high_risk_context)
     objective_outline = json.loads(json.dumps(frozen_objective_outline, ensure_ascii=False)) if isinstance(frozen_objective_outline, dict) else None
     should_generate_objective_outline = bool(not is_special_opportunity_dungeon or high_risk_adjudication_required)
@@ -5012,7 +5023,7 @@ def _call_main_expedition_ai(members, item_dict, target_dungeon, dungeon_info, s
     if use_condition_by_name is None:
         _, use_condition_by_name = build_expedition_equipment_context(members)
     from plugins.adventurer_s1.services.s1_encounter_draft_contract import restore_compact_draft
-    event_resolution = restore_compact_draft(frozen_event_resolution, members)
+    event_resolution = restore_compact_draft(frozen_event_resolution, members) if high_risk_stage_enabled else None
     reused_frozen_draft = event_resolution is not None and event_resolution_regeneration_basis not in {'event_resolution_invalid', 'persistent_content_violation'}
     from plugins.adventurer_s1.services.s1_trait_context_projection_service import build_s1_trait_context_projection
     frozen_trait_context_receipt = _load_s1_trait_context_selection_receipt(expedition_log_id)
@@ -5044,7 +5055,7 @@ def _call_main_expedition_ai(members, item_dict, target_dungeon, dungeon_info, s
     member_context = _build_s1_member_validation_context(ai_members, asset_dungeon, use_condition_by_name, item_dict)
     member_source_names_by_id = {int(mid): {kind: set(context.get(field) or ()) for kind, field in (('equipment', 'equipment_names'), ('skill', 'skill_names'), ('trait', 'trait_names'))} for mid, context in member_context.items()}
     description_feedback_catalog = None
-    if high_risk_adjudication_required and event_resolution is None:
+    if high_risk_stage_enabled and high_risk_adjudication_required and event_resolution is None:
 
         def save_resolution_checkpoint(stage, resolution):
             if not party_id or not expedition_log_id:
@@ -6160,6 +6171,9 @@ def _do_s1_expedition_ai(party_id: int, expedition_log_id: int, *, force_retry: 
         stamina_cost = int(current_app.config.get('ADVENTURER_S1_STAMINA_COST_PER_DUNGEON', 80))
         party_name = log.party_name if log else None
         db_manager.remove()
+        from services.tavern_ai_stage_settings import enabled as stage_enabled
+        from services.tavern_ai_stage_authority import authorize_fate, issue as issue_stage_policy
+        observer_stage_enabled = stage_enabled('expedition_observer')
         observer_review_enabled = _coerce_bool(current_app.config.get('ADVENTURER_S1_EXPEDITION_OBSERVER_REVIEW_ENABLED', False), False)
         from plugins.adventurer_s1.services.adventurer_s1_expedition_observer_ai_service import CONSUMED_ASSET_CONTINUITY_REVIEWED_CONTEXT_FIELD, COUNTERMEASURE_OPPORTUNITY_REVIEWS_FIELD, DECISIVE_CAPABILITY_REVIEWS_FIELD, DEFERRED_OBSERVER_SUBCONTRACTS_FIELD, OBSERVER_CALL_CORRELATION_ID_FIELD, OBSERVER_SEMANTIC_VERDICT_CAN_PASS_FIELD, OBSERVER_STORY_RELEASE_AUTHORIZED_FIELD, OBSERVER_STORY_RELEASE_BASIS_FIELD, TARGETED_SPECIALIZED_REVIEW_CLASS_TRANSFER, TARGETED_SPECIALIZED_REVIEW_DM_INSTRUCTION, TARGETED_SPECIALIZED_REVIEW_LOCATION_STATE, TARGETED_SPECIALIZED_REVIEW_NEW_EQUIPMENT_QUANTITY, TARGETED_SPECIALIZED_REVIEW_TRAIT_PERSISTENCE, TRAIT_PERSISTENCE_PROGRESS_FIELD, TRAIT_PERSISTENCE_PUBLICATION_BLOCKED_FIELD, requires_decisive_capability_review, review_expedition_result_for_gate
         from plugins.adventurer_s1.services.s1_item_use_condition_service import build_expedition_equipment_context, class_transfer_invitation_member_ids
@@ -6270,10 +6284,14 @@ def _do_s1_expedition_ai(party_id: int, expedition_log_id: int, *, force_retry: 
         def queue_downstream_retry(candidate: dict, errors: list[str], *, resume_stage: str='review_ai') -> None:
             nonlocal review_retry_candidate, review_retry_errors
             nonlocal resume_guard_only, guard_resume_reuses_current_observer
-            nonlocal history_anchor_repairs
+            nonlocal history_anchor_repairs, observer_feedback
             history_anchor_repairs = matching_s1_history_anchor_repairs(candidate, history_anchor_repairs)
             review_retry_candidate = json.loads(json.dumps(candidate, ensure_ascii=False))
             review_retry_errors = [str(error)[:1000] for error in dict.fromkeys([*history_anchor_repair_errors, *errors]) if str(error).strip()][:20]
+            if not observer_stage_enabled and resume_stage == 'review_ai':
+                review_retry_candidate = None
+                observer_feedback = build_s1_retry_validation_feedback(review_retry_errors, post_member_context)
+                resume_stage = 'main_ai'
             resume_guard_only = resume_stage == 'settlement_guard_ai'
             guard_resume_reuses_current_observer = resume_guard_only
             if resume_guard_only:
@@ -6281,10 +6299,22 @@ def _do_s1_expedition_ai(party_id: int, expedition_log_id: int, *, force_retry: 
             _persist_s1_expedition_generation_checkpoint(expedition_log_id, party_id=party_id, member_ids=member_snapshot_ids, resume_stage=resume_stage, review_attempt=min(review_attempt + 1, max_review_attempts), generation_claim_token=generation_claim_token, objective_outline=frozen_objective_outline, event_resolution=frozen_event_resolution, candidate=review_retry_candidate, review_failure_fallback_candidate=review_failure_fallback_candidate, trait_context_receipt=actual_trait_context_receipt, observer_feedback=observer_feedback, event_resolution_regeneration_basis=event_resolution_regeneration_basis, retry_errors=review_retry_errors, history_anchor_repairs=history_anchor_repairs, retry_trace=generation_retry_trace)
 
         def checkpoint_approved_result(candidate: dict, review_attempt: int, *, release_unreviewed_ordinary_loot: bool=False) -> None:
+            if not observer_stage_enabled:
+                conflicts = [row for row in _build_s1_same_name_gain_review_context(candidate, audit_member_snapshot) if row.get('conflict_kind') == 'equipment_update_final_name']
+                if conflicts:
+                    context_digest = _s1_same_name_gain_review_context_digest(conflicts)
+                    candidate[_S1_SAME_NAME_GAIN_REVIEW_RECEIPT_FIELD] = {
+                        'schema_version': 2, 'status': 'skipped_by_admin', 'reviews': [],
+                        'context_digest': context_digest,
+                        'admin_policy': issue_stage_policy('expedition_observer', 'same_name', context_digest)}
+                _record_s1_retry_decision(generation_retry_trace, stage='expedition_observer',
+                    reason_code='observer_disabled_by_admin', action=S1RetryAction.SKIP_DISABLED_STAGE,
+                    attempt=review_attempt, max_attempts=max_review_attempts, preserves_main_result=True,
+                    detail='管理员关闭独立剧情审核；主剧情提案通过后端校验后执行。')
             pending_story_release = _pending_s1_review_failure_story_release(generation_retry_trace)
             if candidate.get('unassigned_items') and capture_team_loot_review(candidate) is None:
                 from .s1_team_loot_service import authorize_team_loot_original_release, TeamLootError
-                original_release = bool(release_unreviewed_ordinary_loot or pending_story_release is not None or _has_s1_review_failure_story_release(generation_retry_trace))
+                original_release = bool(not observer_stage_enabled or release_unreviewed_ordinary_loot or pending_story_release is not None or _has_s1_review_failure_story_release(generation_retry_trace))
                 if not original_release or not isinstance(review_failure_fallback_candidate, dict):
                     raise TeamLootError('共同实物尚未获得可发布的同源授权')
                 authorize_team_loot_original_release(candidate, review_failure_fallback_candidate, roster=audit_member_snapshot, log_id=expedition_log_id, attempt=review_attempt)
@@ -6374,7 +6404,7 @@ def _do_s1_expedition_ai(party_id: int, expedition_log_id: int, *, force_retry: 
                 if not _persist_s1_expedition_generation_checkpoint(expedition_log_id, party_id=party_id, member_ids=member_snapshot_ids, resume_stage=S1_EXPEDITION_GENERATION_PHASE_MAIN_AI, review_attempt=review_attempt, generation_claim_token=generation_claim_token, objective_outline=frozen_objective_outline, event_resolution=frozen_event_resolution, candidate=None, observer_feedback=observer_feedback, event_resolution_regeneration_basis=event_resolution_regeneration_basis, retry_errors=[], retry_trace=generation_retry_trace):
                     current_app.logger.info('S1 探险 AI 主生成中止：日志已离开 generating party=%s log=%s', party_id, expedition_log_id)
                     return
-                result_data, main_ai_failure = _call_main_expedition_ai(member_snapshots, item_prompt_dict, target_dungeon, dungeon_info, special_event_mode=special_event_mode, party_id=party_id, expedition_log_id=expedition_log_id, special_event_type=special_event_type, special_event_risk_tier=special_event_risk_tier, has_special_event=has_special_event, is_extreme_crisis=is_extreme_crisis, hidden_boss_context=hidden_boss_context, campaign_dispatch=full_log.get('campaign_dispatch'), commission_context=commission_context, use_condition_by_name=use_condition_by_name, initial_validation_feedback=observer_feedback, name_alias=name_alias, special_dungeon_context=special_dungeon_context, narrative_seed=narrative_seed, skip_length_checks=skip_length_checks, allow_observer_equipment_repairs=True, frozen_objective_outline=frozen_objective_outline, frozen_event_resolution=frozen_event_resolution, event_resolution_regeneration_basis=event_resolution_regeneration_basis, checkpoint_review_attempt=review_attempt, generation_claim_token=generation_claim_token, physical_attempt_guard=require_current_generation_claim, hidden_dungeon_context=hidden_dungeon_context, retry_trace=generation_retry_trace)
+                result_data, main_ai_failure = _call_main_expedition_ai(member_snapshots, item_prompt_dict, target_dungeon, dungeon_info, special_event_mode=special_event_mode, party_id=party_id, expedition_log_id=expedition_log_id, special_event_type=special_event_type, special_event_risk_tier=special_event_risk_tier, has_special_event=has_special_event, is_extreme_crisis=is_extreme_crisis, hidden_boss_context=hidden_boss_context, campaign_dispatch=full_log.get('campaign_dispatch'), commission_context=commission_context, use_condition_by_name=use_condition_by_name, initial_validation_feedback=observer_feedback, name_alias=name_alias, special_dungeon_context=special_dungeon_context, narrative_seed=narrative_seed, skip_length_checks=skip_length_checks, allow_observer_equipment_repairs=observer_stage_enabled, frozen_objective_outline=frozen_objective_outline, frozen_event_resolution=frozen_event_resolution, event_resolution_regeneration_basis=event_resolution_regeneration_basis, checkpoint_review_attempt=review_attempt, generation_claim_token=generation_claim_token, physical_attempt_guard=require_current_generation_claim, hidden_dungeon_context=hidden_dungeon_context, retry_trace=generation_retry_trace)
                 actual_trait_context_receipt = _clone_s1_generation_value(getattr(result_data, 'trait_context_receipt', None))
                 if result_data is not None:
                     frozen_event_resolution = restore_compact_draft(getattr(result_data, 'event_resolution', None), member_snapshots)
@@ -6425,6 +6455,8 @@ def _do_s1_expedition_ai(party_id: int, expedition_log_id: int, *, force_retry: 
                 result_data = dict(result_data)
                 result_data['fate_journey_context'] = json.loads(json.dumps(frozen_fate_context, ensure_ascii=False))
             result_data, final_fate_destructive_review_context, final_fate_destructive_context_errors = prepare_final_fate_destructive_context(result_data, full_log.get('audit_member_snapshot'), expedition_log_id=expedition_log_id)
+            if not observer_stage_enabled and final_fate_destructive_review_context and not final_fate_destructive_context_errors:
+                result_data[FINAL_FATE_DESTRUCTIVE_RESOLUTION_FIELD] = authorize_fate(final_fate_destructive_review_context)
             if final_fate_destructive_context_errors:
                 _record_s1_retry_decision(generation_retry_trace, stage='final_fate_destructive_change_freeze', reason_code='invalid_destructive_payload_discarded', action=S1RetryAction.REPAIR_LOCAL, attempt=review_attempt, max_attempts=max_review_attempts, preserves_main_result=True, detail='; '.join(final_fate_destructive_context_errors[:10]))
                 current_app.logger.warning('S1 最终命途非法永久删除提案已丢弃，保留主剧情与其它结算 log=%s errors=%s', expedition_log_id, final_fate_destructive_context_errors[:10])
@@ -6492,13 +6524,13 @@ def _do_s1_expedition_ai(party_id: int, expedition_log_id: int, *, force_retry: 
                     resume_guard_only = False
                 if resume_guard_only and class_transfer_review_member_ids:
                     resume_guard_only = False
-            if main_result_generated:
+            if main_result_generated or not observer_stage_enabled:
                 review_failure_fallback_candidate = _clone_s1_generation_value(result_data)
             if resume_guard_only:
                 verdict = {'infra_failed': False, 'observer_skipped': True, 'needs_regeneration': False, 'regeneration_basis': 'none', 'reason': '从已持久化的结算守卫阶段继续', 'result_data': result_data, **({COUNTERMEASURE_APPLICATION_RECEIPTS_LOG_FIELD: guard_countermeasure_envelope} if guard_countermeasure_envelope is not None else {})}
                 resume_guard_only = False
                 guard_resume_reuses_current_observer = False
-            elif observer_review_enabled or retained_physical_loot_review_requested or hard_specialized_observer_review_requested:
+            elif observer_stage_enabled and (observer_review_enabled or retained_physical_loot_review_requested or hard_specialized_observer_review_requested):
                 from plugins.adventurer_s1.models import S1_EXPEDITION_GENERATION_PHASE_REVIEW_AI
                 location_review_snapshot = full_log.get('location_state_snapshot')
                 if isinstance(location_review_snapshot, dict):
@@ -6514,7 +6546,7 @@ def _do_s1_expedition_ai(party_id: int, expedition_log_id: int, *, force_retry: 
                 db_manager.remove()
                 _touch_expedition_generation_phase(expedition_log_id, S1_EXPEDITION_GENERATION_PHASE_REVIEW_AI, generation_claim_token=generation_claim_token)
             else:
-                verdict = {'infra_failed': False, 'observer_skipped': True, 'needs_regeneration': False, 'regeneration_basis': 'none', 'reason': '剧情审核 AI 已关闭，仅执行后端轻量校验', 'result_data': result_data}
+                verdict = {'infra_failed': False, 'observer_skipped': True, 'needs_regeneration': False, 'regeneration_basis': 'none', 'reason': '未派发独立剧情审核，继续后端校验', 'skipped_by_admin': not observer_stage_enabled, 'result_data': result_data}
             history_anchor_repairs = matching_s1_history_anchor_repairs(verdict.get('result_data') or result_data, {**history_anchor_repairs, **(verdict.get('history_anchor_repairs') or {})})
             waiting_npc_review_requested = bool(waiting_npc_repair_required or (waiting_npc_review_candidate_present and verdict.get('review_mode') == 'full'))
             countermeasure_review_deferred = bool(lightweight_observer_review_requested or verdict.get('review_mode') == 'targeted_specialized' or verdict.get('observer_skipped') is True)
@@ -6593,7 +6625,7 @@ def _do_s1_expedition_ai(party_id: int, expedition_log_id: int, *, force_retry: 
             if frozen_event_resolution is not None:
                 candidate['pre_narrative_resolution'] = deepcopy(frozen_event_resolution)
             retained_physical_loot_review_requested = retained_physical_loot_review_requested or _has_s1_retained_physical_loot_settlement(candidate)
-            if not infra_failed and candidate.get('unassigned_items') and (capture_team_loot_review(candidate) is None):
+            if observer_stage_enabled and not infra_failed and candidate.get('unassigned_items') and (capture_team_loot_review(candidate) is None):
                 loot_review_error = 'unassigned_items_explicit_review_missing'
                 queue_downstream_retry(candidate, [loot_review_error])
                 _record_s1_retry_decision(generation_retry_trace, stage='expedition_observer', reason_code=loot_review_error, action=S1RetryAction.RETRY_OBSERVER, attempt=review_attempt, max_attempts=max_review_attempts, preserves_main_result=True, detail=loot_review_error, correlation_id=observer_correlation_id)
@@ -6673,7 +6705,7 @@ def _do_s1_expedition_ai(party_id: int, expedition_log_id: int, *, force_retry: 
                 queue_downstream_retry(candidate, [continuity_drift_error])
                 _record_s1_retry_decision(generation_retry_trace, stage='expedition_observer', reason_code=continuity_drift_error, action=S1RetryAction.RETRY_OBSERVER, attempt=review_attempt, max_attempts=max_review_attempts, preserves_main_result=True, detail=continuity_drift_error, correlation_id=observer_correlation_id)
                 continue
-            if reviewed_continuity_context and (not infra_failed):
+            if observer_stage_enabled and reviewed_continuity_context and (not infra_failed):
                 companion_stage_errors = _apply_reviewed_companion_stage_floors(candidate, reviewed_continuity_context, verdict.get('consumed_asset_continuity_reviews'))
                 if companion_stage_errors:
                     queue_downstream_retry(candidate, companion_stage_errors)
@@ -6908,7 +6940,7 @@ def _do_s1_expedition_ai(party_id: int, expedition_log_id: int, *, force_retry: 
                 current_app.logger.warning('S1 剧情审核故障放行后复校验仍有硬残留，仅重试下游审核 log=%s 第 %s/%s 次：%s', expedition_log_id, review_attempt, max_review_attempts, '; '.join(post_hard_errors[:3]))
                 continue
             quantity_repair_errors = get_s1_new_equipment_quantity_repair_errors(post_hard_errors)
-            if post_hard_errors and len(quantity_repair_errors) == len(post_hard_errors) and (review_attempt >= max_review_attempts):
+            if observer_stage_enabled and post_hard_errors and len(quantity_repair_errors) == len(post_hard_errors) and (review_attempt >= max_review_attempts):
                 quantity_repaired_candidate, quarantined_paths = _quarantine_s1_invalid_new_equipment_quantities(candidate)
                 if quarantined_paths:
                     candidate = quantity_repaired_candidate
@@ -6917,7 +6949,7 @@ def _do_s1_expedition_ai(party_id: int, expedition_log_id: int, *, force_retry: 
                     current_app.logger.warning('S1 实物数量局部修复耗尽，仅隔离非法条目并发布原剧情 log=%s attempt=%s/%s quarantined=%s', expedition_log_id, review_attempt, max_review_attempts, quarantined_paths[:30])
             if post_hard_errors:
                 observer_fixable_errors = get_s1_observer_repair_errors(post_hard_errors)
-                if len(observer_fixable_errors) == len(post_hard_errors):
+                if observer_stage_enabled and len(observer_fixable_errors) == len(post_hard_errors):
                     for usage_handle in deferred_observer_ai_token_usage_handles:
                         set_failure_diagnostics = getattr(usage_handle, 'set_downstream_failure_diagnostics', None)
                         if callable(set_failure_diagnostics):
