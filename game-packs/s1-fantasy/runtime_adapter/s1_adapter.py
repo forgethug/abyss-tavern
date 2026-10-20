@@ -149,6 +149,7 @@ class S1FantasyRuntimeAdapter:
         app.config.update(rules_config())
         app.config.update(self._environment_config())
         load_runtime_extension_factory(__file__, "ai_input_mode.py", "install")(app)
+        load_runtime_extension_factory(__file__, "log_presentation.py", "install")(app)
         s1_ai_runtime_config_service.requests = RequestsTransportFacade(
             app.extensions["model_gateway"]
         )
